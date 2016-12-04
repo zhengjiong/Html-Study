@@ -1,0 +1,681 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	background: url("http://js.1ting.com/js.gif") no-repeat; font: 12px/normal Tahoma, Geneva, sans-serif; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+ul {
+	list-style: none;
+}
+a {
+	color: rgb(0, 102, 204); text-decoration: none;
+}
+a:hover {
+	color: rgb(255, 51, 0);
+}
+img {
+	border: 0px currentColor;
+}
+.head_bg {
+	background: url("/v5/r4/player/images/head.gif") repeat-x left top rgb(213, 239, 253); width: 100%; height: 56px;
+}
+.head {
+	margin: 0px auto; width: 960px; height: 56px;
+}
+.head h1.toplogo {
+	padding: 0px; width: 162px; height: 56px; overflow: hidden; float: left; display: block;
+}
+.head h1.toplogo a {
+	background: url("/v5/r4/player/images/player_toplogo.png") no-repeat 0px 0px; width: 162px; height: 56px; text-indent: -999em; overflow: hidden; display: block;
+}
+.head .search {
+	height: 35px; padding-top: 12px; padding-left: 12px; float: left; position: relative; z-index: 999;
+}
+.head .search .option_selected {
+	background: url("/v5/r4/player/images/head.gif") no-repeat -132px -123px; width: 76px; height: 31px; padding-top: 4px; padding-left: 4px; float: left;
+}
+.head .search .option_selected a {
+	width: 42px; height: 24px; text-align: left; line-height: 24px; padding-left: 8px; display: block;
+}
+.head .search .option_list {
+	background: rgb(255, 255, 255); border: 1px solid rgb(16, 137, 209); left: 12px; top: 43px; display: none; position: absolute;
+}
+.head .search .option_list ul {
+	width: 240px; overflow: hidden;
+}
+.head .search .option_list ul li {
+	width: 48px; height: 25px; text-align: center; line-height: 25px; margin-left: -1px; border-left-color: rgb(238, 238, 238); border-left-width: 1px; border-left-style: solid; float: left;
+}
+.head .search .option_list ul li a {
+	width: 48px; height: 25px; color: rgb(102, 102, 102); display: block;
+}
+.head .search .option_list ul li a:hover {
+	background: rgb(245, 251, 254);
+}
+.head .search .search_box {
+	background: url("/v5/r4/player/images/head.gif") repeat-x 0px -88px; float: left;
+}
+.head .search .search_box input {
+	padding: 8px 2px 4px; border: 0px currentColor; width: 240px; height: 15px; line-height: 15px; font-size: 14px; margin-top: 1px; vertical-align: top;
+}
+.head .search .search_box button {
+	background: url("/v5/r4/player/images/head.gif") no-repeat -212px -123px; border: 0px currentColor; width: 68px; height: 35px; line-height: 0px; text-indent: -1000em; overflow: hidden; font-size: 0px; vertical-align: top; cursor: pointer;
+}
+.head .search .randplay {
+	background: url("/v5/r4/player/images/head.gif") no-repeat -177px -158px; width: 103px; height: 35px; margin-left: 2px; float: left;
+}
+.head .search .randplay a {
+	background: url("/v5/r4/player/images/head.gif") no-repeat -177px -158px; width: 100px; height: 32px; text-indent: -1000px; overflow: hidden; display: block;
+}
+.head .tlink {
+	background: url("/v5/r4/player/images/head.gif") no-repeat right -56px; width: 272px; height: 32px; overflow: hidden; padding-right: 8px; margin-top: 12px; float: right;
+}
+.head .tlink ul {
+	padding: 8px 0px; height: 16px; line-height: 16px; overflow: hidden; float: right;
+}
+.head .tlink ul li {
+	padding: 0px 10px; color: rgb(102, 102, 102); margin-left: -1px; border-left-color: rgb(238, 238, 238); border-left-width: 1px; border-left-style: solid; float: left;
+}
+.head .tlink ul li a {
+	color: rgb(51, 51, 51);
+}
+.head .tlink ul li a:hover {
+	color: rgb(255, 51, 0);
+}
+.main {
+	margin: 8px auto 0px; width: 960px; overflow: hidden; clear: both; position: relative;
+}
+.player {
+	width: 332px; height: 544px; overflow: hidden; margin-right: 8px; float: left; background-color: rgb(237, 248, 254);
+}
+.playact {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat; width: 332px; height: 88px;
+}
+.playact .state {
+	margin: 0px auto; width: 300px; height: 24px; color: rgb(237, 248, 254); line-height: 24px; overflow: hidden;
+}
+.playact .state .playedtime {
+	width: 60px; height: 24px; text-align: left; letter-spacing: 1px; font-size: 11px; float: left;
+}
+.playact .state .totaltime {
+	width: 60px; height: 24px; text-align: left; letter-spacing: 1px; font-size: 11px; float: left;
+}
+.playact .state .playstate {
+	width: 180px; text-align: center; float: left;
+}
+.playact .state .totaltime {
+	text-align: right;
+}
+.playact .progress {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat 0px -88px; margin: 0px auto; width: 330px; height: 8px; overflow: hidden; clear: both; cursor: pointer;
+}
+.playact .progress #progress-chanage {
+	width: 10px; height: 8px; overflow: hidden; margin-left: 80px; cursor: pointer;
+}
+.playact .action {
+	margin: 0px auto; width: 320px; height: 48px; position: relative;
+}
+.playact .action #play-pause {
+	left: 5px; top: 5px; width: 40px; height: 40px; position: absolute;
+}
+.playact .action .play {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat 0px -96px;
+}
+.playact .action .play:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -120px -96px;
+}
+.playact .action .pause {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -80px -96px;
+}
+.playact .action .pause:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -40px -96px;
+}
+.playact .action #music-stop {
+	left: 47px; top: 10px; width: 32px; height: 32px; position: absolute;
+}
+.playact .action #music-stop:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -164px -98px;
+}
+.playact .action #music-pre {
+	left: 90px; top: 12px; width: 64px; height: 26px; position: absolute;
+}
+.playact .action #music-pre:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -81px -136px;
+}
+.playact .action #music-next {
+	left: 153px; top: 12px; width: 65px; height: 26px; position: absolute;
+}
+.playact .action #music-next:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -144px -136px;
+}
+.playact .action .volume {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat 64px -136px; left: 232px; top: 30px; width: 78px; height: 8px; overflow: hidden; position: absolute; cursor: pointer;
+}
+.playact .action .volume .volume-chanage {
+	width: 8px; height: 8px; overflow: hidden; margin-left: 40px; cursor: pointer;
+}
+.playact .action #volume-max {
+	left: 295px; top: 11px; width: 16px; height: 16px; overflow: hidden; display: block; position: absolute;
+}
+.playact .action #volume-max:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -198px -114px;
+}
+.playact .action #volume-min {
+	left: 231px; top: 11px; width: 16px; height: 16px; overflow: hidden; display: block; position: absolute;
+}
+.playact .action #volume-min:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -198px -98px;
+}
+.tabs {
+	padding: 0px 3px; width: 324px; height: 27px; overflow: hidden; border-right-color: rgb(139, 181, 228); border-left-color: rgb(139, 181, 228); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; position: relative; z-index: 10;
+}
+.tabs a {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -88px -182px; width: 88px; height: 27px; text-align: center; color: rgb(76, 97, 143); line-height: 27px; overflow: hidden; text-decoration: none; margin-right: 2px; float: left;
+}
+.tabs a:hover {
+	color: rgb(0, 0, 0);
+}
+.tabs a.selected {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat 0px -182px; color: rgb(34, 34, 34); line-height: 31px; font-weight: bold;
+}
+.lists {
+	padding: 0px 3px; width: 324px; height: 400px; overflow: hidden; margin-top: -1px; border-right-color: rgb(139, 181, 228); border-left-color: rgb(139, 181, 228); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; position: static; z-index: 5; background-color: rgb(237, 248, 254);
+}
+ul.mlist {
+	background: rgb(255, 255, 255); clear: both;
+}
+ul.mlist li {
+	background: rgb(255, 255, 255); padding: 5px 2px 5px 24px; height: 21px; overflow: hidden; clear: both; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid; display: block; position: relative;
+}
+ul.mlist li a {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+ul.mlist li input {
+	left: 6px; top: 9px; position: absolute;
+}
+ul.mlist li span.songtitle {
+	height: 21px; line-height: 21px; overflow: hidden; display: block;
+}
+ul.mlist li span.songtitle small {
+	color: rgb(136, 136, 136); font-size: 11px; float: left;
+}
+ul.mlist li span.songtitle a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+ul.mlist li .action {
+	background: rgb(245, 251, 254); padding: 3px 0px 3px 8px; top: 5px; height: 15px; right: 0px; overflow: hidden; visibility: hidden; position: absolute;
+}
+ul.mlist li .action a {
+	width: 15px; height: 15px; line-height: 0px; text-indent: -1000px; overflow: hidden; font-size: 0px; margin-right: 2px; float: left; filter: alpha(opacity=60); opacity: 0.6;
+}
+ul.mlist li .action a:hover {
+	filter: alpha(opacity=100); opacity: 1;
+}
+ul.mlist li .action a.tofav {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat 0px -146px;
+}
+ul.mlist li .action a.toplaylist {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -15px -146px;
+}
+ul.mlist li .action a.moveup {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -30px -146px;
+}
+ul.mlist li .action a.movedown {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -45px -146px;
+}
+ul.mlist li .action a.remove {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -60px -146px;
+}
+ul.mlist li .action a.toplaylist-succeed {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -30px -146px; filter: alpha(opacity=100); cursor: default; opacity: 1;
+}
+ul.mlist li .action a.toplaylist-succeed:hover {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -30px -146px; filter: alpha(opacity=100); cursor: default; opacity: 1;
+}
+ul.mlist li.playing {
+	background: rgb(247, 255, 205);
+}
+ul.mlist li.playing span.songtitle small {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat right -98px; padding-right: 14px;
+}
+ul.mlist li.playing span.songtitle {
+	color: rgb(51, 153, 0);
+}
+ul.mlist li.playing span.songtitle a {
+	color: rgb(51, 153, 0);
+}
+ul.mlist li.mouseon {
+	background: url("/v5/r4/player/images/player0208.gif") repeat-x 0px -209px rgb(245, 251, 254);
+}
+ul.mlist li.mouseon .action {
+	visibility: visible;
+}
+.lists .listbox {
+	padding: 4px 2px; height: 360px; overflow: auto; position: relative;
+}
+.lists .listaction {
+	background: rgb(247, 252, 255); padding: 4px; width: 314px; height: 20px; overflow: hidden; clear: both; border-top-color: rgb(140, 182, 228); border-top-width: 1px; border-top-style: solid;
+}
+.lists .listaction a {
+	border: 0px currentColor; height: 20px; line-height: 2000%; overflow: hidden;
+}
+.lists .listaction .btn_select {
+	background: url("/v5/r4/player/images/player0208.gif") -166px -162px; width: 68px; margin-right: 4px; float: left;
+}
+.lists .listaction .btn_tofav {
+	background: url("/v5/r4/player/images/player0208.gif") 0px -162px; width: 48px; margin-right: 4px; float: left;
+}
+.lists .listaction .btn_toplaylist {
+	background: url("/v5/r4/player/images/player0208.gif") -94px -162px; width: 72px; margin-right: 4px; float: left;
+}
+.lists .listaction .btn_remove {
+	background: url("/v5/r4/player/images/player0208.gif") -47px -162px; width: 48px; float: left;
+}
+.lists .listaction .btn_addmusic {
+	background: url("/v5/r4/player/images/player0208.gif") -215px -98px; width: 72px; float: right;
+}
+.lists .loading {
+	margin: 0px auto; width: 240px; text-align: center; color: rgb(89, 150, 217); padding-top: 120px;
+}
+.lists .loading img {
+	vertical-align: middle;
+}
+.playlist {
+	border: 1px solid rgb(140, 182, 228); width: 322px; height: 398px; overflow: hidden; background-color: rgb(255, 255, 255);
+}
+.historylist {
+	border: 1px solid rgb(140, 182, 228); width: 322px; height: 398px; overflow: hidden; display: none; background-color: rgb(255, 255, 255);
+}
+.musicbox {
+	border: 1px solid rgb(140, 182, 228); width: 322px; height: 398px; overflow: hidden; display: none; background-color: rgb(255, 255, 255);
+}
+.musicbox dl {
+	position: relative;
+}
+.musicbox dl dt {
+	background: rgb(238, 247, 253); border-width: 1px; border-style: solid; border-color: rgb(128, 181, 223) rgb(210, 235, 251) rgb(210, 235, 251); height: 27px; overflow: hidden; position: relative;
+}
+.musicbox dl dt input {
+	left: 4px; top: 7px; position: absolute;
+}
+.musicbox dl dt span.boxtitle {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -320px -138px; left: 24px; height: 27px; line-height: 27px; padding-left: 14px; position: absolute;
+}
+.musicbox dl.open dt span.boxtitle {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -320px -116px;
+}
+.musicbox dl dt span.boxtitle a {
+	font-weight: bold;
+}
+.musicbox dl dt span.boxtitle a:hover {
+	color: rgb(0, 0, 0);
+}
+.musicbox dl dt span.boxtitle small {
+	color: rgb(119, 119, 119); font-size: 12px;
+}
+.musicbox dl dd {
+	padding-top: 2px; display: none; position: relative;
+}
+.musicbox dl.open dd {
+	display: block;
+}
+.playmode {
+	padding: 4px 0px; width: 330px; height: 21px; overflow: hidden; border-right-color: rgb(139, 181, 228); border-bottom-color: rgb(139, 181, 228); border-left-color: rgb(139, 181, 228); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+}
+.playmode ul {
+	float: right;
+}
+.playmode ul li {
+	height: 21px; line-height: 21px; overflow: hidden; margin-right: 3px; float: left;
+}
+.playmode a {
+	width: 32px; color: rgb(0, 102, 153); padding-left: 24px; float: left; filter: alpha(opacity=50); opacity: 0.5; background-image: url("/v5/r4/player/images/player0208.gif"); background-repeat: no-repeat;
+}
+.playmode a:hover {
+	color: rgb(0, 102, 153); filter: alpha(opacity=100); opacity: 1;
+}
+.playmode ul li.loop a {
+	background-position: -236px -146px;
+}
+.playmode ul li.rand a {
+	background-position: -236px -166px;
+}
+.playmode ul li.single a {
+	background-position: -236px -186px;
+}
+.playmode ul li.selected {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -178px -186px;
+}
+.playmode ul li.selected a {
+	filter: alpha(opacity=100); opacity: 1;
+}
+.playmode ul li.selected a:hover {
+	filter: alpha(opacity=100); opacity: 1;
+}
+.song {
+	background: rgb(255, 255, 255); width: 312px; height: 474px; margin-top: 68px; border-top-color: rgb(152, 191, 235); border-bottom-color: rgb(152, 191, 235); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: left;
+}
+.songinfo {
+	padding: 8px; height: 64px; overflow: hidden; border-right-color: rgb(152, 191, 235); border-left-color: rgb(152, 191, 235); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.songinfo .albumpic {
+	width: 74px; height: 64px; float: left;
+}
+.songinfo .songtitle {
+	width: 200px; height: 22px; line-height: 22px; overflow: hidden; font-size: 14px; font-weight: bold; float: left;
+}
+.songinfo .singer {
+	width: 200px; height: 22px; color: rgb(153, 153, 153); line-height: 22px; overflow: hidden; float: left;
+}
+.songinfo .album {
+	width: 200px; height: 22px; color: rgb(153, 153, 153); line-height: 22px; overflow: hidden; float: left;
+}
+.songinfo .singer a {
+	color: rgb(102, 102, 102); margin-left: 4px;
+}
+.songinfo .album a {
+	color: rgb(102, 102, 102); margin-left: 4px;
+}
+.songinfo a:hover {
+	color: rgb(255, 0, 0);
+}
+.songact {
+	background: url("/v5/r4/player/images/songact_hr.gif") no-repeat bottom; height: 36px; overflow: hidden; padding-top: 4px; clear: both; border-right-color: rgb(152, 191, 235); border-left-color: rgb(152, 191, 235); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.songact a {
+	width: 52px; height: 24px; line-height: 24px; overflow: hidden; padding-left: 48px; font-weight: bold; float: left;
+}
+.songact .fav {
+	background: url("/v5/r4/player/images/songact_ico.gif") no-repeat 24px 4px; border-right-color: rgb(238, 238, 238); border-right-width: 1px; border-right-style: solid;
+}
+.songact .down {
+	background: url("/v5/r4/player/images/songact_ico.gif") no-repeat 24px -26px;
+}
+.songact .nice {
+	background: url("/v5/r4/player/images/songact_ico.gif") no-repeat 24px -58px; border-left-color: rgb(238, 238, 238); border-left-width: 1px; border-left-style: solid;
+}
+.songact .google1 {
+	padding: 2px 0px 2px 10px; width: 90px; height: 20px; overflow: hidden; border-left-color: rgb(238, 238, 238); border-left-width: 1px; border-left-style: solid; float: left;
+}
+.share {
+	padding: 8px; height: 16px; line-height: 16px; overflow: hidden; clear: both; border-right-color: rgb(152, 191, 235); border-left-color: rgb(152, 191, 235); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.share strong {
+	padding: 0px 6px; float: left;
+}
+.share a {
+	width: 16px; height: 16px; line-height: 2000%; overflow: hidden; font-size: 0px; margin-right: 8px; float: left; background-image: url("/v5/r4/player/images/share_ico.gif"); background-repeat: no-repeat;
+}
+.share a.ico_qq {
+	
+}
+.share a.ico_baidu {
+	background-position: -16px 0px;
+}
+.share a.ico_kaixin {
+	background-position: -32px 0px;
+}
+.share a.ico_renren {
+	background-position: -48px 0px;
+}
+.share a.ico_douban {
+	background-position: -64px 0px;
+}
+.share a.ico_sina {
+	background-position: -80px 0px;
+}
+.share a.ico_myspace {
+	background-position: -96px 0px;
+}
+.share a.ico_delicious {
+	background-position: -112px 0px;
+}
+.share a.ico_tsohu {
+	background-position: -128px 0px;
+}
+.share a.ico_t163 {
+	background-position: -144px 0px;
+}
+.share a.ico_qzone {
+	background-position: -160px 0px;
+}
+.share a.ico_tqq {
+	background-position: -176px 0px;
+}
+.mobile {
+	background: url("/v5/r4/player/images/mobile_bg.gif") repeat-x left -30px; height: 30px; overflow: hidden; border-right-color: rgb(152, 191, 235); border-left-color: rgb(152, 191, 235); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.mobile strong {
+	background: url("/v5/r4/player/images/mobile_bg.gif") no-repeat -56px 0px; width: 66px; height: 30px; line-height: 30px; padding-left: 30px; font-weight: normal; float: left;
+}
+.mobile input {
+	margin: 3px; padding: 2px; border: 1px solid rgb(230, 130, 177); width: 150px; height: 17px; color: rgb(102, 102, 102); line-height: 17px; font-size: 12px; float: left;
+}
+.mobile button {
+	background: url("/v5/r4/player/images/mobile_bg.gif") no-repeat -5px -5px; border: 0px currentColor; width: 48px; height: 24px; font-size: 12px; margin-top: 4px; float: left;
+}
+.lyric {
+	background: rgb(251, 254, 255); padding: 3px; height: 286px; overflow: hidden; border-right-color: rgb(152, 191, 235); border-left-color: rgb(152, 191, 235); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; position: relative;
+}
+.lyric .lrcact {
+	padding: 4px 8px 0px; height: 26px; overflow: hidden;
+}
+.lyric .lrcact {
+	padding: 4px 0px 0px 8px; height: 26px; overflow: hidden;
+}
+.lyric .lrcact strong {
+	width: 32px; height: 26px; color: rgb(41, 120, 207); line-height: 23px; float: left;
+}
+.lyric .lrcact input {
+	font-size: 12px; float: left;
+}
+.lyric .lrcact input[type='checkbox'] {
+	margin: 5px 4px 0px 3px; _vertical-align: middle;
+}
+* html .lyric .lrcact input {
+	margin: 1px 0px 0px -2px;
+}
+.lyric .lrcact label {
+	width: 48px; height: 26px; color: rgb(119, 119, 119); line-height: 23px; margin-right: 12px; float: left;
+}
+.lyric .lrcact a {
+	height: 26px; line-height: 23px; margin-right: 8px; float: left;
+}
+.lyric .lrcbox {
+	background: rgb(255, 255, 255); border: 1px solid rgb(207, 223, 244); width: 302px; height: 254px; text-align: center; color: rgb(102, 102, 102); line-height: 25px; overflow: hidden; font-size: 14px;
+}
+.lyric .lrcbox p {
+	height: 25px; line-height: 25px;
+}
+.addmusic {
+	background: rgb(255, 255, 255); border: 2px solid rgb(18, 165, 248); left: 340px; top: 68px; width: 308px; height: 472px; overflow: hidden; position: absolute; z-index: 2147483646;
+}
+.addmusic .box_title {
+	background: rgb(247, 252, 255); padding: 0px 8px; width: 292px; height: 24px; line-height: 24px; overflow: hidden; clear: both; border-bottom-color: rgb(237, 248, 254); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.addmusic .box_title h3 {
+	font-size: 12px; float: left;
+}
+.addmusic .box_title a.close {
+	float: right;
+}
+.addmusic .search {
+	padding: 10px; height: 30px; overflow: hidden;
+}
+.addmusic .search input {
+	padding: 3px; border: 1px solid rgb(18, 165, 248); width: 220px; height: 21px; line-height: 21px; font-size: 12px; float: left;
+}
+.addmusic .search button {
+	background: rgb(18, 165, 248); border: 0px currentColor; width: 60px; height: 29px; color: rgb(255, 255, 255); letter-spacing: 4px; font-size: 14px; float: left;
+}
+.addmusic .musiclist {
+	padding: 0px 8px; display: none;
+}
+.addmusic .musiclist ul {
+	width: 292px; height: 364px; overflow: hidden; border-top-color: rgb(221, 221, 221); border-top-width: 1px; border-top-style: solid;
+}
+.addmusic .musiclist ul li {
+	height: 29px; line-height: 29px; overflow: hidden; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+.addmusic .musiclist ul li small {
+	color: rgb(153, 153, 153); font-size: 11px; margin-left: 4px;
+}
+.addmusic .musiclist ul li a.songtitle {
+	color: rgb(102, 102, 102);
+}
+.addmusic .musiclist ul li a.songtitle:hover {
+	color: rgb(255, 51, 0);
+}
+.addmusic .musiclist ul li a.addtolist {
+	background: url("/v5/r4/player/images/mlist_action.gif") no-repeat -50px -24px rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); top: 7px; width: 14px; height: 14px; right: 1px; line-height: 2000%; overflow: hidden; position: absolute;
+}
+.addmusic .musiclist ul li a.addtolist:hover {
+	border: 1px solid rgb(190, 231, 252); background-color: rgb(237, 248, 254);
+}
+.addmusic .musiclist .pages {
+	width: 292px; height: 23px; overflow: hidden; padding-top: 4px;
+}
+.addmusic .musiclist .pages a {
+	border: 1px solid rgb(82, 156, 231); width: 64px; height: 21px; text-align: center; line-height: 21px; display: block;
+}
+.addmusic .musiclist .pages a:hover {
+	background: rgb(82, 156, 231); color: rgb(255, 255, 255);
+}
+.addmusic .musiclist .pages a.page_pre {
+	float: left;
+}
+.addmusic .musiclist .pages a.page_next {
+	float: right;
+}
+.addmusic .hotkeyword {
+	margin: 0px auto; padding: 8px 0px; width: 292px; height: 348px; overflow: hidden; border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid; display: none;
+}
+.addmusic .hotkeyword h3 {
+	color: rgb(85, 85, 85); line-height: 25px; font-size: 12px;
+}
+.addmusic .hotkeyword p {
+	padding: 4px;
+}
+.addmusic .hotkeyword p a {
+	line-height: 25px; margin-right: 8px; vertical-align: middle; white-space: nowrap;
+}
+.addmusic .loading {
+	margin: 0px auto; width: 240px; text-align: center; color: rgb(89, 150, 217); padding-top: 120px;
+}
+.addmusic .loading img {
+	vertical-align: middle;
+}
+.addmusic_arrow {
+	background: url("/v5/r4/player/images/player0208.gif") no-repeat -287px -99px; left: 333px; top: 488px; width: 9px; height: 18px; overflow: hidden; position: absolute; z-index: 2147483647;
+}
+.nexusmusic {
+	background: rgb(237, 248, 254); padding: 4px; border: 1px solid rgb(208, 215, 241); width: 642px; height: 230px; overflow: hidden; float: left;
+}
+.nexusmusic dl {
+	background: rgb(255, 255, 255); width: 642px; height: 230px; overflow: hidden;
+}
+.nexusmusic dl dt {
+	margin: 0px auto; width: 632px; height: 29px; line-height: 29px; text-indent: 4px; overflow: hidden; font-weight: bold; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; text-overflow: ellipsis;
+}
+.nexusmusic dl dt strong {
+	color: rgb(255, 102, 0);
+}
+.nexusmusic dl dd {
+	margin: 0px auto; width: 640px;
+}
+.nexusmusic dl dd ul {
+	margin: 0px auto; padding: 4px 0px; width: 636px; height: 164px;
+}
+.nexusmusic dl dd ul li {
+	padding: 2px 0px 2px 12px; width: 200px; height: 23px; line-height: 23px; overflow: hidden; float: left;
+}
+.nexusmusic dl dd ul li input {
+	font-size: 12px; float: left;
+}
+.nexusmusic dl dd ul li input[type='checkbox'] {
+	margin: 5px 4px 0px 3px; _vertical-align: middle;
+}
+* html .nexusmusic dl dd ul li input {
+	margin: 1px 0px 0px -2px;
+}
+.nexusmusic dl dd .action {
+	background: url("/v5/r4/player/images/mlist_action.gif") repeat-x 0px -70px rgb(255, 255, 255); margin: 0px auto; width: 632px; height: 30px; text-align: center; overflow: hidden;
+}
+.nexusmusic dl dd .action p {
+	margin: 0px auto; width: 216px; height: 23px; padding-left: 6px; display: block;
+}
+.nexusmusic dl dd .action a {
+	border: 0px currentColor; height: 23px; line-height: 1000px; overflow: hidden; font-size: 0px; margin-right: 6px; float: left; display: block; background-color: rgb(255, 255, 255);
+}
+.nexusmusic dl dd .action .btn_select {
+	background: url("/v5/r4/player/images/mlist_action.gif") repeat-x 0px -46px rgb(255, 255, 255); width: 70px;
+}
+.nexusmusic dl dd .action .btn_play {
+	background: url("/v5/r4/player/images/mlist_action.gif") repeat-x 0px -23px rgb(255, 255, 255); width: 50px; display: none;
+}
+.nexusmusic dl dd .action .btn_add {
+	background: url("/v5/r4/player/images/mlist_action.gif") repeat-x 0px 0px rgb(255, 255, 255); width: 78px;
+}
+.userbox {
+	background: rgb(237, 248, 254); padding: 4px; border: 1px solid rgb(208, 215, 241); width: 290px; height: 230px; overflow: hidden; float: right;
+}
+.userbox dl {
+	background: rgb(255, 255, 255); width: 290px; height: 230px; overflow: hidden;
+}
+.userbox dl dt {
+	margin: 0px auto; width: 280px; height: 29px; line-height: 29px; text-indent: 4px; overflow: hidden; font-weight: bold; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; text-overflow: ellipsis;
+}
+.userbox dl dt strong {
+	color: rgb(255, 102, 0);
+}
+.userbox dl dd {
+	margin: 0px auto; padding: 8px 0px; width: 288px;
+}
+.userbox dl dd ul {
+	
+}
+.userbox dl dd ul li {
+	width: 72px; height: 88px; overflow: hidden; padding-bottom: 8px; float: left;
+}
+.userbox dl dd ul li a {
+	width: 72px; height: 70px; text-align: center; display: block; cursor: pointer;
+}
+.userbox dl dd ul li a .userpic {
+	margin: 0px auto; width: 48px; height: 48px; display: block;
+}
+.userbox dl dd ul li a .username {
+	margin: 0px auto; width: 72px; height: 22px; text-align: center; line-height: 24px; overflow: hidden; display: block;
+}
+.userbox dl dd ul li span.usercity {
+	width: 72px; height: 21px; text-align: center; color: rgb(136, 136, 136); overflow: hidden; display: none;
+}
+.comment {
+	margin: 8px auto 0px; width: 960px;
+}
+.comment .comment_title {
+	background: url("/v5/r4/player/images/comment_title_bg.gif") repeat-x; width: 960px; height: 28px; overflow: hidden;
+}
+.comment .comment_title h2 {
+	color: rgb(255, 255, 255); line-height: 28px; text-indent: 12px; font-size: 14px; float: left;
+}
+.comment .comment_box {
+	border: 1px solid rgb(140, 182, 228); width: 958px; overflow: hidden;
+}
+.comment .comment_box iframe {
+	width: 100%;
+}
+.toplaylist_tips {
+	padding: 0px 4px; border: 1px solid rgb(51, 51, 51); width: 116px; height: 21px; line-height: 21px; display: block; position: absolute; z-index: 9999; background-color: rgb(255, 255, 221);
+}
+.foot {
+	margin: 8px auto 0px; padding: 8px 0px; width: 960px;
+}
+.foot p.copyright {
+	text-align: center; line-height: 21px;
+}
+.foot p.icp {
+	text-align: center; line-height: 21px;
+}
+.foot p.copyright a {
+	font-weight: bold;
+}

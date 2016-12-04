@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist>
+  <trackList>
+    <track>
+      <location>musics/再会约束.mp3</location>
+      <title>再会约束</title>
+    </track>
+    <track>
+      <location>musics/慌心假期.mp3</location>
+      <title>慌心假期</title>
+    </track>
+    <track>
+      <location>musics/有我在.mp3</location>
+      <title>有我在</title>
+    </track>
+    <track>
+      <location>musics/明年今日.mp3</location>
+      <title>明年今日</title>
+    </track>
+    <track>
+      <location>musics/伤信.mp3</location>
+      <title>伤信</title>
+    </track>
+    <track>
+      <location>musics/十面埋伏.mp3</location>
+      <title>十面埋伏</title>
+    </track>
+    <track>
+      <location>musics/時代曲.mp3</location>
+      <title>時代曲</title>
+    </track>
+  </trackList>
+</playlist>

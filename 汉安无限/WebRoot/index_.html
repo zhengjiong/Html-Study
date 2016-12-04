@@ -1,0 +1,2327 @@
+﻿	<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <base href="<%=basePath%>"/>
+    
+    <title>汉安无限</title>
+    
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="expires" content="0"/>    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+	<meta http-equiv="description" content="汉安无限"/>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/index_.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script>
+$(function(){
+	a lert("温馨提示：\n 1、用户您好，若您未安装快播请下载快播播放器安装或者随便点击一部本站影片播放页面会提示您下载安装，否则将无法点播本站视频！\n 2、安装完快播后请将快播设置里面“加入快播缓冲优化计划”打钩，方可高速点播本站视频！\n 3、详细设置方法请在影片播放页面红色文字提示处下载教程！\n 4、欢迎大家加入：汉安无限影音交流群给我们提意见，群号：280045951");
+	for(var i=0;i<16;i++){$("#top_nav_"+i).attr("class","");}$("#top_nav_0").addClass("on");
+	}
+);
+ /*
+    * Timer类
+    * @author: kmlxk@yahoo.com.cn
+    * @created: 2011-2-12 18:51
+    * 方法: 
+    *   构造函数: Timer(间隔, 回调函数)
+    *   清除: clear()
+    * 使用示例: var timer = new Timer(200, function(t) {alert('nana'); t.clear();} );    
+    */
+    
+    function Timer(interval, functor) {
+        this.id = 'timer_'+Math.ceil(Math.random()*900000000+100000000);
+        eval(this.id+' = this;');
+        this.tid = setInterval(this.id+'.callback()',interval)
+        this.functor = functor;
+        this.callback = function(){
+            this.functor(this);
+        }
+        this.clear = function(){
+            clearInterval(this.tid);
+        }
+    }
+    
+    
+
+function shownoall(num)//这个是关闭层
+    {
+    
+    var divv1="doing"+num;
+    var divv2="divLogin"+num;
+    
+    document.getElementById(divv1).style.display="none";
+    document.getElementById(divv2).style.display="none";
+    document.getElementById("Div4").innerHTML="";
+     
+    }
+    
+    function showfloatall(num)//这个是显示要弹出的层
+    {
+    var isIE6= !!window.ActiveXObject&&!window.XMLHttpRequest; 
+    if(isIE6==false){
+      var range = getRange();
+          var divvv1="doing"+num;
+           var divvv2="divLogin"+num;
+           
+            document.getElementById(divvv1).style.width = range.width + "px";
+            document.getElementById(divvv1).style.height = range.height + "px";
+            document.getElementById(divvv1).style.display = "block";
+            document.getElementById(divvv2).style.display="block";
+       }
+            
+    }
+
+        function getRange()                      //得到屏幕的大小
+        {
+              var top     = document.body.scrollTop;
+              var left    = document.body.scrollLeft;
+              var height  = document.body.clientHeight;
+              var width   = document.body.clientWidth;
+
+              if (top==0 && left==0 && height==0 && width==0) 
+              {
+                top     = document.documentElement.scrollTop;
+                left    = document.documentElement.scrollLeft;
+                height  = document.documentElement.clientHeight;
+                width   = document.documentElement.clientWidth;
+              }
+              return  {top:top  ,left:left ,height:height ,width:width } ;
+        } 
+var timer = new Timer(15000, function(t) {shownoall(6); t.clear();} );
+</script>
+<script type="text/javascript">
+function show(){
+	$("#float_div").html(document.all.float_div.style.posTop);
+	setTimeout("show();", 50);
+}
+
+//setTimeout("show();", 50);
+var ini;
+/*function inix(){
+    ini=parseInt(document.getElementById("float_div").style.top);
+    //alert(ini);
+    ini2=parseInt(document.getElementById("float_div").style.top);
+    
+}*/
+/*function move(){
+    document.getElementById("float_div").style.top=document.body.scrollTop+ini;
+    //alert("move,ini="+window.document.body.scrollTop);
+}*/
+//window.onscroll=move;
+
+function wordRoll()
+{
+	document.getElementById("wordDiv2").innerHTML = document.getElementById("wordDiv1").innerHTML;
+	
+	if(document.getElementById("wordDiv").scrollTop==document.getElementById("wordDiv2").offsetTop)
+	{
+		//alert(document.getElementById("wordDiv1").offsetHeight);
+		document.getElementById("wordDiv").scrollTop = 0;
+	}else
+	{
+		document.getElementById("wordDiv").scrollTop++;
+	}
+}
+var wordLoop = setInterval(wordRoll,200);
+function stopWordRoll()
+{
+	clearInterval(wordLoop);
+}
+
+function startWordRoll()
+{
+	wordLoop = setInterval(wordRoll,20);
+}
+</script>
+<style type="text/css">
+
+.userpanel_box {
+    color: #E6E6E6;
+    position: absolute;
+    right: 0;
+    top: 39px;
+    width: 258px;
+    text-align: right;
+}
+.userpanel_box a{
+	color:#a9a9a9;
+	font-size:14px;
+}
+.quickpanel {
+    top: 60px;
+    color: #E6E6E6;
+    position: absolute;
+    right: -3px;
+}
+.userpanel a, .quickpanel a {
+    color: #A9A9A9;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+}
+.mainnav{
+	-moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-repeat: repeat-x;
+    border-bottom-color: #DDDDDD;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #DDDDDD;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #DDDDDD;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-color: #DDDDDD;
+    border-top-style: solid;
+    border-top-width: 1px;
+    height: 35px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 968px;
+    margin-top: 10px;
+    overflow-x: visible;
+    overflow-y: visible;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("images/headerpage_970_1.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-size: auto auto;
+    text-align: left;
+    color: #888888;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+.top_nav_videolink {
+    float: left;
+    text-align: left;
+    line-height: 35px;
+    
+}
+.dropbox_1 {
+    margin-right: 10px;
+}
+.dropbox {
+    display: inline;
+    float: right;
+    height: 31px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 3px;
+    position: relative;
+    width: 74px;
+    z-index: 100;
+}
+.dropbox_tigger {
+    color: #414141;
+    display: block;
+    height: 31px;
+    line-height: 29px;
+    position: relative;
+    text-align: center;
+    width: 72px;
+    z-index: 100;
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+}
+.mainnav_site {
+    border-bottom-color: #F8F8F8;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    text-align: left;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 968px;
+}
+.mainnav_site a
+{
+	color: #414141;
+}
+.mainnav_site_con {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: #EBEBEB;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #EBEBEB;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #EBEBEB;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+    color: #EBEBEB;
+    height: 29px;
+    line-height: 29px;
+    padding-left: 18px;
+    text-align: left;
+}
+.mainnav_site_con .on {
+    color: #0082C6;
+    font-weight: bold;
+}
+.mainnav_site_con a {
+    display: inline;
+    float: left;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    line-height: 29px;
+    text-align: left;
+}
+span.cutline {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("http://misc.web.xunlei.com/movie_index_60/img/cutline.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    display: block;
+    float: left;
+    height: 17px;
+    margin-top: 6px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 1px;
+    line-height: 29px;
+    text-align: left;
+}
+.topinfo{
+	position:absolute;
+	right: 68px;
+	top:24px;
+	width:200px;
+	overflow: hidden;
+	color: #5eafff;
+	font-weight: bold;
+	font-size: 12px;
+}
+#wordDiv1 a{
+	color: #efefef;
+}
+#wordDiv1 a:hover{
+	color: #bfbfbf;
+	text-decoration: underline;
+}
+#wordDiv2 a{
+	color: #efefef;
+}
+#wordDiv2 a:hover{
+	color: #bfbfbf;
+	text-decoration: underline;
+}
+</style>
+</head>
+<!--<body onload="javascript:bodyonload();inix();" id="body">-->
+<body id="body" onload="showfloatall(6)">
+<s:include value="head_2.jsp"></s:include>
+<%--<div id=""></div>
+<div class="header">
+	<h1 class="header_logo">
+		<a target="_self" title="汉安无限·畅享高清" href="getindexMsg.action">汉安无限·畅享高清</a>
+	</h1>
+	<div class="searchbox">
+		
+		<form id="searchform" target="_self" action="" method="get">
+			<fieldset class="searchbox_search">
+				<input id="searchbox1" class="input" type="text" maxlength="50" onfocus="" name="keyword">
+				<button id="btnSearch" type="submit">搜 索</button>
+			</fieldset>
+		</form>
+		<form id="searchform" target="_self" action="searchByKey.action" method="post">
+			<fieldset class="searchbox_search">
+				<input id="searchbox1" class="input" type="text" maxlength="50" onfocus="javascript:document.getElementById('searchbox1').value=''"  name="keyword" value="超级战舰">
+				<button id="btnSearch" type="submit">搜 索</button>
+			</fieldset>
+		</form>
+		
+		<div class="searchbox_hottag">
+			<a target="_blank" title="AA制生活" href="player.action?ID=1338&movieNum=1">AA制生活</a>
+			<a target="_blank" title="金陵十三钗" href="player.action?ID=283&movieNum=1">金陵十三钗</a>
+			<a target="_blank" title="决战星球" href="player.action?ID=27&movieNum=1">决战星球</a>
+			<a target="_blank" title="生化危机" href="player.action?ID=39&movieNum=1">生化危机</a>
+			|
+			<a target="_blank" title="星球大战" href="player.action?ID=57&movieNum=1">星球大战</a>
+			<a target="_blank" title="失恋33天" href="player.action?ID=98&movieNum=1">失恋33天</a>
+		</div>
+	</div>
+	<div class="userpanel_box">
+		<a id="top_login" target="_self" title="登录" href="login.jsp">登录</a>&nbsp;|&nbsp;<a title="注册" href="register.jsp">注册</a>
+	</div>
+	<div class="topinfo">本站所有视频均系网友上传，仅供测试带宽使用，观看请买正版</div>
+</div>
+
+<div class="mainnav">
+	<div class="mainnav_list">
+		<a id="top_nav_0" class="on" title="首页"  href="getindexMsg.action">首页</a>
+		<a id="top_nav_1" target="_self" title="网址大全" href="nav.jsp">网址大全</a>
+		<a id="top_nav_2" href="movieIndex.action" title="电影">电影</a>
+		<a id="top_nav_3" href="showTV.action" title="电视剧">电视剧</a>
+		<a id="top_nav_4"  href="zongyi.action" title="综艺">综艺</a>
+		<a id="top_nav_5"  href="animes.action" title="动漫">动漫</a>
+		<a id="top_nav_13" href="musicIndex.action" title="音乐">音乐</a>
+		<a id="top_nav_15" href="softwareIndex.action" title="软件下载">软件下载</a>
+		<div class="top_nav_videolink">
+			<a id="top_nav_6" target="_self" title="游戏" href="games.jsp">游戏</a>
+		</div>
+		
+		<a id="top_nav_9" title="上传视频" href="upload.jsp">上传视频</a>
+		<a id="top_nav_14" target="_self" title="电视台" href="searchByKey.action?cateid=5">动作片</a>
+		<div class="mainnav_list_2">
+			<a id="top_nav_om" title="爱情片" target="_self" href="searchByKey.action?cateid=6">爱情片</a>
+			<a id="top_nav_jd" title="喜剧片" target="_self" href="searchByKey.action?cateid=7">喜剧片</a>
+			<a id="top_nav_hy" title="科幻片" target="_self" href="searchByKey.action?cateid=9">科幻片</a>
+			<img class="newico" src="images/new.png">
+		</div>
+	</div>
+</div>
+--%>
+<div class="foucebox">
+	<div class="foucebox_con">
+		<div class="lamu">
+			<div id="cm1169_outer" class="lamubox lamubox_L" style="display:none">
+				<div id="cm1169_bg" class="lamu_bg lamu_bg_L" onmouseover="lamuLight()"></div>
+					<a class="lamubox_close lamubox_close_L" onclick="lamuShow=false;lamuClose()" target="_self" title="" href="javascript://">关闭</a>
+				<div id="cm1169" class="lamu_con" onmouseout="lamuShadow()"></div>
+			</div>
+			<div id="cm1170_outer" class="lamubox lamubox_R" style="display:none">
+				<div id="cm1170_bg" class="lamu_bg lamu_bg_R" onmouseover="lamuLight()"></div>
+					<a class="lamubox_close lamubox_close_R" onclick="lamuShow=false;lamuClose()" target="_self" title="" href="javascript://">关闭</a>
+				<div id="cm1170" class="lamu_con" onmouseout="lamuShadow()"></div>
+			</div>
+		</div>
+		<div class="scrollimg2">
+			<div id="SwitchBigPic">
+				<div id="showDiv_0" class="scrollimg2_bigimg" style="display: block; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711"  href="http://111.9.141.200" target="_blank">
+							<img id="bigpic_0" src="images/fengmian/yujianjianghu.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_1" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" title="" target="_blank" href=" ">
+							<img id="bigpic_0" title="" onload="loadNext()" src="images/fengmian/diyongquan.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_2" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" title="" href="player.action?ID=6064&movieNum=1" target="_blank">
+							<img id="bigpic_0" onload="loadNext()" src="images/fengmian/buershentan.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_3" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" title="" href="player.action?ID=6082&movieNum=1" target="_blank">
+							<img id="bigpic_3" title="" alt="" src="images/fengmian/xiaoshidai.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_4" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a rel="external nofollow" blockid="3711" title="" href="player.action?ID=6038&movieNum=1" target="_blank">
+							<img id="bigpic_4"  src="images/fengmian/pake.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_5" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" href="player.action?ID=6071&movieNum=1" target="_blank">
+							<img id="bigpic_5"  src="images/fengmian/zhanlei.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_6" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+					<a blockid="3711" href="player.action?ID=6106&movieNum=1" target="_blank">
+						<img id="bigpic_6" src="images/fengmian/jidujingyin.jpg"/>
+					</a>
+					</div>
+				</div>
+				<div id="showDiv_7" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" href="player.action?ID=6033&movieNum=1" target="_blank">
+							<img id="bigpic_7" src="images/fengmian/zhiqingchun.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_8" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" href="player.action?ID=6067&movieNum=1" target="_blank">
+							<img id="bigpic_8" src="images/fengmian/xianghuohuaxianghudie.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_9" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden; z-index: 0;">
+					<div>
+						<a blockid="3711"  href="" target="_blank">
+							<img id="bigpic_9" src="images/fengmian/liuliang.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_10" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a rel="external nofollow" href="player.action?ID=4050&movieNum=1" target="_blank">
+							<img id="bigpic_10" src="images/fengmian/cheshou.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div id="showDiv_11" class="scrollimg2_bigimg" style="display: none; position: absolute; left: 0pt; top: 0pt; overflow: hidden;">
+					<div>
+						<a blockid="3711" href="player.action?ID=5898&movieNum=1" target="_blank">
+							<img id="bigpic_11" src="images/fengmian/Xnvtegong.jpg"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="scrollimg2_tigger">
+				<div id="bigHover" class="scrollimg2_tigger_hoverbg"></div>
+				<ul>
+					<li id="scrollimg2_tigger_0">
+						<a href="http://111.9.141.200" target="_blank">
+						<img id="big_pic_nav_on_0" src="images/fengmian/yujianjianghu1.png"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_1">
+						<a href="" target="_blank">
+						<img id="big_pic_nav_on_1" src="images/fengmian/diyongquan1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_2">
+						<a href="player.action?ID=6064&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_2" src="images/fengmian/buershentan1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_3">
+						<a blockid="3711" href="player.action?ID=6082&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_3" src="images/fengmian/xiaoshidai1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_4">
+						<a rel="external nofollow"  href="player.action?ID=6038&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_4" src="images/fengmian/pake1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_5">
+						<a blockid="3711" href="player.action?ID=6071&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_5" src="images/fengmian/zhanlei1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_6">
+						<a blockid="3711"  href="player.action?ID=6106&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_6" src="images/fengmian/jidujingyin1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_7">
+						<a blockid="3711" href="player.action?ID=6033&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_7" src="images/fengmian/zhiqingchun1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_8">
+						<a blockid="3711" href="player.action?ID=6067&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_8"  src="images/fengmian/xianghuohuaxianghudie1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_9">
+						<a blockid="3711" href="" target="_blank">
+						<img id="big_pic_nav_on_9" src="images/fengmian/liuliang1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_10">
+						<a rel="external nofollow"  href="player.action?ID=4050&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_10"  src="images/fengmian/cheshou1.jpg"/>
+						</a>
+					</li>
+					<li id="scrollimg2_tigger_11">
+						<a blockid="3711" href="player.action?ID=5898&movieNum=1" target="_blank">
+						<img id="big_pic_nav_on_11" src="images/fengmian/Xnvtegong1.jpg"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="foucerank">
+			<ul class="tabbox">
+				<li id="Tab_rebo_0" class="on">热播</li>
+				<li id="Tab_rebo_1">电影</li>
+				<li id="Tab_rebo_2">电视</li>
+				<li id="Tab_rebo_3">动漫</li>
+				<li id="Tab_rebo_4">综艺</li>
+				<!-- 
+				<li id="Tab_rebo_5">纪录</li>
+				-->
+			</ul>
+			<div style="overflow: hidden;height:260px;" >
+				<ul id="tabbox_ul_0" style="height:260px;overflow: hidden;position:relative;">
+					<a href="searchByKey.action?bid=1&key=" class="more">更多</a>
+					<s:iterator value="#request.moviesvolistall" id="MoviesVo" status="status">
+						<li>
+							<font class="tabbox_ul_0_top"><s:property value="#status.count"/></font>
+							<span class="tabbox_ul_0_content">
+								<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+								<strong style="color:#5f5f5f;"><s:property  value="#MoviesVo.updateNum"/></strong>
+							</span>
+							<span class="tabbox_ul_0_content_score"><s:property  value="#MoviesVo.sore"/></span>
+						</li>
+					</s:iterator>
+				</ul>
+				<ul id="tabbox_ul_1" style="display: none;height:260px;overflow: hidden;position:relative;">
+					<a href="movieIndex.action" class="more">更多</a>
+					<s:iterator value="#request.moviesvolistdj" id="MoviesVo" status="status">
+					<li>
+						<font class="tabbox_ul_0_top"><s:property value="#status.count"/></font>
+						<span class="tabbox_ul_0_content">
+							<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+							<strong style="color:#5f5f5f;"><s:property  value="#MoviesVo.updateNum"/></strong>
+						</span>
+						<span class="tabbox_ul_0_content_score"><s:property  value="#MoviesVo.sore"/></span>
+					</li>
+					</s:iterator>
+				</ul>
+				<ul id="tabbox_ul_2" style="display: none;height:260px;overflow: hidden;position:relative;">
+					<a href="showTV.action" class="more">更多</a>
+					<s:iterator value="#request.moviesvolisttv" id="MoviesVo" status="status">
+					<li>
+						<font class="tabbox_ul_0_top"><s:property value="#status.count"/></font>
+						<span class="tabbox_ul_0_content">
+							<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+							<strong style="color:#5f5f5f;"><s:property  value="#MoviesVo.updateNum"/></strong>
+						</span>
+						<span class="tabbox_ul_0_content_score"><s:property  value="#MoviesVo.sore"/></span>
+					</li>
+					</s:iterator>
+				</ul>
+				<ul id="tabbox_ul_3" style="display: none;height:260px;overflow: hidden;position:relative;">
+					<a href="animes.action" class="more">更多</a>
+					<s:iterator value="#request.moviesvolistdm" id="MoviesVo" status="status">
+					<li>
+						<font class="tabbox_ul_0_top"><s:property value="#status.count"/></font>
+						<span class="tabbox_ul_0_content">
+							<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+							<strong style="color:#5f5f5f;"><s:property  value="#MoviesVo.updateNum"/></strong>
+						</span>
+						<span class="tabbox_ul_0_content_score"><s:property  value="#MoviesVo.sore"/></span>
+					</li>
+					</s:iterator>
+				</ul>
+				<ul id="tabbox_ul_4" style="display: none;height:260px;overflow: hidden;position:relative;">
+					<a href="zongyi.action" class="more">更多</a>
+					<s:iterator value="#request.moviesvolistzy" id="MoviesVo" status="status">
+					<li>
+						<font class="tabbox_ul_0_top"><s:property value="#status.count"/></font>
+						<span class="tabbox_ul_0_content">
+							<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+							<strong style="color:#5f5f5f;"><s:property  value="#MoviesVo.updateNum"/></strong>
+						</span>
+						<span class="tabbox_ul_0_content_score"><s:property  value="#MoviesVo.sore"/></span>
+					</li>
+				</s:iterator>
+					
+				</ul>
+			</div>
+			<div  id="wordDiv" style="width:225px;height:30px;padding-left:5px;padding-top:30px;margin-top:8px;padding-right: 5px;overflow: hidden;" onMouseOver="stopWordRoll()" onMouseOut="startWordRoll()">
+				<div id="wordDiv1">
+<a target="_blank" href="/"><font color='red'>【救灾前线】：</font>四川移动第一时间响应全力确保地震灾区通信畅通雅安地震发生后，中国移动四川公司已第一时间启动紧急预案，全省动员，通信抢修正在进行中，已派出200人左右抢险队伍，首批投入应急通信车和40部应急抢修车辆，抽调卫星电话20部、光缆100公里、油机128台、应急通信车等应急通信物资，及帐篷、饮用水等生活救灾物资，准备运往震区。                                        
+在内江地区，地震后话务量短时间暴涨，内江移动迅速启动红橙黄蓝应急预案的蓝色预案，分公司各级领导第一时间赶到网络应急中心，现场指挥，8:40经观察内江各交换机CP负荷均已下降到50%以下，目前内江地区话务拥塞情况已经缓解，同时第一时间组成一支5人通信抢险队奔赴雅安，12点派出1辆应急通信车，1辆载有10台油机以及相应抢险物资的应急车，从内江出发奔赴雅安，参与灾区现场通信抢险。</a><br>
+                                <a target="_blank" h ref=""><font color='red'>【重要公告】：</font>尊敬的用户您好！本站已升级更换为快播播放器，为了您能高速点播本站电影，请务必把您的快播播放器按此步骤进入[主菜单->设置->选项->网络]将：<font color='red'>加入快播优化缓冲计划</font>打钩，退出快播请右键点击快播托盘图标选择完全退出即可退出快播所有后台进程。</a><br>
+                                <a target="_blank" h ref=""><font color="color[2]">【温馨提示】：</font><font color="color[#ffff00]">尊敬的用户您好，若部分影片出现播放画面全黑，请更新或者升级你的浏览器至最新版，为了获得更好的体验建议您尽量不要使用低于IE6.0内核版本的浏览器。<a target="_blank" a href="http://liuyan.cnzz.com/index.php?tid=4427800" style="color:yellow;">您在观看途中遇到任何问题，请点此为我们留言</a>,汉安无限全体员工感谢您的支持！11月07日-14:48</font></a><br>
+                                <a target="_blank" h ref=""><font color="color[2]">【公告】：</font><font color="color[#ffff00]">《铜雀台》、《白鹿原》720P高清以及近期热门电视剧已登录汉安无限，您可通过本站搜索节目观看<a target="_blank" a href="http://liuyan.cnzz.com/index.php?tid=4427800" style="color:yellow;">若您在观看途中遇到任何问题，请点此为我们留言</a>,以便及时给您处理和帮助我们改进，汉安无限全体员工感谢您的支持！11月05日-17:18</font></a><br>
+                                <a target="_blank" h ref=""><font color="color[2]">【公告】：</font><font color="color[#ffff00]">尊敬的用户您好！若您有什么疑问或者影片报错，<a target="_blank" a href="http://liuyan.cnzz.com/index.php?tid=4427800" style="color:yellow;">请点此为我们留言</a>,以便及时给您处理和帮助我们改进，汉安无限的成长离不开广大用户的支持！汉安无限全体员工感谢您的支持！10月25日-17:45</font></a><br>
+                                <a target="_blank" href="player.action?ID=4835&movieNum=1"><font color="color[9]">【公告】：</font><font color="color[6666ff]">最新大片《浮城谜事》抢先上线，点此链接直接播放。汉安无限全体员工感谢广大用户支持，谢谢！10月21日-22:25</font></a><br>
+                                <a target="_blank" h ref=""><font color="color[9]">大量新电影、高清电影、热播电视剧已登录汉安无限，欢迎点播！汉安无限全体员工感谢广大用户支持，谢谢！10月20日-22:40</font></a><br>
+                                <a target="_blank" h ref=""><font color="color[1]">温馨提示：</font>请广大用户在点播720P甚至以上视频时稍作缓冲再进行观看，由于观看视频需要占用大量宽带资源，为了获得更流畅的体验请用户在观看视频时尽量减少其他占用网络资源的操作.汉安无限工作人员感谢您的支持！</a><br>
+                                <a target="_blank" h ref="">最新电影、最新电视剧汉安无限一网打尽！...最新：《飓风营救2》抢版已上线、更多720P等你点播...</a><br>
+                                <a target="_blank" h ref=""><font color="color[1]">【好消息】：</font>移动“感恩5000万，话费省一半”活动开始啦！网龄越长送的越多、存的越多送的越多、打得越多送得越多、参加越早送的越多...</a><br>
+                                        <a target="_blank" href="http://zy528.com">【公告】：昆仑ol-大千之巅已正式开启，人气十足，场面火爆。不再有地域限制、不再封闭随时随处都可登陆游戏畅玩。赶快加入吧，即刻加群：202464517注明来自汉安无限更有vip卡拿....</a><br>
+                                        <a target="_blank" h ref="">温馨提示：请广大用户在点播720P甚至以上视频时稍作缓冲再进行观看，由于观看视频需要占用大量宽带资源，为了获得更流畅的体验请用户在观看视频时尽量减少其他占用网络资源的操作.汉安无限工作人员感谢您的支持！</a><br>
+                                        <a target="_blank" h ref="">【公告】：现在起加群：202464517 附加消息：汉安无限 更可获赠【大千之巅】新服特别vip卡，29日下午19点震撼开启。</a><br>
+                                        <a target="_blank" href="http://kl.zy528.com/Webs/pNews/News1652.html">抢元宝、抢经验、抢百元话费充值卡，来吧9月29日19:00《昆仑ol》将开启内江专属服务器：【大千之巅】不限访问，让你随时畅玩游戏。</a><br> 
+                                        <a target="_blank" hr ef="">公告：汉安无限服务器带宽已全面升级，前所未有的速度就在汉安无限。</a><br>
+                                        <a target="_blank" h ref="">【公告】：现在起加群：202464517 附加消息：汉安无限 更可获赠【大千之巅】新服特别vip卡，29日下午19点震撼开启。</a><br>
+                                        <a target="_blank" hr ef="">生化危机5 画皮2 白鹿原 机械师 有木有？ 看新片大片就上汉安无限</a><br> 
+                                        <a target="_blank" hr ef="">上汉安无限看大片新片，这里有你所想要的！一流的速度，一流的更新。</a><br>                                                                 <a target="_blank" href="player.action?ID=4238&movieNum=1">卫视最新热播电视剧《致美丽的你》</a><br>
+                                        <a target="_blank" href="player.action?ID=4232&movieNum=1">8月17日最新上映大片抢先看《华丽之后》</a><br>
+                                        <a target="_blank" href="player.action?ID=4141&movieNum=1">加油中国！《奥运会中国军团合辑》</a><br>
+                                        <a target="_blank" href="player.action?ID=4142&movieNum=1">都市爱情爆笑喜剧《爱情公寓3》</a><br>
+                                        <a target="_blank" href="player.action?ID=4076&movieNum=1">感动心灵的爱情经济手册《我的经济适用男》</a><br>
+                                        <a target="_blank" href="player.action?ID=4102&movieNum=1">玩的就是心跳，720P高清《致命追踪》</a><br>
+                                        <a target="_blank" href="player.action?ID=2278&movieNum=1">超清极致体验1080P《形影不离》</a><br>
+				        <a target="_blank" href="player.action?ID=3980&movieNum=1">人气偶像720P电影《青春期3完整版》</a><br>
+                                        <a target="_blank" href="player.action?ID=4067&movieNum=1">抢先上映《四大名捕》</a><br>
+          <a target="_blank" href="player.action?ID=3979&movieNum=1">热播国产大片《画皮2》抢先看</a><br>
+					<a target="_blank" href="player.action?ID=3860&movieNum=1">激烈赛事欧洲杯</a><br>
+					<a target="_blank" href="player.action?ID=1508&movieNum=1">人气电视剧《我可能不会爱你》</a><br>
+					<a target="_blank" href="player.action?ID=1753&movieNum=1">超清体验1080P《画皮》</a>
+			    </div>
+			    <div id="wordDiv2">更多精彩2</div>
+			</div>
+		</div>
+	</div>
+</div>
+<a class="switch_banner" target="_blank"  href="111.9.141.200:82">
+	<img src="images/ban1.png" />
+<!-- 
+        <img src="images/ban2.jpg" />	
+	<img src="images/ban2.jpg"  style="display:none;"/>-->
+</a>
+<div class="topMovie">
+	<div class="topMovie_con">
+		<div class="topmovie_bg">
+			<a href="searchByKey.action?cateid=9&bid=1" class="topmovie_bg_title">科幻剧推荐</a>
+			<ul>
+				<s:iterator value="#request.moviesrmdp1" id="MoviesVo" status="status">
+				<li>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.moviesrmdp2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+			</ul>
+		</div>
+	</div>
+	<div class="topMovie_con">
+		<div class="topmovie_bg" style="border-top: 3px solid #879ac5;">
+			<a href="searchByKey.action?cateid=11&bid=1" class="topmovie_bg_title" style="color:#879ac5;">战争剧推荐</a>
+			<ul>
+				<s:iterator value="#request.moviesman1" id="MoviesVo" status="status">
+				<li>
+					<a href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a" target="_blank">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name" ><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.moviesman2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+			</ul>
+		</div>
+	</div>
+	<div class="topMovie_con">
+		<div class="topmovie_bg" style="border-top: 3px solid #a6a6a6;">
+			<a href="searchByKey.action?bid=2&aresid=4" class="topmovie_bg_title" style="color:#a6a6a6;">日韩剧推荐</a>
+			<ul>
+				<s:iterator value="#request.movieshwjc1" id="MoviesVo" status="status">
+				<li>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+				
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.movieshwjc2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank"  href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="topMovie_con">
+		<div class="topmovie_bg" style="border-top: 3px solid #7ec0da;">
+			<a href="searchByKey.action?key=&bid=3" class="topmovie_bg_title" style="color:#7ec0da;">动漫剧推荐</a>
+			<ul>
+				<s:iterator value="#request.moviesrqdm1" id="MoviesVo" status="status">
+				<li>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+				
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.moviesrqdm2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="topMovie_con">
+		<div class="topmovie_bg" style="border-top: 3px solid #e18786;">
+			<a href="searchByKey.action?aresid=1&bid=2" class="topmovie_bg_title" style="color:#e18786;">港台剧推荐</a>
+			<ul>
+				<s:iterator value="#request.moviesgtjc1" id="MoviesVo" status="status">
+				<li>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.moviesgtjc2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="topMovie_con">
+		<div class="topmovie_bg" style="border-top: 3px solid #e4cd6f;">
+			<a href="searchByKey.action?bid=4&key=" class="topmovie_bg_title" style="color:#e4cd6f;">综艺推荐</a>
+			<ul>
+				<s:iterator value="#request.moviesrqzy1" id="MoviesVo" status="status">
+				<li>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_title_a">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" alt="" />
+					</a>
+					<div class="topmovie_bg_msg">
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_msg_name"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span class="topmovie_bg_msg_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+						<a href="" class="topmovie_bg_msg_img"></a>
+					</div>
+				</li>
+				</s:iterator>
+				
+			</ul>
+			<ul class="topmovie_bg_ul_2">
+				<s:iterator value="#request.moviesrqzy2" id="MoviesVo" status="status">
+				<li style="margin-top: 10px;">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="topmovie_bg_ul_2_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<span class="topmovie_bg_ul_2_resolution"><s:property  value="#MoviesVo.updateNum"/></span>
+					<div class="clear"></div>
+					<span class="topmovie_bg_ul_2_intro">
+						<s:property  value="#MoviesVo.roleName"/>
+					</span>
+				</li>
+				</s:iterator>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="width:973px;height:83px;margin:0 auto;margin-top:15px;">
+	<img width="973" height="85" src="images/bann2.png">
+</div>
+<div class="wrapper_box">
+	<div class="main">
+		<div class="box_tt">
+			<a class="box_tt_left" href="searchByKey.action?bid=1&key=">今日电影</a>
+			<div class="box_tt_middle">
+				<a target="_blank" href="player.action?ID=2088&movieNum=1">超级战舰</a>
+				<span class="">(利亚姆·尼森演绎)</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=98&movieNum=1" target="_blank">失恋33天</a>
+				<span>(迈克尔·杰特 )</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=638&movieNum=1" target="_blank">无间道</a>
+				<span>(任贤齐)</span>
+			</div>
+			<a class="box_tt_right" href="searchByKey.action?bid=1&key=">更多</a>
+		</div>
+		<ul class="movielist">
+			<s:iterator value="#request.moviestodaym" id="MoviesVo" status="status">
+			<li>
+				<a target="_blank" class="movielist_img" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" target="_blank">
+					<img src="<s:property  value="#MoviesVo.mainPic"/>" />
+				</a>
+				<div class="movielist_row_1">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_play"></a>
+				</div>
+				<div class="movielist_row_2">
+					<s:property  value="#MoviesVo.roleName"/><br/>
+				</div>
+				<div>
+					上传者:<s:property  value="#MoviesVo.uploadName"/>
+				</div>
+			</li>
+			</s:iterator>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="box_tt">
+			<a class="box_tt_left" href="earchByKey.action?bid=2&key=">今日电视剧</a>
+			<div class="box_tt_middle">
+				<a href="player.action?ID=1097&movieNum=1" target="_blank">鹿鼎记</a>
+				<span class="">(黄晓明)</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=177&movieNum=1" target="_blank">养父</a>
+				<span>(张国立 )</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=537&movieNum=1" target="_blank">怪侠欧阳德</a>
+				<span>(小沈阳 林江国)</span>
+			</div>
+			<a class="box_tt_right" href="searchByKey.action?bid=2&key=">更多</a>
+		</div>
+		<ul class="movielist">
+			<s:iterator value="#request.moviestodaytv" id="MoviesVo" status="status">
+			<li>
+				<a class="movielist_img" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" target="_blank">
+					<img src="<s:property  value="#MoviesVo.mainPic"/>" />
+				</a>
+				<div class="movielist_row_1">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_play"></a>
+				</div>
+				<div class="movielist_row_2">
+					<s:property  value="#MoviesVo.roleName"/>
+				</div>
+				<div>
+					上传者:<s:property  value="#MoviesVo.uploadName"/>
+				</div>
+			</li>
+			</s:iterator>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="box_tt">
+			<a class="box_tt_left" href="searchByKey.action?bid=4&key=">今日综艺</a>
+			<div class="box_tt_middle">
+				<a href="player.action?ID=935&movieNum=1" target="_blank">女人好犀利</a>
+				<span class="">(第三十二期)</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=219&movieNum=1" target="_blank">天天向上</a>
+				<span>(欧弟汪涵 )</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=1560&movieNum=1" target="_blank">中国达人秀</a>
+				<span></span>
+			</div>
+			<a class="box_tt_right" href="searchByKey.action?bid=4&key=">更多</a>
+		</div>
+		<ul class="movielist">
+			<s:iterator value="#request.moviestodayzy" id="MoviesVo" status="status">
+			<li>
+				<a class="movielist_img" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" target="_blank">
+					<img src="<s:property  value="#MoviesVo.mainPic"/>" />
+				</a>
+				<div class="movielist_row_1">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_play"></a>
+				</div>
+				<div class="movielist_row_2">
+					<s:property  value="#MoviesVo.roleName"/>
+				</div>
+				<div>
+					上传者:<s:property  value="#MoviesVo.uploadName"/>
+				</div>
+			</li>
+			</s:iterator>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="box_tt">
+			<a class="box_tt_left" href="searchByKey.action?bid=3&key=">今日动漫</a>
+			<div class="box_tt_middle">
+				<a href="player.action?ID=319&movieNum=1" target="_blank">超级大坏蛋</a>
+				<span class="">(威尔·法瑞尔)</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=1086&movieNum=1" target="_blank">风之谷</a>
+				<span>(岛本须美 )</span>&nbsp;&nbsp;|
+				<a href="player.action?ID=1103&movieNum=1" target="_blank">龙猫</a>
+				<span>(日高法)</span>
+			</div>
+			<a class="box_tt_right" href="searchByKey.action?bid=3&key=">更多</a>
+		</div>
+		<ul class="movielist">
+			<s:iterator value="#request.moviestodaydm" id="MoviesVo" status="status">
+			<li>
+				<a class="movielist_img" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" target="_blank">
+					<img src="<s:property  value="#MoviesVo.mainPic"/>" />
+				</a>
+				<div class="movielist_row_1">
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_name"><s:property  value="#MoviesVo.MovieName"/></a>
+					<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1" class="movielist_row_1_play"></a>
+				</div>
+				<div class="movielist_row_2">
+					<s:property  value="#MoviesVo.roleName"/>
+				</div>
+				<div>
+					上传者:<s:property  value="#MoviesVo.uploadName"/>
+				</div>
+			</li>
+			</s:iterator>
+		</ul>
+	</div>
+</div>
+
+
+<!-- =============================================电影start================================= -->
+<div class="wrapper_2">
+	<div class="wrapper_2_main">
+		<div class="box_tt">
+			<h2 class="title_5">
+				<a style="display: block;height: 18px;text-indent: -9999px;" title="电影" href="javascript:void(0);">电影</a>
+			</h2>
+			<div class="second_tab">
+				<ul class="second_tab_list">
+					<li class="on" id="Tab_mfen_0" onmouseover="switch_mfen_Tab(0)" >动作</li>
+					<li id="Tab_mfen_1" onmouseover="switch_mfen_Tab(1)" >恐怖</li>
+					<li id="Tab_mfen_2" onmouseover="switch_mfen_Tab(2)" >科幻</li>
+					<li id="Tab_mfen_3" onmouseover="switch_mfen_Tab(3)" >爱情</li>
+					<li id="Tab_mfen_4" onmouseover="switch_mfen_Tab(4)" >喜剧</li>
+					<li id="Tab_mfen_5" onmouseover="switch_mfen_Tab(5)" >战争</li>
+				</ul>
+				<a class="more" title="更多" href="searchByKey.action?key=&bid=1">更多</a>
+			</div>
+		</div>
+		<div class="main_list">
+			<ul class="main_list_ul" id="main_list_ul_0">
+				<s:iterator value="#request.dzmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="黑色大丽花" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="<s:property  value="#MoviesVo.MovieName"/>" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_1" style="display: none;">
+				<s:iterator value="#request.kbmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title=""  href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_2" style="display: none;">
+				<s:iterator value="#request.khmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_3" style="display: none;">
+				<s:iterator value="#request.aqmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_4" style="display: none;">
+				<s:iterator value="#request.xjmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_5" style="display: none;">
+				<s:iterator value="#request.zzmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+		</div>
+		<div class="main_side">
+			<div class="hotbox">
+				<h4>
+					<a class="hotpic" target="_blank" href="player.action?ID=<s:property value="moviesvo1.ID"/>&movieNum=1"">
+						<img class="pic" alt="" src="<s:property value="moviesvo1.mainPic"/>"><s:property value="moviesvo1.MovieName"/>
+					</a>
+				</h4>
+				<ul class="txtlist4">
+					<li>
+						导演:<a href="searchByKey.action?key=<s:property value="moviesvo1.directors"/>"><s:property value="moviesvo1.directors"/></a>
+					</li>
+					<li>
+						主演:
+						<a href="searchByKey.action?key=<s:property value="moviesvo1.roleName"/>"><s:property value="moviesvo1.roleName"/></a>
+						
+					</li>
+					<li>
+						类型:
+						<a href="searchByKey.action?cateid=9"><s:property value="moviesvo1.cateSname"/></a>
+					</li>
+				</ul>
+				<p>
+					<s:property value="moviesvo1.directName"/>
+					<a title="详细" target="_blank" href="player.action?ID=<s:property value="moviesvo1.ID"/>&movieNum=1">详细</a>
+				</p>
+			</div>
+			<div>
+				<img width="199" height="190" src="images/ban4.png">
+			</div>
+		</div>
+	</div>
+	<div class="wrapper_2_side">
+		<div class="wrapper_2_side_tt">
+			<h3>电影分类</h3>
+		</div>
+		<div class="wrapper_2_side_con">
+			<dl class="taglist">
+				<dt>类型</dt>
+				<dd>
+					<a title="动作" href="searchByKey.action?cateid=5">动作</a>
+				</dd>
+				<dd>
+					<a title="喜剧" href="searchByKey.action?cateid=7">喜剧</a>
+				</dd>
+				<dd>
+					<a title="爱情" href="searchByKey.action?cateid=6">爱情</a>
+				</dd>
+				<dd>
+					<a title="科幻" href="searchByKey.action?cateid=9">科幻</a>
+				</dd>
+				<dd>
+					<a title="文艺" href="searchByKey.action?cateid=12">文艺</a>
+				</dd>
+				<dd>
+					<a title="魔幻" href="searchByKey.action?cateid=24">魔幻</a>
+				</dd>
+				<dd>
+					<a title="恐怖" href="searchByKey.action?cateid=8">恐怖</a>
+				</dd>
+				<dd>
+					<a title="战争" href="searchByKey.action?cateid=11">战争</a>
+				</dd>
+				<dd>
+					<a title="其他" href="searchByKey.action?cateid=25">其他</a>
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>地区</dt>
+				<dd>
+					<a title="港台" href="searchByKey.action?aresid=1&bid=1">港台</a>
+				</dd>
+				<dd>
+					<a title="欧美" href="searchByKey.action?aresid=3&bid=1">欧美</a>
+				</dd>
+				<dd>
+					<a title="日韩" href="searchByKey.action?aresid=4&bid=1">日韩</a>
+				</dd>
+				<dd>
+					<a title="大陆" href="searchByKey.action?aresid=2&bid=1">大陆</a>
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>年份</dt>
+				<dd>
+					<a title="2013" href="searchByKey.action?key=2013&bid=1">2013</a>
+				</dd>
+				<dd>
+					<a title="2012" href="searchByKey.action?key=2012&bid=1">2012</a>
+				</dd>
+				<dd>
+					<a title="2011" href="searchByKey.action?key=2011&bid=1">2011</a>
+				</dd>
+				<dd>
+					<a title="2010" href="searchByKey.action?key=2010&bid=1">2010</a>
+				</dd>
+				<dd>
+					<a title="2009" href="searchByKey.action?key=2009&bid=1">2009</a>
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>明星</dt>
+				<dd>
+					<a title="周星驰" href="searchByKey.action?key=周星驰">周星驰</a>
+				</dd>
+				<dd>
+					<a title="甄子丹" href="searchByKey.action?key=甄子丹">甄子丹</a>
+				</dd>
+				<dd>
+					<a title="周润发" href="searchByKey.action?key=周润发">周润发</a>
+				</dd>
+				<dd>
+					<a title="姜文" href="searchByKey.action?key=姜文">姜文</a>
+				</dd>
+				<dd>
+					<a title="李连杰" href="searchByKey.action?key=李连杰">李连杰</a>
+				</dd>
+				<dd>
+					<a title="梁朝伟" href="searchByKey.action?key=梁朝伟">梁朝伟</a>
+				</dd>
+				<dd>
+					<a title="刘德华" href="searchByKey.action?key=刘德华">刘德华</a>
+				</dd>
+				<dd>
+					<a title="葛优" href="searchByKey.action?key=葛优">葛优</a>
+				</dd>
+				<dd>
+					<a title="成龙" href="searchByKey.action?key=成龙">成龙</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="wrapper_2_side_tt_2">
+			<h3>电影排行榜</h3>
+		</div>
+		<div class="wrapper_2_side_con_2">
+			<ul class="wrapper_2_side_con_2_ul">
+			<s:iterator value="#request.topmovies1" id="MoviesVo" status="status">
+				<li>
+					<em class="top"><s:property value="#status.count"/></em>
+					<p>
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span><s:property value="#MoviesVo.roleName"/></span>
+					</p>
+					<span class="score"><s:property value="#MoviesVo.sore"/></span>
+				</li>
+			</s:iterator>
+			</ul>
+		</div>
+		<div class="banner">
+			<img width="220" height="150" src="images/1.jpg" alt="" />
+		</div>
+	</div>
+</div>
+
+<!-- =============================================电视剧start================================= -->
+<div class="wrapper_2">
+	<div class="wrapper_2_main">
+		<div class="box_tt">
+			<h2 class="title_6">
+				<a style="display: block;height: 18px;text-indent: -9999px;" title="电视剧" href="javascript:void(0);">电视剧</a>
+			</h2>
+			<div class="second_tab">
+				<ul class="second_tab_list">
+					<li id="Tab_tv_0" class="on">港台</li>
+					<li id="Tab_tv_1">日韩</li>
+					<li id="Tab_tv_2">欧美</li>
+					<li id="Tab_tv_3">大陆</li>
+				</ul>
+				<a class="more" title="更多" href="searchByKey.action?key=&bid=2">更多</a>
+			</div>
+		</div>
+		<div class="main_list">
+			<ul class="main_list_ul" id="main_list_ul_tv_0">
+				<s:iterator value="#request.gtmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>			
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_tv_1" style="display: none;">
+				<s:iterator value="#request.rhmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title=""  href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>	
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_tv_2" style="display: none;">
+				<s:iterator value="#request.ommovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_tv_3" style="display: none;">
+				<s:iterator value="#request.dlmovies" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_tv_4" style="display: none;">
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/17/f6b250804bb1592cfa1378afcb492226.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_tv_5" style="display: none;">
+				
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+			</ul>
+		</div>
+		<div class="main_side">
+				<div class="hotbox">
+				<h4>
+					<a class="hotpic" target="_blank" href="player.action?ID=<s:property value="moviesvo2.ID"/>&movieNum=1">
+						<img class="pic" alt="" src="<s:property value="moviesvo2.mainPic"/>"><s:property value="moviesvo2.MovieName"/>
+					</a>
+				</h4>
+				<ul class="txtlist4">
+					<li>
+						导演:<a href="searchByKey.action?key=<s:property value="moviesvo2.directors"/>&bid=2"><s:property value="moviesvo2.directors"/></a>
+					</li>
+					<li>
+						主演:
+						<a href="searchByKey.action?key=<s:property value="moviesvo2.roleName"/>&bid=2"><s:property value="moviesvo2.roleName"/></a>
+						
+					</li>
+					<li>
+						类型:
+						<a href="searchByKey.action?aresid=2&bid=2"><s:property value="moviesvo2.cateSname"/></a>
+					</li>
+				</ul>
+				<p>
+					<s:property value="moviesvo2.directName"/>
+					<a title="详细" target="_blank" href="player.action?ID=<s:property value="moviesvo2.ID"/>&movieNum=1">详细</a>
+				</p>
+			</div>
+			<div>
+				<img width="199" height="190" src="images/baoban_.png">
+			</div>
+		</div>
+	</div>
+	<div class="wrapper_2_side">
+		<div class="wrapper_2_side_tt">
+			<h3>电视剧分类</h3>
+		</div>
+		<div class="wrapper_2_side_con">
+			<dl class="taglist">
+				<dt>地区</dt>
+				<dd>
+					<a title="港台" href="searchByKey.action?aresid=1&bid=2">港台</a>
+				</dd>
+				<dd>
+					<a title="欧美" href="searchByKey.action?aresid=3&bid=2">欧美</a>
+				</dd>
+				<dd>
+					<a title="日韩" href="searchByKey.action?aresid=4&bid=2">日韩</a>
+				</dd>
+				<dd>
+					<a title="大陆" href="searchByKey.action?aresid=2&bid=2">大陆</a>
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>年份</dt>
+				<dd>
+					<a title="2013" href="searchByKey.action?key=2013&bid=2">2013</a>
+				</dd>
+				<dd>
+					<a title="2012" href="searchByKey.action?key=2012&bid=2">2012</a>
+				</dd>
+				<dd>
+					<a title="2011" href="searchByKey.action?key=2011&bid=2">2011</a>
+				</dd>
+				<dd>
+					<a title="2010" href="searchByKey.action?key=2010&bid=2">2010</a>
+				</dd>
+				<dd>
+					<a title="2009" href="searchByKey.action?key=2009&bid=2">2009</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="wrapper_2_side_tt_2">
+			<h3>电视剧排行榜</h3>
+		</div>
+		<div class="wrapper_2_side_con_2">
+			<ul class="wrapper_2_side_con_2_ul">
+				<s:iterator value="#request.topmovies2" id="MoviesVo" status="status">
+				<li>
+					<em class="top"><s:property value="#status.count"/></em>
+					<p>
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span><s:property value="#MoviesVo.roleName"/></span>
+					</p>
+					<span class="score"><s:property value="#MoviesVo.sore"/></span>
+				</li>
+			</s:iterator>
+			</ul>
+		</div>
+		<div class="banner">
+			<img width="220px" height="140px" src="images/2.jpg" alt="" />
+		</div>
+	</div>
+</div>
+
+<!-- =============================================综艺start================================= -->
+<div class="wrapper_2">
+	<div class="wrapper_2_main">
+		<div class="box_tt">
+			<h2 class="title_7">
+				<a style="display: block;height: 18px;text-indent: -9999px;" title="综艺" href="javascript:void(0);">综艺</a>
+			</h2>
+			<div class="second_tab">
+				<ul class="second_tab_list">
+					<li id="Tab_zy_0" class="on">大陆</li>
+					<li id="Tab_zy_3">港台</li>
+				</ul>
+				<a class="more" title="更多" href="searchByKey.action?key=&bid=4">更多</a>
+			</div>
+		</div>
+		<div class="main_list">
+			<ul class="main_list_ul" id="main_list_ul_zy_0">
+				<s:iterator value="#request.dlmovies3" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			
+			<ul class="main_list_ul" id="main_list_ul_zy_2" style="display: none;">
+				<s:iterator value="#request.gtmovies3" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_zy_3" style="display: none;">
+				<s:iterator value="#request.gtmovies3" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_zy_4" style="display: none;">
+				
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_zy_5" style="display: none;">
+				
+			</ul>
+		</div>
+		<div class="main_side">
+			<div class="hotbox">
+				<h4>
+					<a class="hotpic" target="_blank" href="player.action?ID=<s:property value="moviesvo3.ID"/>&movieNum=1">
+						<img class="pic" alt="" src="<s:property value="moviesvo3.mainPic"/>"><s:property value="moviesvo3.MovieName"/>
+					</a>
+				</h4>
+				<ul class="txtlist4">
+					<li>
+						嘉宾:
+						<a href="searchByKey.action?key=<s:property value="moviesvo3.roleName"/>&bid=4"><s:property value="moviesvo3.roleName"/></a>
+						
+					</li>
+					<li>
+						类型:
+						<a href="searchByKey.action?aresid=2&bid=4"><s:property value="moviesvo3.cateSname"/></a>
+					</li>
+				</ul>
+				<p>
+					<s:property value="moviesvo3.directName"/>
+					<a title="详细" target="_blank" href="player.action?ID=<s:property value="moviesvo3.ID"/>&movieNum=1">详细</a>
+				</p>
+			</div>
+			<div style="margin-top:15px;">
+				<img width="199" height="190" src="images/baoban_.png">
+			</div>
+		</div>
+	</div>
+	<div class="wrapper_2_side">
+		<div class="wrapper_2_side_tt">
+			<h3>综艺分类</h3>
+		</div>
+		<div class="wrapper_2_side_con">
+			<dl class="taglist">
+				<dt>地区</dt>
+				<dd>
+					<strong><a title="港台" href="searchByKey.action?aresid=1&bid=4">港台</a></strong>
+				</dd>
+				
+				<dd>
+					<a title="大陆" href="searchByKey.action?aresid=2&bid=4">大陆</a>
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>年份</dt>
+				<dd>
+					<a title="2013" href="searchByKey.action?key=2013&bid=4">2013</a>
+				</dd>
+				<dd>
+					<a title="2012" href="searchByKey.action?key=2012&bid=4">2012</a>
+				</dd>
+				<dd>
+					<a title="2011" href="searchByKey.action?key=2011&bid=4">2011</a>
+				</dd>
+				<dd>
+					<a title="2010" href="searchByKey.action?key=2010&bid=4">2010</a>
+				</dd>
+				<dd>
+					<a title="2009" href="searchByKey.action?key=2009&bid=4">2009</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="wrapper_2_side_tt_2">
+			<h3>综艺排行榜</h3>
+		</div>
+		<div class="wrapper_2_side_con_2">
+			<ul class="wrapper_2_side_con_2_ul">
+				<s:iterator value="#request.topmovies3" id="MoviesVo" status="status">
+				<li>
+					<em class="top"><s:property value="#status.count"/></em>
+					<p>
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span><s:property value="#MoviesVo.roleName"/></span>
+					</p>
+					<span class="score"><s:property value="#MoviesVo.sore"/></span>
+				</li>
+			</s:iterator>
+			</ul>
+		</div>
+		<div class="banner">
+			<img width="220px" height="150px" src="images/4.gif" alt="" />
+		</div>
+	</div>
+</div>
+
+<!-- =============================================动漫start================================= -->
+<div class="wrapper_2">
+	<div class="wrapper_2_main">
+		<div class="box_tt">
+			<h2 class="title_8">
+				<a style="display: block;height: 18px;text-indent: -9999px;" title="动漫" href="javascript:void(0);">动漫</a>
+			</h2>
+			<div class="second_tab">
+				<ul class="second_tab_list">
+					<li id="Tab_anime_0" class="on">日韩</li>
+					<li id="Tab_anime_1">欧美</li>
+					<li id="Tab_anime_2">大陆</li>
+				</ul>
+				<a class="more" title="更多" href="searchByKey.action?key=&bid=3">更多</a>
+			</div>
+		</div>
+		<div class="main_list">
+			<ul class="main_list_ul" id="main_list_ul_anime_0">
+				<s:iterator value="#request.rhmovies4" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_anime_1" style="display: none;">
+				
+				<s:iterator value="#request.ommovies4" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_anime_2" style="display: none;">
+				<s:iterator value="#request.dlmovies4" id="MoviesVo" status="status">
+				<li>
+					<a class="pic" target="_blank" title="" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1">
+						<img src="<s:property  value="#MoviesVo.mainPic"/>" width="120px" height="168px"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+					</p>
+					<p><s:property  value="#MoviesVo.roleName"/></p>
+				</li>
+				</s:iterator>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_anime_3" style="display: none;">
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/28/2985bdacc063a969fe90792b76786c5a.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/28/2985bdacc063a969fe90792b76786c5a.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/28/2985bdacc063a969fe90792b76786c5a.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_anime_4" style="display: none;">
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/17/f6b250804bb1592cfa1378afcb492226.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/17/f6b250804bb1592cfa1378afcb492226.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/04/17/f6b250804bb1592cfa1378afcb492226.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				<li>
+					<a class="pic" blockid="4486" target="_blank" title="" href="http://kankan.xunlei.com/vod/mp4/35/35705.shtml">
+						<img src="http://img2.kankan.xunlei.com/gallery2/block/2012/05/02/4bcc5bd53238715c494c5025460f4448.jpg"/>
+					</a>
+					<p class="main_list_ul_tt">
+						<a title="" href=""></a>
+					</p>
+					<p>好莱坞女星惨死</p>
+				</li>
+				
+			</ul>
+			<ul class="main_list_ul" id="main_list_ul_anime_5" style="display: none;">
+				
+			</ul>
+		</div>
+		<div class="main_side">
+			<div class="hotbox">
+				<h4>
+					<a class="hotpic" target="_blank" href="player.action?ID=<s:property value="moviesvo4.ID"/>&movieNum=1">
+						<img class="pic" alt="" src="<s:property value="moviesvo4.mainPic"/>"><s:property value="moviesvo4.MovieName"/>
+					</a>
+				</h4>
+				<ul class="txtlist4">
+					<li>
+						导演:<a href="searchByKey.action?key=<s:property value="moviesvo4.directors"/>&bid=3"><s:property value="moviesvo4.directors"/></a>
+					</li>
+					<li>
+						主演:
+						<a href="searchByKey.action?key=<s:property value="moviesvo4.roleName"/>&bid=3"><s:property value="moviesvo4.roleName"/></a>
+						
+					</li>
+					<li>
+						类型:
+						<a href="searchByKey.action?bid=3"><s:property value="moviesvo4.cateSname"/></a>
+					</li>
+				</ul>
+				<p>
+					<s:property value="moviesvo4.directName"/>
+					<a title="详细" target="_blank" href="player.action?ID=<s:property value="moviesvo4.ID"/>&movieNum=1">详细</a>
+				</p>
+			</div>
+			<div>
+				<img width="199" height="190" src="images/baoban_.png">
+			</div>
+		</div>
+	</div>
+	<div class="wrapper_2_side">
+		<div class="wrapper_2_side_tt">
+			<h3>动漫分类</h3>
+		</div>
+		<div class="wrapper_2_side_con">
+			<dl class="taglist">
+				<dt>地区</dt>
+				<dd>
+					<a title="港台" href="searchByKey.action?aresid=1&bid=3">港台</a>
+				</dd>
+				<dd>
+					<a title="日韩" href="searchByKey.action?aresid=4&bid=3">日韩</a>
+				</dd>
+				<dd><div align="right"><a title="大陆" href="searchByKey.action?aresid=2&bid=3">大陆</a></div>
+					
+				</dd>
+			</dl>
+			<dl class="taglist">
+				<dt>年份</dt>
+				<dd>
+					<a title="2013" href="searchByKey.action?key=2013&bid=3">2013</a>
+				</dd>
+				<dd>
+					<a title="2012" href="searchByKey.action?key=2012&bid=3">2012</a>
+				</dd>
+				<dd>
+					<a title="2011" href="searchByKey.action?key=2011&bid=3">2011</a>
+				</dd>
+				<dd>
+					<a title="2010" href="searchByKey.action?key=2010&bid=3">2010</a>
+				</dd>
+				<dd>
+					<a title="2009" href="searchByKey.action?key=2009&bid=3">2009</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="wrapper_2_side_tt_2">
+			<h3>动漫排行榜</h3>
+		</div>
+		<div class="wrapper_2_side_con_2">
+			<ul class="wrapper_2_side_con_2_ul">
+				<s:iterator value="#request.topmovies4" id="MoviesVo" status="status">
+				<li>
+					<em class="top"><s:property value="#status.count"/></em>
+					<p>
+						<a target="_blank" href="player.action?ID=<s:property value="#MoviesVo.ID"/>&movieNum=1"><s:property  value="#MoviesVo.MovieName"/></a>
+						<span><s:property value="#MoviesVo.roleName"/></span>
+					</p>
+					<span class="score"><s:property value="#MoviesVo.sore"/></span>
+				</li>
+			</s:iterator>
+			</ul>
+		</div>
+		<div class="banner">
+			<img width="228px" height="200px" src="images/3.jpg" alt="" />
+		</div>
+	</div>
+</div>
+<!--=============================================== 音乐start================================================== -->
+<div class="wrapper_3">
+	<div class="box_tt" style="border-bottom: 0px solid #E6E6E6;">
+		<h2 class="title_9">
+			<a style="display: block;height: 18px;text-indent: -9999px;" title="电视剧" href="javascript:void(0);">音乐</a>
+		</h2>
+		<a class="more" title="更多" href="musicIndex.action">更多</a>
+	</div>
+	<ul class="wrapper_music">
+		<s:iterator value="#request.newAlbumVos" id="album">
+			<li>
+				<a title="<s:property value="#album.albumName"/>-<s:property value="#album.singer"/>" class="pic" href="musicSearch.action?albumId=<s:property value="#album.ID"/>">
+					<img title="<s:property value="#album.albumName"/>-<s:property value="#album.singer"/>" src="<s:property value="#album.cover"/>"/>
+				</a>
+				<a title="<s:property value="#album.albumName"/>-<s:property value="#album.singer"/>" class="rolename" href="musicSearch.action?albumId=<s:property value="#album.ID"/>">
+					<s:property value="#album.albumName"/>-<s:property value="#album.singer"/>
+				</a>
+				<p>唱片公司:<s:property value="#album.company"/></p>
+			</li>
+		</s:iterator>
+	</ul>
+</div>
+<!--=============================================== 导航================================================== -->
+<!-- 
+<div class="wrapper">
+	<div class="hot">
+		<div class="hot_tt">
+			<h2>网址导航</h2>
+			<a href="getindexMsg.action">更多&gt;</a>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[小说]</dt>
+				<dd>
+					<a title="起点中文网" href="http://www.qidian.com" target="_blank">起点中文网</a>
+				</dd>
+				<dd>
+					<a title="红袖言情" href="http://www.hongxiu.com/" target="_blank">红袖言情</a>
+				</dd>
+				<dd>
+					<a title="TXT小说网" href="http://www.txtbbs.com/" target="_blank">TXT小说网</a>
+				</dd>
+				<dd>
+					<a title="TXT小说网" href="http://www.txtbbs.com/" target="_blank">TXT小说网</a>
+				</dd>
+				<dd>
+					<a title="潇湘言情小说" href="http://www.xxsy.net/" target="_blank">潇湘言情小说</a>
+				</dd>
+			</dl>
+			<dl class="navlist_right">
+				<dt>[游戏]</dt>
+				<dd>
+					<a title="游乐" href="http://www.qq937.com" target="_blank">游乐</a>
+				</dd>
+				<dd>
+					<a title="幻想三国" href="http://88.198game.com" target="_blank">幻想三国</a>
+				</dd>
+				<dd>
+					<a title="庄园物语" href="http://sso.365m.cn" target="_blank">庄园物语</a>
+				</dd>
+				<dd>
+					<a title="4399小游戏" href="http://www.4399.com" target="_blank">4399小游戏</a>
+				</dd>
+				<dd>
+					<a title="7k7k小游戏" href="http://www.7k7k.com" target="_blank">7k7k小游戏</a>
+				</dd>
+				<dd>
+					<a title="中关村游戏网" href="http://game.zol.com.cn" target="_blank">中关村游戏网</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[财经]</dt>
+				<dd>
+					<a title="东方财富网" href="http://www.eastmoney.com" target="_blank">东方财富网</a>
+				</dd>
+				<dd>
+					<a title="腾讯财经" href="http://www.tiexue.net" target="_blank">腾讯财经</a>
+				</dd>
+				<dd>
+					<a title="和讯网" href="http://mil.qianlong.com" target="_blank">和讯网</a>
+				</dd>
+				<dd>
+					<a title="中国经济网" href="http://www.mod.gov.cn" target="_blank">中国经济网</a>
+				</dd>
+				<dd>
+					<a title="财经频道-21CN" href="http://www.mod.gov.cn" target="_blank">财经频道-21CN</a>
+				</dd>
+				<dd>
+					<a title="金融界" href="http://news.ifeng.com" target="_blank">金融界</a>
+				</dd>
+			</dl>
+			<dl class="navlist_right">
+				<dt>[购物]</dt>
+				<dd>
+					<a title="麦考林" href="http://www.m18.com" target="_blank">麦考林</a>
+				</dd>
+				<dd>
+					<a title="拍拍网" href="http://www.paipai.com" target="_blank">拍拍网</a>
+				</dd>
+				<dd>
+					<a title="淘宝网" href="http://www.taobao.com/" target="_blank">淘宝网</a>
+				</dd>
+				<dd>
+					<a title="梦芭莎" href="http://shopping.moonbasa.com/" target="_blank">梦芭莎</a>
+				</dd>
+				<dd>
+					<a title="雅库英伦男装" href="http://www.yksuit.com/" target="_blank">雅库英伦男装</a>
+				</dd>
+				<dd>
+					<a title="兰缪内衣" href="http://www.lamiu.com/" target="_blank">兰缪内衣</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[女性]</dt>
+				<dd>
+					<a title="YOKA时尚网" href="http://www.yoka.com/" target="_blank">YOKA时尚网</a>
+				</dd>
+				<dd>
+					<a title="瑞丽女性网" href="http://www.rayli.com.cn/" target="_blank">瑞丽女性网</a>
+				</dd>
+				<dd>
+					<a title="VOGUE时尚网" href="http://www.vogue.com.cn/" target="_blank">VOGUE时尚网</a>
+				</dd>
+				<dd>
+					<a title="爱丽女性网" href="http://www.27.cn/" target="_blank">爱丽女性网</a>
+				</dd>
+				<dd>
+					<a title="腾讯女性" href="http://lady.qq.com/" target="_blank">腾讯女性</a>
+				</dd>
+			</dl>
+			<dl class="navlist_right">
+				<dt>[汽车]</dt>
+				<dd>
+					<a title="汽车之家" href="http://www.autohome.com.cn/" target="_blank">汽车之家</a>
+				</dd>
+				<dd>
+					<a title="腾讯汽车" href="http://auto.qq.com/" target="_blank">腾讯汽车</a>
+				</dd>
+				<dd>
+					<a title="搜狐汽车" href="http://auto.sohu.com/" target="_blank">搜狐汽车</a>
+				</dd>
+				<dd>
+					<a title="二手车之家" href="http://www.che168.com/" target="_blank">二手车之家</a>
+				</dd>
+				<dd>
+					<a title="中国汽车网" href="http://www.chinacars.com/" target="_blank">中国汽车网</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[生活]</dt>
+				<dd>
+					<a title="太平洋家居网" href="http://mobile.pconline.com.cn/" target="_blank">太平洋家居网</a>
+				</dd>
+				<dd>
+					<a title="九游网" href="http://mobile.it168.com/" target="_blank">九游网</a>
+				</dd>
+				<dd>
+					<a title="游在云南旅游信息网" href="http://mobile.pcpop.com/" target="_blank">游在云南旅游信息网</a>
+				</dd>
+				<dd>
+					<a title="搜狐旅游" href="http://www.155.cn/" target="_blank">搜狐旅游</a>
+				</dd>
+				<dd>
+					<a title="21CN旅游" href="http://digi.it.sohu.com/" target="_blank">21CN旅游</a>
+				</dd>
+			</dl>
+			<dl class="navlist_right">
+				<dt>[体育]</dt>
+				<dd>
+					<a title="搜狐体育" href="http://sports.sohu.com/" target="_blank">搜狐体育</a>
+				</dd>
+				<dd>
+					<a title="乔丹体育" href="http://sports.tom.com/" target="_blank">乔丹体育</a>
+				</dd>
+				<dd>
+					<a title="腾讯体育" href="http://sports.qq.com/" target="_blank">腾讯体育</a>
+				</dd>
+				<dd>
+					<a title="人民网体育" href="http://sports.people.com.cn/" target="_blank">人民网体育</a>
+				</dd>
+				<dd>
+					<a title="中华网体育" href="http://sports.china.com/" target="_blank">中华网体育</a>
+				</dd>
+				<dd>
+					<a title="新华体育" href="http://www.xinhuanet.com/" target="_blank">新华体育</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+ -->
+<div class="wrapper float_left" id="float_div" style="display: none;">
+	<div class="hot">
+		<div class="hot_tt">
+			<h2>网址推荐</h2>
+			<a href="javascript:hidefloat(1)" id="float_div1_hide">关闭</a>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[小说]</dt>
+				<dd>
+					<a title="起点中文网" href="http://www.qidian.com" target="_blank">起点中文网</a>
+				</dd>
+				<dd>
+					<a title="红袖言情" href="http://www.hongxiu.com/" target="_blank">红袖言情</a>
+				</dd>
+				<dd>
+					<a title="TXT小说网" href="http://www.txtbbs.com/" target="_blank">TXT小说网</a>
+				</dd>
+				<dd>
+					<a title="妖屋小说" href="http://www.15.net/" target="_blank">妖屋小说</a>
+				</dd>
+				<dd>
+					<a title="潇湘言情小说" href="http://www.xxsy.net/" target="_blank">潇湘言情小说</a>
+				</dd>
+				<dd>
+					<a title="看书小说网" href="http://www.kanshu.com/" target="_blank">看书小说网</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[财经]</dt>
+				<dd>
+					<a title="东方财富网" href="http://www.eastmoney.com" target="_blank">东方财富网</a>
+				</dd>
+				<dd>
+					<a title="腾讯财经" href="http://www.tiexue.net" target="_blank">腾讯财经</a>
+				</dd>
+				<dd>
+					<a title="和讯网" href="http://mil.qianlong.com" target="_blank">和讯网</a>
+				</dd>
+				<dd>
+					<a title="中国经济网" href="http://www.mod.gov.cn" target="_blank">中国经济网</a>
+				</dd>
+				<dd>
+					<a title="财经频道-21CN" href="http://www.mod.gov.cn" target="_blank">财经频道-21CN</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[女性]</dt>
+				<dd>
+					<a title="YOKA时尚网" href="http://www.yoka.com/" target="_blank">YOKA时尚网</a>
+				</dd>
+				<dd>
+					<a title="瑞丽女性网" href="http://www.rayli.com.cn/" target="_blank">瑞丽女性网</a>
+				</dd>
+				<dd>
+					<a title="腾讯女性" href="http://lady.qq.com/" target="_blank">腾讯女性</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[生活]</dt>
+				<dd>
+					<a title="太平洋家居网" href="http://mobile.pconline.com.cn/" target="_blank">太平洋家居网</a>
+				</dd>
+				<dd>
+					<a title="搜狐旅游" href="http://www.155.cn/" target="_blank">搜狐旅游</a>
+				</dd>
+				<dd>
+					<a title="21CN旅游" href="http://digi.it.sohu.com/" target="_blank">21CN旅游</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="wrapper float_right" id="float_div2" style="display: none;">
+	<div class="hot">
+		<div class="hot_tt">
+			<h2>网址推荐</h2>
+			<a id="float_div2_hide" href="javascript:hidefloat(2)">关闭</a>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[游戏]</dt>
+				<dd>
+					<a title="游乐" href="http://www.qq937.com" target="_blank">游乐</a>
+				</dd>
+				<dd>
+					<a title="幻想三国" href="http://88.198game.com" target="_blank">幻想三国</a>
+				</dd>
+				<dd>
+					<a title="庄园物语" href="http://sso.365m.cn" target="_blank">庄园物语</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[购物]</dt>
+				<dd>
+					<a title="麦考林" href="http://www.m18.com" target="_blank">麦考林</a>
+				</dd>
+				<dd>
+					<a title="拍拍网" href="http://www.paipai.com" target="_blank">拍拍网</a>
+				</dd>
+				<dd>
+					<a title="淘宝网" href="http://www.taobao.com/" target="_blank">淘宝网</a>
+				</dd>
+				<dd>
+					<a title="梦芭莎" href="http://shopping.moonbasa.com/" target="_blank">梦芭莎</a>
+				</dd>
+				<dd>
+					<a title="雅库英伦男装" href="http://www.yksuit.com/" target="_blank">雅库英伦男装</a>
+				</dd>
+				<dd>
+					<a title="兰缪内衣" href="http://www.lamiu.com/" target="_blank">兰缪内衣</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[汽车]</dt>
+				<dd>
+					<a title="汽车之家" href="http://www.autohome.com.cn/" target="_blank">汽车之家</a>
+				</dd>
+				<dd>
+					<a title="腾讯汽车" href="http://auto.qq.com/" target="_blank">腾讯汽车</a>
+				</dd>
+				<dd>
+					<a title="搜狐汽车" href="http://auto.sohu.com/" target="_blank">搜狐汽车</a>
+				</dd>
+				<dd>
+					<a title="二手车之家" href="http://www.che168.com/" target="_blank">二手车之家</a>
+				</dd>
+				<dd>
+					<a title="中国汽车网" href="http://www.chinacars.com/" target="_blank">中国汽车网</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="navlist">
+			<dl class="navlist_left">
+				<dt>[体育]</dt>
+				<dd>
+					<a title="搜狐体育" href="http://sports.sohu.com/" target="_blank">搜狐体育</a>
+				</dd>
+				<dd>
+					<a title="乔丹体育" href="http://sports.tom.com/" target="_blank">乔丹体育</a>
+				</dd>
+				<dd>
+					<a title="腾讯体育" href="http://sports.qq.com/" target="_blank">腾讯体育</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div id="divLogin6"  style="display:none;background:black;width:600px;z-index:1001;position: fixed;top:10%; left:25%;">
+   		<div style="position: absolute;top: 5px;right: 0px;width: 30px;height:25px;overflow: hidden;"><a href="javascript:void;" onclick="shownoall(6)"><span style="color: black;">关闭</span></a></div>
+        <div id="Div4" style="text-align:left;vertical-align:middle; float: left;width: 600px;height:449px;overflow: hidden;" >
+		<%--<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="720" height="576">
+			  <param name="movie" value="guanggao/sanxing.swf">
+			<param name="wmode" value="transparent">
+			  <param name="quality" value="high">
+			   <param name="LOOP" value="false" />
+			  <embed src="guanggao/sanxing.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="720" height="576" wmode="transparent"  loop="false"></embed>
+			</object>
+        	--%>
+        	<img src="images/popup_4.jpg" style="width: 600px;height:449px;" />
+        	<img src="images/popup_4.jpg" style="width: 600px;height:449px;" />
+        	<img src="images/popup_4.jpg" style="width: 600px;height:449px;" />
+        	<%--<img src="images/popup_2.JPG" style="width: 720px;height:576px;" />
+        	<img src="images/popup_3.JPG" style="width: 720px;height:576px;" />
+        	--%>
+        </div>
+<!--cnzz tui-->
+<script  type="text/javascript" charset="utf-8"  src="http://tui.cnzz.net/cs.php?id=1000000905"></script>
+<!--cnzz tui-->
+</div>
+<div id="footer">
+	<a href="showSuggestAndComplain.action">联系我们</a> | <a href="showSuggestAndComplain.action">郑重声明</a> | <a href="showSuggestAndComplain.action">帮助信息</a>| <a href="showSuggestAndComplain.action">投诉建议</a> | <a href="showSuggestAndComplain.action">网上调查</a> | <a href="showSuggestAndComplain.action">留言信息</a><span style="display:none"></span><br/>
+    蜀ICP备 12005138号-1
+</div>
+<script src="http://s16.cnzz.com/stat.php?id=4427800&web_id=4427800&show=pic" language="JavaScript"></script>
+<div id="doing6"  style="filter:alpha(opacity=50);-moz-opacity:0.3;opacity:0.3;background-color:#cccccc; display:none;width:100%;height:100%;z-index:1000;position: absolute;left:0;top:0;overflow: hidden;">
+    </div>    
+<script src="http://s25.cnzz.com/stat.php?id=4386263&web_id=4386263" language="JavaScript"></script>
+</body>
+</html>

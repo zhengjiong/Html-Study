@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist>
+  <trackList>
+    <track>
+      <location>musics/静かな夜に.mp3</location>
+      <title>静かな夜に</title>
+    </track>
+    <track>
+      <location>musics/You Know What i mean.mp3</location>
+      <title>You Know What i mean</title>
+    </track>
+    <track>
+      <location>musics/不具名的悲伤.mp3</location>
+      <title>不具名的悲伤</title>
+    </track>
+    <track>
+      <location>musics/单车.mp3</location>
+      <title>单车</title>
+    </track>
+  </trackList>
+</playlist>

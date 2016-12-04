@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://struts.apache.org/dtds/tiles-config_2_0.dtd"> 
+<tiles-definitions> 
+   
+     <definition name="getPasswds" template="layout.jsp"> 
+    	<put-attribute name="title" value="找回密码"/>
+        <put-attribute name="menu" value="/menu.jsp"/> 
+        <put-attribute name="content" value="/getPw.jsp"/>
+    </definition>
+</tiles-definitions>

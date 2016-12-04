@@ -1,0 +1,282 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>汉安无限-关于我们</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<LINK href="css/about.css" type=text/css rel=stylesheet>
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<SCRIPT src="js/about.js" type=text/javascript></SCRIPT>
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+/*导航*/
+body{font:12px Arial,Verdana,Tahoma,"宋体";}
+*{font-family:微软雅黑 !important}
+*{padding:0px;margin:0px;}
+* li{list-style:none;}
+a{text-decoration:none;color:#20537A;}
+a:hover{text-decoration:underline;}
+
+
+.menu_navcc{width:960px; margin:0 auto;}
+.menu_nav{width:970px;height:53px;background:url(images/nav_bg.gif) repeat-x top;float:left;}
+.menu_nav .nav_content{padding-left:4px;background:url(images/nav_l_bg.gif) no-repeat left top;float:left;}
+.menu_nav .nav_content li{width:114px;height:53px;padding-left:10px;padding-right:10px;background:url(images/nav_li_right.gif) no-repeat right top;float:left;line-height:53px;text-align:center;font-size:14px;font-weight:bold;}
+.menu_nav .nav_content li a{color:#000;width:114px;height:53px;display:block;}
+.menu_nav .nav_content li.current{line-height:53px;}
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+
+.menu_nav .nav_content li.current a,.menu_nav .nav_content li a:hover{width:114px;height:53px;background:url(images/nav_li_current.gif) no-repeat bottom;display:block;color:#fff;}
+.menu_nav .nav_content li a:hover{background:url(images/nav_li_hover.gif) no-repeat bottom;height:53px;line-height:53px;text-decoration:none;}
+
+.menu_nav_right{padding-right:20px;background:url(images/nav_r_bg.gif) no-repeat right top;float:right;margin-left:50px;padding-top:13px;height:23px;padding-bottom:12px;}
+p{
+margin-bottom:15px}
+.hot {
+	float: right;
+	position: relative;
+}
+.divhead a {
+	float: right;
+}
+.divhead {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 2px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #6CF;
+	border-right-color: #6CF;
+	border-bottom-color: #6CF;
+	border-left-color: #6CF;
+	text-align: left;
+	background-color: #F0EFFC;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+.divborde {
+	border: 1px solid #09F;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.hotList {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #30F;
+	padding-top: 10px;
+}
+#song ul li {
+	padding-top: 10px;
+	margin-left: 20px;
+}
+#song ul li span {
+	margin-right: 20px;
+}
+.divhead1 {	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 2px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #6CF;
+	border-right-color: #6CF;
+	border-bottom-color: #6CF;
+	border-left-color: #6CF;
+	text-align: left;
+	background-color: #F0EFFC;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+.cateImg {
+	border: 1px solid #6FF;
+	height: 200px;
+	width: 140px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+-->
+.main{
+	width: 968px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+</style>
+
+</head>
+
+<body>
+<jsp:include page="head_2.jsp"></jsp:include>
+<div class="main">
+  <DIV class="float_right w_1">
+  <DIV class=bbs_content>
+  <DIV class=bbs_menu>
+<UL>
+  <LI class=li_d id=hg onClick="show(this, 1)">联系我们 </LI>
+  <LI onClick="show(this, 2)">郑重声明 </LI>
+  <LI onClick="show(this, 3)">帮助信息</LI>
+  <LI onClick="show(this, 4)">投诉建议</LI>
+  <LI onClick="show(this, 5)">网上调查</LI>
+  <LI onClick="show(this, 6)">留言信息</LI></UL></DIV>
+<DIV class=bbs_right>
+<DIV id=info1>
+<UL >
+  <LI>汉安无限内江视频网友俱乐部 
+	<LI>	客服电话：400-880-2538
+<LI>联系电话：1356264562 
+<LI>地址：内江市**街98号
+ <LI>邮政编码：6401023 
+<LI>业务联系： cdyufengcompany@163.com 
+<LI>合作联系：partner@163.com
+ <LI>QQ：1134383877
+<LI>强大QQ在线搜索和邮址搜索功能  </LI></UL></DIV>
+<DIV id=info2>
+<UL>
+  <LI>1.汉安无限将配合国家有关部门对互联网有害信息网站的治理工作，共同营造健康向上的网络环境，如果您在浏览本站时，发现有违反中国法律（包括政治、色情、及色情擦边的电影、图片、MP3等）的非法网站请立即与网站管理员联系，我们将第一时间做出处理（删除链接等措施）。 
+
+  <LI>2.本站部分内容来自网友自行上传，目的是加强信息文化传播交流，所有视频和音乐都注明来源和作者，如有版权问题，敬请联系我们，我们将在第一时间做出处理。 
+
+  <LI>3. 同时所有非出自本站的观点和评论仅代表原作者和网友的观点，如有法律纠纷，均与本站无关，同时请及时联系我们，以便我们第一时间做出处理。 
+ </LI></UL></DIV>
+<DIV id=info3>
+<UL>
+  <LI>汉安无限视频是什么？ 
+  <LI>汉安无限视频是一款可在线欣赏视频的客户端软件，让您可以在线享受丰富多彩的视频和音乐节目。
+  <LI>汉安无限视频的主要特点：
+  <LI> 
+  <LI>免费：完全免费，打开IE等浏览器即可在线观看。 
+  <LI>灵活：具有灵活点播的功能，随点随看，时间自由掌握。 
+ <LI>丰富：影视、综艺、音乐，各类节目为您一网打尽。 
+  <LI>流畅：播放流畅传输，越多人看越流畅。 
+
+ </UL></DIV>
+<DIV id=info4>
+	<form action="suggests.action" method="post">
+      <br />
+      留言标题：<input type="text" name="title" />
+      <br/>
+      留言内容：<br/><textarea name="contents" id="descript" cols="50" rows="10"></textarea>
+      <br/>
+      联系方式：<input type="text" name="anwsers"/>(QQ、E-mail、电话均可)
+      <br/>
+      <input type="submit" value="告诉我们"/>
+      <br/>
+      
+      <br/>
+      </form>
+
+</DIV>
+<DIV id=info5>
+	<form action="diaocha.action" method="post">
+		1.您常常上网看视频吗？<br/>
+     		<input type="radio" name="dc1" value="有"/>A.有  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     		<input type="radio" name="dc1" value="没有"/>B.没有
+    	<br/>
+    	2.您最喜欢的视频网站是哪些？<br/>
+    	<input type="radio" name="dc2" value="优酷"/>A.优酷  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="土豆网"/>B.土豆网 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="PPTV"/>C.PPTV &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="迅雷看看"/>D.迅雷看看  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="QQlive"/>E.QQlive &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="暴风影音"/>F.暴风影音  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="搜狐视频"/>G.搜狐视频 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="新浪视频"/>H.新浪视频 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="皮皮网"/>I.皮皮网 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc2" value="其他"/>J.其他<br/>
+    	3.你一般喜欢在视频网站观看哪些类型的视频节目？<br/>
+    	<input type="radio" name="dc3" value="电影"/>A.电影  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="电视剧"/>B.电视剧 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="新闻资讯"/>C.新闻资讯 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="综艺娱乐"/>D.综艺娱乐 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="动漫卡通"/>E动漫卡通 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="游戏"/>F.游戏 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc3" value="其他"/>G.其他<br/>
+    	4.您观看网络视频的频率为:<br/>
+    	<input type="radio" name="dc4" value="每周不到一次"/>A.每周不到一次 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc4" value="每周1-3次"/>B.每周 1--3次  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc4" value="每周多次"/>C.每周多次<br/>
+    	5.您平均每天花费几个小时观看网络视频？<br/>
+    	<input type="radio" name="dc5" value="不足1小时"/>A.不足1小时 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc5" value="1-3小时"/>B.1--3小时 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc5" value="3-5小时"/>C.3--5小时 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc5" value="5-7小时"/>D.5--7小时 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc5" value="7小时以上"/>E.7小时以上<br/>
+    	6.您看网络视频时，一般是在线看还是下载后看？<br/>
+    	<input type="radio" name="dc6" value="在线"/>A.在线 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc6" value="下载"/>B.下载<br/>
+    	7.您的性别？<br/>
+    	<input type="radio" name="dc7" value="男"/>A.男 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc7" value="女"/>B.女<br/>
+    	8.您的出生年份是？<br/>
+    	<input type="radio" name="dc8" value="1980年以前"/>A.1980年以前  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc8" value="1980-1989年"/>B.1980--1989年  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc8" value="1990-2000年"/>C.1990--2000年  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc8" value="2000年以后"/>D.2000年以后<br/>
+    	9.您的受教育的水平？<br/>
+    	<input type="radio" name="dc9" value="高中中专及以下"/>A.高中（中专）及以下  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc9" value="大专或同等学历"/>B.大专或同等学历   &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc9" value="大学本科或同等学历"/>C.大学本科或同等学历 &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc9" value="硕士及以上"/>D.硕士及以上<br/>
+    	10.您的职业？<br/>
+    	<input type="radio" name="dc10" value="全日制学生"/>A.全日制学生  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc10" value="企业职员"/>B.企业职员  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc10" value="政府机关事业单位职员"/>C.政府机关/事业单位职员  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc10" value="个体户私营业主"/>D.个体户/私营业主  &nbsp;&nbsp;&nbsp;
+    	<input type="radio" name="dc10" value="其他"/>E其他<br/>    	
+      <br/>
+      <input type="submit" value="确定" onclick="javascript:alert('感谢您参与调查，祝您愉快！')" />
+      	</form>
+      </DIV>
+      
+<DIV id=info6>
+<UL>
+	<s:iterator value="#request.suggestAndComplainLit" id="SuggestAndComplainVO" status="status">
+	<s:property value="#status.count"/>
+  	<LI>
+  		<s:property value="#SuggestAndComplainVO.titles"/><br/>
+  		回复>> <s:property value="#SuggestAndComplainVO.suggestMsg"/><br/>
+  	</LI>
+  </s:iterator>
+  </UL>
+  </DIV>
+
+
+  </DIV></DIV></DIV>
+
+
+
+ </div>  
+<div id="footer">
+	<a href="showSuggestAndComplain.action">联系我们</a> | <a href="showSuggestAndComplain.action">郑重声明</a> | <a href="showSuggestAndComplain.action">帮助信息</a>| <a href="showSuggestAndComplain.action">投诉建议</a> | <a href="showSuggestAndComplain.action">网上调查</a> | <a href="showSuggestAndComplain.action">留言信息</a><span style="display:none"></span><br/>
+    蜀ICP备 12005138号-1
+</div>
+</body>
+</html>

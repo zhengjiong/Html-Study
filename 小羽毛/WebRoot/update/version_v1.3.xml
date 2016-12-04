@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk"?>
+<update>
+	<version>1.2</version>
+	<url>http://www.air169.com:8866/ZJ_webservice/update/Air169_v1.2.apk</url>
+	<bugs>
+		<bug>2012年10月26日更新1.3版本</bug>
+		<bug>1.增加用户指引功能</bug>
+		<bug>2.注册增加城市选择</bug>
+		<bug>3.自助发起拼餐增加修改功能</bug>
+		<bug>4.邀请用户列表增加了用户所在地信息</bug>
+	</bugs>
+</update>

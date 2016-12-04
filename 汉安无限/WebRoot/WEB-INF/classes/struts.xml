@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources"
+		value="globalMessages" />
+	
+	<constant name="struts.multipart.maxSize" value="15242880" />
+	 <!--
+	<constant name="struts.action.extension" value="shtml"/>   -->
+	<package name="default" extends="tiles-default">
+		<action name="loginForm" class="com.yufeng.action.LoginAction" method="login">
+			<result name="loginSuccess">/index.jsp</result>
+			<result name="loginFail">/login.jsp</result>
+		</action>
+		<action name="registerForm" class="com.yufeng.action.RegisterAction" method="registerUser">
+			<result name="registerSuccess">/login.jsp</result>
+			<result name="registerFail">/register.jsp</result>
+		</action>
+		<action name="movieindexs" class="com.yufeng.action.MovieIndexAction" method="getMoviesIndex">
+			<result name="allList">/movieindex.jsp</result>
+		</action>
+		<action name="musicIndex" class="com.yufeng.action.MusicIndexAction">
+			<result>/music.jsp</result>
+			<result name="error">/Myerror.jsp</result>
+		</action>
+		<action name="musicPlayer" class="com.yufeng.action.MusicPlayerAction">
+			<result>/musicplayer.jsp</result>
+			<result name="error">/Myerror.jsp</result>
+		</action>
+		<action name="musicListPlayer" class="com.yufeng.action.MusicListPlayerAction">
+			<result>/musicplayer.jsp</result>
+			<result name="error">/Myerror.jsp</result>
+		</action>
+		<action name="musicSearch" class="com.yufeng.action.MusicSearchAction">
+			<result>/musicsearch.jsp</result>
+			<result name="error">/Myerror.jsp</result>
+		</action>
+		<action name="toMovieSearch" class="com.yufeng.action.MovieSearchAction" method="showSearchMsg">
+			<result name="showSearch">/search.jsp</result>
+		</action>
+
+		<action name="getindexMsg" class="com.yufeng.action.StartAction" method="getListMsg">
+			<result name="allList">/index_.jsp</result>
+		</action>
+		<action name="tvindexs" class="com.yufeng.action.TVIndexAction" method="getTVIndexMsg">
+			<result name="tvindexmsg">/tvindex.jsp</result>
+		</action>
+
+		<action name="player" class="com.yufeng.action.MoviePlayerAction" method="player">
+			<result name="player">/movieplayer.jsp</result>
+			<result name="error">/myerror.jsp</result>
+		</action>
+		<action name="zongyi" class="com.yufeng.action.ZongyiAction" method="getzongyiAll">
+			<result name="zongyiindexs">/zy.jsp</result>
+		</action>
+		<action name="diaocha" class="com.yufeng.action.AboutAction" method="diaocha">
+			<result name="ok">/about.jsp</result>
+			<result name="addfail">/error.jsp</result>
+		</action>
+		<action name="suggests" class="com.yufeng.action.AboutAction" method="suggests">
+			<result name="ok">/about.jsp</result>
+			<result name="addfail">/error.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="showSuggestAndComplain" class="com.yufeng.action.AboutAction" method="showSuggestAndComplain">
+			<result name="ok">/about.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="findusers" class="com.yufeng.action.FindFriendsAction" method="getAllFMsg">
+			<result name="getAllMsg">/findusers.jsp</result>
+			<result name="nologin">/login.jsp</result>
+		</action>
+		<action name="useremail" class="com.yufeng.action.RegisterAction" method="check">
+			<result name="hasexits">/register.jsp</result>
+			<result name="myjson">/register.jsp</result>
+		</action>
+		<action name="softwareIndex" class="com.yufeng.action.SoftwareAction">
+			<result>/softIndex.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="softwaredetail" class="com.yufeng.action.SoftwareAction" method="showSoftDetail">
+			<result name="showdetail">/softwaredetail.jsp</result>
+		</action>
+		<action name="softwareDownloadAction" class="com.yufeng.action.SoftwareDownAction">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param> 
+			</result>
+		</action>
+		<action name="GameDownloadAction" class="com.yufeng.action.GameDownAction">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param> 
+			</result>
+		</action>
+		<action name="guanzhu" class="com.yufeng.action.PlayerAction" method="guanzhu">
+		</action>
+		<action name="shouchang" class="com.yufeng.action.PlayerAction" method="shouchang">
+		</action>
+		<action name="zhichi" class="com.yufeng.action.PlayerAction" method="zhichi">
+		</action>
+		<action name="fandui" class="com.yufeng.action.PlayerAction" method="fandui">
+		</action>
+		<action name="addmovie" class="com.yufeng.action.AddMoivesToSQLAction" method="AddMovie">
+		</action>
+		<action name="addmovieimg" class="com.yufeng.action.AddMoivesToSQLAction" method="addmovieimg">
+		</action>
+		<action name="addMoviePath" class="com.yufeng.action.AddMoivesToSQLAction" method="addMoviePath">
+		</action>
+		<action name="leavers" class="com.yufeng.action.FindFriendsAction" method="leavesWordToFriend">
+		</action>
+		<action name="answersleaves" class="com.yufeng.action.FindFriendsAction" method="AddMovie">
+		</action>
+		<action name="addMusic" class="com.yufeng.action.AddMusicAction">
+		</action>
+		<action name="findFriend" class="com.yufeng.action.FindFriendsAction" method="findFriends">
+			<result name="findfriends">/findusers.jsp</result>
+			<result name="nologin">/login.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="movieIndex" class="com.yufeng.action.MovieIndexAction" method="movieIndex">
+			<result name="movieIndex">/movieindex_.jsp</result>
+		</action>
+
+		<action name="searchByCateID" class="com.yufeng.action.MovieSearchAction" method="searchByCateID">
+			<result name="search">/moviesearch.jsp</result>
+		</action>
+		<action name="searchByAreaID" class="com.yufeng.action.MovieSearchAction" method="searchByAresid">
+			<result name="search">/moviesearch.jsp</result>
+		</action>
+		<action name="searchByKey" class="com.yufeng.action.MovieSearchAction" method="searchByKey">
+			<result name="search">/moviesearch.jsp</result>
+		</action>
+		<action name="showTV" class="com.yufeng.action.TVIndexAction" method="showTV">
+			<result name="showtv">/tv.jsp</result>
+		</action>
+		
+		<action name="showByPageNum" class="com.yufeng.action.MovieSearchAction" method="showByPageNum">
+			<result name="search">/moviesearch.jsp</result>
+		</action>
+		<action name="animes" class="com.yufeng.action.AnimeAction" method="getanime">
+			<result name="animelist">/anime.jsp</result>
+		</action>
+		
+		
+		<action name="downMovie" class="com.yufeng.action.MovieJson" method="showDownMovies">  
+			<result name="moviedownlist">/moviedownlist.jsp</result>
+		</action>
+		<action name="appAction" class="com.yufeng.action.AppAction" method="showApp">
+			<result name="showapp">/games.jsp</result>
+		</action>
+		<action name="showGameDetal" class="com.yufeng.action.AppAction" method="showGameDetal">
+			<result name="showGameDetal">/gamedetail.jsp</result>
+		</action>
+		<action name="movieDownLoad" class="com.yufeng.action.MovieJson">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=UTF-8</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			</result>
+		</action>
+		<action name="TestAction" class="com.yufeng.action.TestAction"></action>
+	</package>
+
+</struts>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<!--配置spring管理事务 
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+-->
+	<!--
+		配置数据库配置属性文件
+	-->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/jdbc.properties</value>
+		</property>
+	</bean>
+	<!--
+		配置数据源
+	-->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="maxWait" value="1000" />
+		<property name="defaultAutoCommit" value="true" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="60" />
+	</bean>
+
+
+	<!--
+		配置映射文件  
+	-->
+	<bean id="sqlMapClient"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/sql-map-config.xml</value>
+		</property>
+	</bean>
+	<bean id="dao" class="com.yufeng.dao.impl.DaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<bean id="appDao" class="com.yufeng.dao.impl.AppDao">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	
+	<bean id="LoginAction" class="com.yufeng.action.LoginAction">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+	<bean id="movieDao" class="com.yufeng.dao.impl.MovieDao">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<bean id="moviedao" class="com.yufeng.dao.impl.MovieDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<bean id="softDao" class="com.yufeng.dao.impl.SoftDao">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="MovieIndexAction" class="com.yufeng.action.MovieIndexAction">
+		<property name="movieDao">
+			<ref bean="movieDao" />
+		</property>
+	</bean>
+
+	<bean id="MovieSearchAction" class="com.yufeng.action.MovieSearchAction">
+		<property name="movieDao">
+			<ref bean="movieDao" />
+		</property>
+	</bean>
+	
+	<bean id="StartAction" class="com.yufeng.action.StartAction">
+		<property name="moviedao">
+			<ref bean="moviedao" />
+		</property>
+	</bean>
+	<bean id="TVIndexAction" class="com.yufeng.action.TVIndexAction">
+		<property name="movieDao">
+			<ref bean="movieDao" />
+		</property>
+	</bean>
+	<bean id="ZongyiAction" class="com.yufeng.action.ZongyiAction">
+		<property name="moviedao">
+			<ref bean="moviedao" />
+		</property>
+	</bean>
+
+	<bean id="MoviePlayerAction" class="com.yufeng.action.MoviePlayerAction">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+		<property name="movieDao">
+			<ref bean="movieDao" />
+		</property>
+	</bean>
+	<bean id="RegisterAction" class="com.yufeng.action.RegisterAction">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+	<bean id="MusicSearchAction" class="com.yufeng.action.MusicSearchAction">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+	
+	<bean id="AboutAction" class="com.yufeng.action.AboutAction">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+	<bean id="SoftwareAction" class="com.yufeng.action.SoftwareAction">
+		<property name="softDao">
+			<ref bean="softDao"/>
+		</property>
+	</bean>
+	<bean id="AnimeAction" class="com.yufeng.action.AnimeAction">
+		<property name="moviedao">
+			<ref bean="moviedao" />
+		</property>
+	</bean>
+	<bean id="AppAction" class="com.yufeng.action.AppAction">
+		<property name="appDao">
+			<ref bean="appDao" />
+		</property>
+	</bean>
+</beans>

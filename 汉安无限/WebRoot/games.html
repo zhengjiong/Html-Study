@@ -1,0 +1,349 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="org.apache.axis.utils.Mapping"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    <title>汉安无限-网友游戏俱乐部</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="汉安无限-网友游戏俱乐部">
+	<link rel="stylesheet" type="text/css" href="css/games.css">
+	<%
+		if(request.getAttribute("flag")==null){
+		
+			response.sendRedirect("appAction.action");
+		}
+	 %>
+<script language="javascript" src="js/jquery-1.3.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+for(var i=0;i<16;i++){
+	$("#top_nav_"+i).attr("class","");
+}
+$("#top_nav_6").addClass("on");
+});
+</script>
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*导航*/
+body{font-size:12px;font-family:微软雅黑 !important}
+*{padding:0px;margin:0px;}
+* li{list-style:none;}
+a{text-decoration:none;color:#20537A;}
+a:hover{text-decoration:underline;}
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+
+.menu_navcc{width:960px; margin:0 auto;}
+.menu_nav{width:970px;height:53px;background:url(images/nav_bg.gif) repeat-x top;float:left;}
+.menu_nav .nav_content{padding-left:4px;background:url(images/nav_l_bg.gif) no-repeat left top;float:left;}
+.menu_nav .nav_content li{width:114px;height:53px;padding-left:10px;padding-right:10px;background:url(images/nav_li_right.gif) no-repeat right top;float:left;line-height:53px;text-align:center;font-size:14px;font-weight:bold;}
+.menu_nav .nav_content li a{color:#000;width:114px;height:53px;display:block;}
+.menu_nav .nav_content li.current{line-height:53px;}
+.main{width:970px;overflow: hidden;margin: 0px auto 0 auto;}
+
+.menu_nav .nav_content li.current a,.menu_nav .nav_content li a:hover{width:114px;height:53px;background:url(images/nav_li_current.gif) no-repeat bottom;display:block;color:#fff;}
+.menu_nav .nav_content li a:hover{background:url(images/nav_li_hover.gif) no-repeat bottom;height:53px;line-height:53px;text-decoration:none;}
+
+.menu_nav_right{padding-right:20px;background:url(images/nav_r_bg.gif) no-repeat right top;float:right;margin-left:50px;padding-top:13px;height:23px;padding-bottom:12px;}
+p{
+margin-bottom:15px}
+.hot {
+	float: right;
+	position: relative;
+}
+.divhead a {
+	float: right;
+}
+.divhead {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 2px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #6CF;
+	border-right-color: #6CF;
+	border-bottom-color: #6CF;
+	border-left-color: #6CF;
+	text-align: left;
+	background-color: #F0EFFC;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+.divborde {
+	border: 1px solid #09F;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.hotList {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #30F;
+	padding-top: 10px;
+}
+#song ul li {
+	padding-top: 10px;
+	margin-left: 20px;
+}
+#song ul li span {
+	margin-right: 20px;
+}
+.divhead1 {	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 2px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #6CF;
+	border-right-color: #6CF;
+	border-bottom-color: #6CF;
+	border-left-color: #6CF;
+	text-align: left;
+	background-color: #F0EFFC;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+.cateImg {
+	border: 1px solid #6FF;
+	height: 200px;
+	width: 140px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+H1{font-size: 100%}
+.login
+{
+	width:420px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 15px;
+}
+.login_prompt
+{
+	font-size: 12px;
+	color: red;
+	background-color: #ffffcc;
+	height:30px;
+	line-height: 30px;
+}
+.login_title
+{
+	font-size: 14px;
+}
+.login_row
+{
+	height:35px;
+	line-height: 28px;
+	margin-top: 3px;
+}
+.login_row .email
+{
+	width:250px;
+	height:25px;
+}
+.login_row .password
+{
+	width:150px;
+	height:25px;
+}
+.loginButton
+{
+	background: url("images/button.gif") ;
+	width:100px;
+	height:80px;
+}
+</style>
+  </head>
+  
+  <body>
+  
+<jsp:include page="head_2.jsp"></jsp:include>
+<div class="gamelist">
+	<div class="game_tt">
+		<a target="_blank">热门小游戏：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game1" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">棋牌：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game2" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">益智：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game3" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">策略：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game4" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">动作：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game5" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">射击：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game6" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+	<div class="game_tt">
+		<a target="_blank">冒险：</a>
+	</div>
+	<div class="game_con">
+		<s:iterator value="#request.game7" id="app" status="status">
+			<s:if test="#app.hot==1">
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>">
+			<span style="color: #ff6600"><s:property value="#app.appName"/></span>
+		</a>&nbsp;|&nbsp;
+			</s:if>
+			<s:else>
+				<a href="showGameDetal.action?id=<s:property value="#app.id"/>" target="_blank" title="<s:property value="#app.appName"/>"><s:property value="#app.appName"/></a>&nbsp;|&nbsp;
+			</s:else>
+			
+		</s:iterator>
+	</div>
+</div>
+<div style="width:970px;height:140px;margin:0 auto;margin-top:15px;">
+	<img border="0" width="970" height="100" src="images/yidong.jpg">
+</div>
+<div class="yujian">
+	<a class="img_div" href="http://111.9.141.200">
+		<img width="530" height="250" src="images/yujian_1.jpg" alt="" />
+	</a>
+	<div class="yujian_info">
+		<div class="yujian_info_tt">背景故事</div>
+		<div class="yujian_info_con">
+			髣髴兮若清云之蔽月，飘渺兮若流风之回雪。洛水之神，遗世而独立。河图洛书，黄河之砥柱。昔有河伯冯夷持河图治理黄河，洛水宓妃持洛书协助。羿之子爱上洛神的美貌，向河伯射出手中愤怒的一箭——冯夷左眼失明，发狂坠入黄河，引起河水泛滥。宓妃凭一己之力难以治水，只有默默的守候在冯夷身边。宋太祖赵匡胤，为天下苍生黎明百姓，与六大门派联手向众神宣战，誓夺回开封！冯夷宓妃惨败身亡，为恢复开封龙脉之气，经点苍、唐门提议，宋太祖将二神骨骸埋葬于此地，封印住的仙灵魂脉，将开封变成了一座繁华都城。分得冯夷躯体鳞片的六大门派，皆染上了仙气，修仙之路指日可待。聚集兵力调查此事未果，宋朝疆土迎来金兵入侵，大辽皇帝辽天祚无视金兵如虎如狼的攻势，一意孤行，带兵攻打开封。辽军军师羿风处处针对宋朝，举弓只身切入战场，出神入化的弓术无人可压制。北宋之难，迫在眉梢……
+我们的故事，就从这里开始...<a style="" target="_blank" href="http://111.9.141.200">点击进入</a>
+		</div>
+	</div>
+</div>
+
+<div class="main">
+  <div id="mainContent" style="margin-top:20px;">
+    <div id="sidebar" style="border:0px solid;"><img src="images/qipailogin.jpg"/></div>
+    <div id="sidebar2" style="border:0px solid;"><img src="images/qipai.jpg"/></div>
+    <div id="content" style="">
+    	<br/>
+    	<div class="login" >
+    		<p style="font-size: 25px;">西部棋牌</p>
+    		<hr/>
+    		<br/>
+    		<p style="font-size: 20px;">游戏简介</p>
+	    	
+    		<p style="line-height:20px;">西部棋牌是以具有浓厚特色的成都麻将、泸州鬼麻将、乐山二七十、四川斗地主等西南地区棋牌游戏为主的互动游戏平台，玩家可以通过ＰＣ或手机客户端的方式参与游戏，随时随地和其它牌友分享游戏的乐趣。</p>
+	    	<p style="font-size: 20px;">游戏特色</p>
+	    	
+	    	<p style="line-height:20px;">无论是用手机还是用PC均可方便的登录西部棋牌。游戏均严格遵循各地棋牌的主流规则，以具有浓厚地方特色的“米米”作为游戏筹码的名称乃至延伸为游戏的代表性符号，带给玩家最亲切最真实的游戏体验。游戏中的交友系统更能让玩家在休闲之余认识更多的朋友，丰富自己的业余生活。西部棋牌不仅是一个虚拟的游戏娱乐平台，更是一种实实在在的生活方式！</p>
+	    	<br />
+	    	<a href="software/njmj_pc.zip" style="font-size: 20px;">下载西部棋牌游戏大厅</a>
+	    	<div style="margin-top: 15px;">
+	    	</div>
+    	</div>
+   
+    </div>
+</div>
+
+</div>
+<div id="footer">
+	<a href="showSuggestAndComplain.action">联系我们</a> | <a href="showSuggestAndComplain.action">郑重声明</a> | <a href="showSuggestAndComplain.action">帮助信息</a>| <a href="showSuggestAndComplain.action">投诉建议</a> | <a href="showSuggestAndComplain.action">网上调查</a> | <a href="showSuggestAndComplain.action">留言信息</a><span style="display:none"></span><br>
+    蜀ICP备 12005138号-1
+</div>
+
+</body>
+</html>
+

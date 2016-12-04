@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk"?>
+<update>
+	<version>1.2</version>
+	<url>http://192.168.1.107:19100/ZJ_webservice/update/Air169_v1.2.apk</url>
+	<bugs>
+		<bug>2012年10月20日更新1.2版本</bug>
+		<bug>1.修改了部分手机首页显示错位</bug>
+		<bug>2.個人中心,有時候頭像顯示不出來</bug>
+		<bug>3.從我申請的拼餐裏面進入拼餐詳情,数据显示不正常</bug>
+		<bug>4.在拼餐的介绍中加入了分享</bug>
+		<bug>5.拼餐首頁增加切換城市功能</bug>
+		<bug>6.修复覆盖安装后会报错</bug>
+		<bug>7.分享的同时加入了小羽毛的介绍信息</bug>
+		<bug>8.修改拼餐人數和价格的问题</bug>
+	</bugs>
+</update>

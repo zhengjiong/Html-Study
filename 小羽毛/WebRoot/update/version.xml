@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk"?>
+<update>
+	<version>1.5</version>
+	<url>http://www.air169.com:8866/ZJ_webservice/update/Air169_v1.6.apk</url>
+	<bugs>
+		<bug>小羽毛空中购2012年12月10日更新1.6版本</bug>
+		<bug>修改bug</bug>
+	</bugs>
+</update>

@@ -1,0 +1,411 @@
+@CHARSET "UTF-8";
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+.bbs_content{
+	overflow: hidden;
+	border:1px solid blue;
+}
+body {
+    color: #989898;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+li {
+    list-style-type: none;
+}
+*{padding:0;margin:0;}
+a {
+    text-decoration: none;
+    color: #404040;
+}
+div{
+	text-align: left;
+}
+*{margin:0;padding:0;}
+.clear{
+	clear: both;
+}
+.topdiv{
+	margin: 0 auto;
+    overflow: hidden;
+    width: 970px;
+    margin-top: 10px;
+    background-color: white;
+}
+.foucebox{
+	border:1px solid #DDDDDD;
+	float: left;
+	height: 312px;
+	overflow: hidden;
+	position: relative;
+	width: 816px;
+	z-index: 1;
+}
+.ranklist{
+	float: right;
+	height: 312px;
+	width: 145px;
+	border: 1px solid #DDDDDD;
+    overflow: hidden;
+    position: relative;
+}
+.tiggerbox{
+	position: absolute;
+	top: 0px;
+	z-index: 100;
+	right: 0px;
+}
+.tiggerbox_left{
+	right: 678px;
+}
+.scrollimg{
+	height: 312px;
+	width: 540px;
+	display: inline;
+	float: right;
+	margin-right: 138px;
+	overflow: hidden;
+	position: relative;
+}
+#switchBigPic{
+	width: 540px;
+	margin-top: 0px;
+}
+.scrollimg_div{
+    height: 312px;
+    position: relative;
+    width: 540px;
+}
+.scrollimg_img{
+	display: block;
+	height: 312px;
+	width: 540px;
+}
+.scrollimg_img img{
+	display: block;
+    height: 312px;
+    width: 540px;
+}
+
+.scrollimg_tigger{
+	border-left: 1px solid #DDDDDD;
+	margin-top : 1px;
+	z-index: 99;
+	width: 137px;
+}
+.scrollimg_tigger_left{
+	border-left: medium none;
+	border-right: 1px solid #DDDDDD;
+	float: left;
+	width: 137px;
+}
+.scrollimg_tigger .lefton {
+    background: url("../images/scrollimg_tigger_left_on_orange.png") repeat scroll 0 0 transparent;
+    margin: 0px -9px 0 0;
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    color: white;
+    position: relative;
+    border-bottom: 0px solid #DDDDDD;
+    padding: 8px 8px 0 4px;
+}
+.scrollimg_tigger a{
+	border-bottom: 1px solid #DDDDDD;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    padding: 7px 8px 0 4px;
+    color: #1B1B1B;
+    position: relative;
+}
+.scrollimg_tigger .lefton strong {
+	color: white;
+	font-weight: bold;
+}
+.scrollimg_tigger .lefton p {
+	color:#aff2fa;
+}
+.scrollimg_tigger .righton {
+    background: url("../images/scrollimg_tigger_on_orange.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    display: block;
+    height: 46px;
+    width: 135px;
+    position: relative;
+    color: white;
+    z-index: 9999;
+    margin: -1px 0 0 -9px;
+    padding-left:13px;
+}
+.scrollimg_tigger .righton strong {
+	color: white;
+	font-weight: bold;
+}
+.scrollimg_tigger .righton p {
+	color:#aff2fa;
+}
+.scrollimg_tigger a:hover{
+	text-decoration: none;
+}
+.scrollimg_tigger img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 34px;
+    padding: 1px;
+    width: 34px;
+}
+.scrollimg_tigger strong {
+    color: #414141;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+.scrollimg_tigger p {
+    color: #B5B5B5;
+    cursor: pointer;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    padding: 4px 0 0 5px;
+}
+
+.ranklist_tt{
+	height: 24px;
+	line-height: 24px;
+	border-bottom: 1px solid #DDDDDD;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+}
+.ranklist_tt h2{
+	color: #414141;
+    font-size: 12px;
+    width: 72px;
+    background: url("../images/sprite_0517.png") no-repeat scroll -147px -66px transparent;
+    float: left;
+    cursor: pointer;
+    font-weight: normal;
+    text-align: center;
+    border-left: 1px solid #DDDDDD;
+}
+.ranklist_tt .on{
+	background: none repeat scroll 0 0 #FFFFFF;
+	font-weight: bold;
+    padding-bottom: 1px;
+    position: relative;
+}
+.ranklist_box{
+	overflow: hidden;
+}
+.ranklist_box_type{
+	height:auto;
+	padding:10px 10px 0;
+	position: relative;
+	overflow: hidden;
+}
+.ranklist_box_type li{
+	background: none repeat scroll 0 0 transparent;
+    padding: 0 37px 2px 24px;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 7px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: bottom;
+}
+.ranklist_box_type .top em{
+    border: medium none;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    height: 16px;
+    line-height: 16px;
+    width: 20px;
+    font-size: 11px;
+    background: url("../images/sprite_0517_orange.png") no-repeat scroll -255px -66px transparent;
+}
+.ranklist_box_type em{
+	border: 1px solid #EEEEEE;
+    color: #929292;
+    display: block;
+    font-family: "Tahoma";
+    font-size: 11px;
+    height: 14px;
+    left: 0;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 18px;
+    font-style: normal;
+}
+.ranklist_box_type p{
+	padding:0;
+}
+.ranklist_box_type p a{
+	display: inline-block;
+	vertical-align: baseline;
+	color: #1B1B1B;
+    text-decoration: none;
+    width:60px;
+    overflow: hidden;
+}
+.ranklist_box_type p a:hover{
+	color: #f6890a;
+	text-decoration: underline;
+}
+.ranklist_box_type strong{
+	margin-left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:38px;
+    height: 15px;
+    overflow: hidden;
+}
+.ranklist_box_more{
+	position: absolute;
+	bottom: 3px;
+	right: 8px;
+}
+.ranklist_box_more a{
+	color: #1b1b1b;
+	font-size: 12px;
+}
+.ranklist_box_more a:hover{
+	color: #f6890a;
+	text-decoration: underline;
+}
+
+.toptag{
+	border: 1px solid #dddddd;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 968px;
+    margin-top:5px;
+    background-color: white;
+}
+.toptag dt{
+	float: left;
+    padding-left: 10px;
+    
+}
+.toptag dd{
+	color: #9B9B9B;
+    display: inline;
+    float: left;
+    margin: 0 5px;
+}
+.toptag dd a{
+	color:#3c3c3c;
+}
+.toptag dd a:hover{
+	color:#f6890a;
+	text-decoration: underline;
+}
+*/
+.hot{
+	border: 1px solid #dddddd;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 968px;
+    margin-top:10px;
+}
+.wrapper{
+	margin: 0 auto;
+    overflow: hidden;
+    width: 970px;
+    margin-top: 5px;
+    background-color: white;
+}
+.wrapper .hot{
+	border: 1px solid #DDDDDD;
+    overflow: hidden;
+    width: 968px;
+}
+.hot_tt{
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+    padding: 0 10px 0 20px;
+    background: url("../images/sprite_2.png") repeat-x scroll 0 0 transparent;
+    position: relative;
+}
+.hot_tt h2{
+	color: #f6890a;
+    float: left;
+    font-family: "Microsoft Yahei";
+    font-size: 18px;
+}
+.hot_tt a{
+	display: block;
+	position: absolute;
+	right: 8px;
+	color: #3c3c3c;
+}
+.hot_tt a:hover{
+	color: #a04cb2;
+	text-decoration: underline;
+}
+.animelist{
+	overflow: hidden;
+}
+.animelist li{
+	display: inline;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 5px 5px 5px 2px;
+    text-align: center;
+}
+.animelist li .pic{
+    border:1px solid #ddd;
+    display: block;
+    padding: 1px;
+}
+.animelist li .pic:hover{
+	border: 1px solid #179ae0;
+}
+.animelist li .pic img{
+	height: 200px;
+    width: 150px;
+}
+.animelist li p{
+	margin: 0;
+	height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+}
+.animelist li p a{
+	color:#414141;
+}
+.animelist li p a:hover{
+	color:#f6890a;
+}
+	
+	
+	

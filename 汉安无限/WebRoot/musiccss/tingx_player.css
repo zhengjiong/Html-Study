@@ -1,0 +1,15 @@
+.tingx_1 {
+	top: 0px; width: 312px; height: 60px; right: 308px; position: absolute; z-index: 1;
+}
+.tingx_1 iframe {
+	width: 234px; height: 60px;
+}
+.tingx_2 {
+	top: 0px; width: 300px; height: 250px; right: 0px; position: absolute; z-index: 5;
+}
+.tingx_3 {
+	top: 250px; width: 300px; height: 294px; right: 0px; overflow: hidden; position: absolute;
+}
+.tingx_5 {
+	margin: 8px auto 0px; width: 960px; height: 150px; overflow: hidden;
+}

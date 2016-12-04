@@ -1,0 +1,1267 @@
+@CHARSET "UTF-8";
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+body {
+    color: #989898;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    background: url("../images/body_bg.jpg") repeat;
+}
+a {
+    text-decoration: none;
+}
+div{
+	text-align: left;
+	
+}
+*{margin:0;padding:0;}
+.clear{
+	clear: both;
+}
+.foucebox {
+	height: 364px;
+	padding: 8px 0;
+	background-color: #3a3a3a;
+}
+.foucebox_con {
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    position: relative;
+    width: 970px;
+}
+.lamubox {
+	position: absolute;
+	top: 0;
+	width: 140px;
+	height: 364px;
+	background: #333;
+	overflow: hidden;
+	z-index: 7;
+}
+.lamubox_R {
+    right: -142px;
+}
+.lamubox_L {
+    left: -142px;
+}
+.lamu_bg_L {
+    left: 0;
+}
+.lamu_bg {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #000000;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 364px;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 140px;
+    z-index: 9;
+}
+.lamubox_close_L {
+    left: 0;
+}
+.lamubox_close {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/lamubox_close.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    color: #FFFFFF;
+    display: block;
+    height: 18px;
+    line-height: 18px;
+    opacity: 0.6;
+    position: absolute;
+    text-indent: 17px;
+    top: 0;
+    width: 45px;
+    z-index: 8;
+}
+
+.scrollimg2 {
+    float: left;
+    height: 364px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    width: 740px;
+}
+.scrollimg2_tigger {
+	position: relative;
+	height: 52px;
+	background: #181818;
+	top: 310px;
+	border: solid #444 1px;
+	display: block;
+}
+#SwitchBigPic img{border:none;}
+.scrollimg2_tigger img{
+	border:0px;
+}
+.scrollimg2_tigger_hoverbg {
+	position: absolute;
+	left: 5px;
+	top: -1px;
+	width: 58px;
+	height: 51px;
+	background-position: -228px 0;
+	cursor: pointer;
+	z-index: 2;
+	background-image: url("../images/foucerank.png");
+	margin-left: 0px;
+}
+.txtlist3 a {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/foucerank_0818.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+.scrollimg2_tigger ul {
+    padding-bottom: 0;
+    padding-left: 2px;
+    padding-right: 0;
+    padding-top: 3px;
+    text-align: center;
+}
+.scrollimg2_tigger_link {
+    left: 3px;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+}
+.scrollimg2_tigger li {
+    display: inline;
+    float: left;
+    height: 47px;
+    margin-left: 3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    width: 58px;
+}
+li {
+    list-style-type: none;
+}
+.scrollimg2_tigger_link a {
+    display: block;
+    height: 45px;
+    opacity: 0;
+    width: 56px;
+}
+.scrollimg2_tigger a {
+    background-position: -228px -52px;
+    left: 0;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    position: absolute;
+    top: 0;
+}
+a {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #3D3D3D;
+}
+.txtlist3 a {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/foucerank_0818.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+.scrollimg2_tigger img {
+    height: 45px;
+    width: 56px;
+}
+fieldset, img {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+}
+.foucerank {
+	position: relative;
+	float: right;
+	width: 227px;
+	height: 362px;
+	background: url(../images/foucerank.png);
+	border: solid #4A4A4A 1px;
+	overflow: hidden;
+}
+.foucerank .tabbox {
+    float: none;
+    height: 24px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 0;
+    padding-top: 10px;
+    position: static;
+}
+.tabbox {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.tabbox li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: #545454;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #545454;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: #545454;
+    border-top-style: solid;
+    border-top-width: 1px;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    width: 43px;
+}
+.tabbox #Tab_rebo_1 {
+    background-position: -228px -111px;
+    width: 42px;
+}
+.tabbox .on {
+	position: relative;
+	height: 24px;
+	background-position: -232px -111px;
+	color: white;
+	line-height: 21px;
+	border: none !important;
+	background-image: url("../images/foucerank.png");
+	
+}
+.tabbox #Tab_rebo_5 {
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #545454;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+}
+.foucerank .ranklist {
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.ranklist {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+}
+.foucerank .ranklist li {
+    margin-bottom: 3px;
+}
+.ranklist li {
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 7px;
+    padding-left: 28px;
+    padding-right: 30px;
+    padding-top: 0;
+    position: relative;
+    vertical-align: bottom;
+}
+.ranklist .top em {
+}
+.foucerank .ranklist em {
+    border-bottom-color: #4D4D4D;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #4D4D4D;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #4D4D4D;
+    border-top-color: #4D4D4D;
+    color: #848484;
+}
+#List_rebo_4 .ranklist p {
+    padding-right: 75px;
+}
+.ranklist p {
+    height: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 40px;
+}
+.foucerank .ranklist a {
+    color: #BFBFBF;
+}
+.ranklist li a {
+    vertical-align: baseline;
+}
+.ranklist p a {
+    display: inline-block;
+}
+.foucerank .ranklist strong {
+    color: #5F5F5F;
+}
+.ranklist strong {
+    color: #B6B5B3;
+    font-weight: normal;
+    margin-left: 6px;
+    position: absolute;
+}
+.foucerank .ranklist {
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.ranklist {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+}
+.foucerank_scroll {
+    height: 44px;
+    margin-top: 6px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+.foucerank_txt {
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    position: relative;
+}
+.foucerank_txt li {
+    background-position: -287px -135px;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 7px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 10px;
+}
+.foucerank_txt .HL a {
+    color: #DF7E0D;
+}
+.foucerank_txt a {
+    color: #BFBFBF;
+}
+.foucerank_txt .HL {
+    background-position: -287px -112px;
+}
+.foucerank_txt li {
+    background-position: -287px -135px;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 7px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 10px;
+}
+.switch_banner{
+	width: 972px;
+	height: 200px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: block;
+}
+.switch_banner img{
+	width: 972px;
+	height: 200px;
+	outline: none;
+	border: 0px;
+}
+
+.topMovie
+{
+	width:972px;
+	height:570px;
+	margin: 0 auto;
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	background-color: white;
+}
+.topMovie_con
+{
+	float:left;
+	overflow: hidden;
+}
+.topmovie_bg 
+{
+    border-left: 1px solid #DDDDDD;
+    border-top: 3px solid #E188C2;
+    float: left;
+    overflow: hidden;
+    width: 161px;
+    height:568px;
+}
+.topmovie_bg_title{
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	color:#d167af;
+	padding-top: 8px;
+}
+.topmovie_bg_2{
+	color:#5d729f
+}
+.topmovie_bg_title_a{
+	width:136px;
+	height:186px;
+	display: block;
+	border:1px solid #dddddd;
+	padding:1px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.topmovie_bg_title_a img{
+	border:0px;
+}
+.topmovie_bg_title_a:hover{
+	border:1px solid #179ae0;
+}
+.topmovie_bg ul li img{
+	width:136px;
+	height:186px;
+}
+.topmovie_bg_msg{
+	width:136px;
+	height:25px;
+	line-height:25px;
+	overflow: hidden;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #3D3D3D;
+	position: relative;
+}
+
+.topmovie_bg_msg_name{
+	max-width: 75px;
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+.topmovie_bg_msg_name:hover{
+	text-decoration: underline;
+	color: #087ed1;
+}
+.topmovie_bg_msg_resolution{
+	color:#aaaaaa;
+	font-size:12px;
+	width:52px;
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+.topmovie_bg_msg_img{
+	width:10px;
+	height:10px;
+	position: absolute;
+	right: -2px;
+	top: 8px;
+	background: url("../images/foucerank.png") no-repeat scroll -237px -100px transparent;
+}
+.topmovie_bg_ul_2{
+	border-top: 1px dashed #DCDCDC;
+	width:140px;
+	overflow:hidden;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.topmovie_bg_ul_2_name{
+	max-width:90px;
+	height:18px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	font-size:14px;
+	color:#3d3d3d;
+}
+.topmovie_bg_ul_2_name:hover{
+	text-decoration: underline;
+	color: #087ed1;
+}
+.topmovie_bg_ul_2_resolution{
+	width:40px;
+	height:18px;
+	overflow: hidden;
+	float: left;
+	font-size:12px;
+	display: block;
+	padding-top:1px;
+	color:#aaaaaa;
+}
+.topmovie_bg_ul_2_intro{
+	
+}
+.wrapper_box{
+	width:971px;
+	overflow:hidden;
+	border: 1px solid #DDDDDD;
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: white;
+}
+.main{
+	
+}
+.box_tt{
+	height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+.box_tt a:hover{
+	text-decoration: none;
+}
+.box_tt_left{
+	font-size: 18px;
+	display: block;
+	float:left;
+	font-weight: bold;
+	color:#282828;
+	font-family: "微软雅黑";
+}
+.box_tt_middle{
+	max-width: 800px;
+	height: 50px;
+	color:#282828;
+	font-family: "微软雅黑";
+	float:right;
+	margin-right:50px;
+	overflow: hidden;
+}
+.box_tt_middle span{
+	color:#b7b7b7;
+	font-family: "宋体";
+}
+.box_tt_middle a{
+	color:#282828;
+	font-family: "宋体";
+}
+.box_tt_middle a:hover{
+	color: #02a1d9;
+	font-family: "宋体";
+	text-decoration: underline;
+	
+}
+.box_tt_right {
+	position: absolute;
+	right: 5px;
+	color:#3d3d3d;
+	font-family: "微软雅黑";
+}
+.movielist{
+	overflow: hidden;
+}
+.movielist li{
+	width: 104px;
+	height: 200px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	display: inline;
+	margin-left: 15px;
+}
+.movielist_img{
+	height: 140px;
+    width: 100px;
+    display: block;
+    border:1px solid #dddddd;
+    padding:1px;
+}
+.movielist_img img{
+	border:0px;
+}
+.movielist_img:hover{
+    border:1px solid #179ae0;
+}
+.movielist_img img{
+	height: 140px;
+    width: 100px;
+}
+.movielist_row_1{
+	height: 18px;
+	position: relative;
+	overflow: hidden;
+	margin-top: 3px;
+}
+.movielist_row_1_name{
+	max-width: 90px;
+	height: 18px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	color: #3d3d3d;
+	font-size: 13px;
+}
+.movielist_row_1_name:hover{
+	color: #02a1d9;
+}
+.movielist_row_1_play{
+	width: 10px;
+	height: 10px;
+	display: block;
+	background: url("../images/foucerank.png") no-repeat -237px -100px;
+	position: absolute;
+	right:1px;
+	top:4px;
+}
+.movielist_row_2{
+	color:#aaaaaa;
+	max-width: 130px;
+	overflow: hidden;
+	height:18px;
+}
+#tabbox_ul_0 li{
+	margin-bottom: 7px;
+	width:218px;
+	overflow: hidden;
+}
+#tabbox_ul_1 li{
+	margin-bottom: 7px;
+	width:218px;
+	overflow: hidden;
+}
+#tabbox_ul_2 li{
+	margin-bottom: 7px;
+	width:218px;
+	overflow: hidden;
+}
+#tabbox_ul_3 li{
+	margin-bottom: 7px;
+	width:218px;
+	overflow: hidden;
+}
+#tabbox_ul_4 li{
+	margin-bottom: 7px;
+	width:218px;
+	overflow: hidden;
+}
+.tabbox_ul_0_top{
+	color: white;
+	width:22px;
+	padding-left:1px;
+	height:18px;
+	line-height: 22px;
+	margin-left:7px;
+	background-color: #34bbed;
+	display: block;
+	float: left;
+	text-align: center;
+	font-family: serif;
+	font-weight: bold;
+}
+.tabbox_ul_0_content{
+	display: block;
+	float:left;
+	width: 155px;
+	overflow: hidden;
+	color:#bfbfbf;
+}
+.tabbox_ul_0_content_score{
+	float: right;
+}
+.tabbox_ul_0_content a{
+	color:#bfbfbf;
+	padding-left:5px;
+}
+.tabbox_ul_0_content a:hover{
+	color: #34bbed;
+	text-decoration: underline;
+}
+.top{
+	width:970px;
+	overflow: hidden;
+	text-align: center;
+	color: black;
+}
+/*----------------------------------------------导航-------------------------------------*/
+.float_left{
+	width: 185px;
+    height:350px;
+    position: absolute;
+    z-index:999;
+    overflow: hidden;
+    background-color: white;
+}
+.float_right{
+	width: 185px;
+    height:350px;
+    position: absolute;
+    z-index:999;
+    overflow: hidden;
+    background-color: white;
+}
+.wrapper .hot{
+	border: 1px solid #DDDDDD;
+    overflow: hidden;
+}
+.hot_tt{
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+    padding: 0px 10px 0px 20px;
+    background: url("../images/sprite_2.png") repeat-x scroll 0 0 transparent;
+    position: relative;
+}
+.hot_tt h2{
+	color: #282828;
+    float: left;
+    font-family: "Microsoft Yahei";
+    font-size: 18px;
+}
+.hot_tt a{
+	display: block;
+	position: absolute;
+	right: 8px;
+	color: #3c3c3c;
+}
+.hot_tt a:hover{
+	color: #a04cb2;
+	text-decoration: underline;
+}
+.navlist{
+	overflow: hidden;
+}
+.navlist_left{
+	width: 210px;
+	overflow: hidden;
+}
+.navlist_right{
+	width: 210px;
+	overflow: hidden;
+	float: right;
+	display:none;
+}
+.navlist dl dt{
+	padding:5px 0px 5px 5px;
+}
+.navlist dl dd{
+	float: left;
+	padding:5px 0px 5px 5px;
+}
+.navlist a{
+	color:#3c3c3c;
+}
+.navlist a:hover{
+	color:#09a8dd;
+}
+.more{
+	position: absolute;
+	right: 5px;
+	bottom: 0px;
+	display: block;
+	color: #989898;
+}
+.more:hover{
+	color: #989898;
+	text-decoration: underline;
+}
+
+/*-----------------------------------最后增加的 -------------------------*/
+.wrapper_2{
+	width: 970px;
+	height: 676px;
+	border:1px solid #DDDDDD;
+	overflow: hidden;
+	margin: 15px auto 0px auto;
+	background-color: white;
+}
+.wrapper_2_main{
+	width:710px;
+	float: left;
+	overflow: hidden;
+}
+.wrapper_2_side{
+	display: inline;
+	float: right;
+	margin-right: 10px;
+	width: 232px;
+}
+.wrapper_2_side_tt{
+	margin-top: 16px;
+	height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    
+}
+.wrapper_2_side_tt h3{
+	color: #414141;
+    float: left;
+    font-size: 14px;
+}
+.wrapper_2_side_con{
+	margin-top: 10px;
+	overflow: hidden;
+}
+.wrapper_2_side_con .taglist{
+	line-height: 23px;
+    overflow: hidden;
+    padding: 0;
+}
+.taglist dt{
+	color: #5B5B5B;
+    display: inline;
+    float: left;
+    font-weight: bold;
+    margin-right: 11px;
+}
+.taglist dd {
+    display: inline;
+    float: left;
+    margin-right: 13px;
+    white-space: nowrap;
+}
+.taglist dd a:hover{
+	color: #05a4de;
+	text-decoration: underline;
+}
+.wrapper_2_side_tt_2{
+	height: 20px;
+	line-height: 18px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.wrapper_2_side_tt_2 h3{
+	color: #414141;
+    float: left;
+    font-size: 14px;
+}
+.wrapper_2_side_con_2{
+	margin-top: 10px;
+	overflow: hidden;
+}
+.wrapper_2_side_con_2_ul{
+	overflow: hidden;
+    padding: 5px 0 0;
+} 
+.wrapper_2_side_con_2_ul li{
+	height: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 0 30px 7px 28px;
+    position: relative;
+    vertical-align: bottom;
+}
+.wrapper_2_side_con_2_ul em{
+	border: 1px solid #EEEEEE;
+    color: #929292;
+    display: block;
+    font-family: "Tahoma";
+    font-size: 11px;
+    height: 14px;
+    left: 0;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 18px;
+    font-style: normal;
+}
+.wrapper_2_side_con_2_ul .top{
+	background: url("../images/foucerank_0818.png") no-repeat scroll -228px -136px transparent;
+    border: medium none;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    height: 16px;
+    line-height: 16px;
+    width: 20px;
+}
+.wrapper_2_side_con_2_ul p{
+	height: 16px;
+    overflow: hidden;
+    padding: 0;
+}
+.wrapper_2_side_con_2_ul li a{
+	vertical-align: baseline;
+	display: inline-block;
+	color: #3D3D3D;
+}
+.wrapper_2_side_con_2_ul li a:hover{
+	color: #05a4de;
+	text-decoration: underline;
+}
+.wrapper_2_side_con_2_ul p span{
+	margin-left: 5px;
+}
+.wrapper_2_side_con_2_ul .score{
+	color: #FF3C00;
+    font-family: "Tahoma";
+    font-size: 11px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+}
+.wrapper_2_side .banner{
+	height: 200px;
+    margin-top: 10px;
+    width: 232px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+.wrapper_3 .box_tt{
+	height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+
+.wrapper_2_main .box_tt{
+	height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+.box_tt .title_5{
+	float: left;
+    height: 18px;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 72px;
+	background: url("../images/title_20120206.png") no-repeat scroll 0 -76px transparent;
+}
+.box_tt .title_6{
+	float: left;
+    height: 18px;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 72px;
+	background: url("../images/title_20120206.png") no-repeat scroll 0 -114px transparent;
+}
+.box_tt .title_7{
+	float: left;
+    height: 18px;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 72px;
+	background: url("../images/title_20120206.png") no-repeat scroll 0 -133px transparent;
+}
+.box_tt .title_8{
+	float: left;
+    height: 18px;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 72px;
+	background: url("../images/title_20120206.png") no-repeat scroll 0 -152px transparent;
+}
+.box_tt .title_9{
+	float: left;
+    height: 18px;
+    margin-top: 16px;
+    overflow: hidden;
+    width: 72px;
+	background: url("../images/title_20120206.png") no-repeat scroll 0 -341px transparent;
+}
+.box_tt .second_tab{
+	border-bottom: 1px solid #E6E6E6;
+    color: #424242;
+    float: right;
+    height: 29px;
+    margin-top: 12px;
+    width: 468px;
+}
+.second_tab_list li{
+	border: 1px solid #E6E6E6;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 2px;
+    padding: 0 10px;
+    position: relative;
+}
+.second_tab_list .on{
+	border-bottom-color: #FFFFFF;
+    font-weight: bold;
+}
+.second_tab .more{
+	position: absolute;
+	right: 5px;
+	bottom: -5px;
+	display: block;
+	color: #3d3d3d;
+}
+.second_tab .more:hover{
+	text-decoration: underline;
+	color: #02a1d9;
+}
+
+.main_list{
+	float: right;
+    width: 484px;
+    overflow: hidden;
+}
+.main_list_ul{
+	overflow: hidden;
+}
+.main_list_ul li{
+	height: 188px;
+    width: 104px;
+    display: inline;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 23px 17px;
+}
+.main_list_ul li .pic{
+	height: 140px;
+    width: 100px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #DDDDDD;
+    padding: 1px;
+}
+.main_list_ul li .pic:hover{
+    border: 1px solid #179ae0;
+}
+.main_list_ul li .pic img{
+	background: none repeat scroll 0 0 #DDDDDD;
+    display: block;
+    margin-bottom: 4px;
+    border: 0 none;
+    height: 140px;
+    width: 100px;
+}
+.main_list_ul_tt{
+	margin-top: 8px;
+	height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    padding-right: 10px;
+    position: relative;
+    color: #AAAAAA;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.main_list_ul_tt a{
+	font-size: 14px;
+	height: 16px;
+	overflow: hidden;
+}
+.main_list_ul_tt a:hover{
+	color:#05a4de;
+}
+.main_list_ul li p{
+	text-align: center;
+	height: 16px;
+	overflow: hidden;
+}
+
+
+.main_side{
+	display: inline;
+    float: left;
+    margin-left: 15px;
+    width: 199px;
+    overflow: hidden;
+}
+.main_side .hotbox{
+	overflow: hidden;
+}
+.hotpic{
+	display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 199px;
+    
+}
+.hotpic:hover{
+	color: #05a4de;
+	text-decoration: underline;
+}
+.hotpic .pic{
+	border: 1px solid #DDDDDD;
+	padding: 1px;
+	display: block;
+    height: 183px;
+    margin-bottom: 10px;
+    width: 195px;
+}
+.hotbox .txtlist4{
+	width: 199px;
+	overflow: hidden;
+    padding-top: 5px;
+}
+.txtlist4 li{
+	height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+}
+.txtlist4 li a{
+	color: #3D3D3D;
+    text-decoration: none;
+}
+.txtlist4 li a:hover{
+	text-decoration: underline;
+	color: #02a1d9;
+}
+
+
+.wrapper_3{
+	width: 970px;
+	border:1px solid #DDDDDD;
+	overflow: hidden;
+	margin: 15px auto 0px auto;
+	background-color: white;
+}
+.wrapper_music{
+	overflow: hidden;
+}
+.wrapper_music li{
+	margin: 0 0 15px 14px;
+	width: 145px;
+	height: 200px;
+	display: inline;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.wrapper_music .pic{
+	height: 150px;
+    width: 140px;
+	display: block;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #DDDDDD;
+    padding: 1px;
+}
+.wrapper_music .pic img{
+	height: 150px;
+    width: 140px;
+    border:0 none;
+}
+
+.wrapper_music .pic:hover{
+    border: 1px solid #05a4de;.
+}
+.wrapper_music li p{
+	color: #AAAAAA;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 4px;
+    overflow: hidden;
+    text-align: center;
+}
+.wrapper_music li .rolename{
+	display: block;
+	text-align: center;
+	color:#3d3d3d;
+	cursor: pointer;
+}
+.wrapper_music li .rolename:hover{
+	color: #05a4de;
+	text-decoration: underline;
+}

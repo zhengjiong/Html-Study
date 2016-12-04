@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist>
+  <trackList>
+    <track>
+      <location>musics/You Know What i mean.mp3</location>
+      <title>You Know What i mean</title>
+    </track>
+    <track>
+      <location>musics/朋友的爱.mp3</location>
+      <title>朋友的爱</title>
+    </track>
+    <track>
+      <location>musics/直来直往.mp3</location>
+      <title>直来直往</title>
+    </track>
+    <track>
+      <location>musics/祝你开心.mp3</location>
+      <title>祝你开心</title>
+    </track>
+    <track>
+      <location>musics/時代曲.mp3</location>
+      <title>時代曲</title>
+    </track>
+  </trackList>
+</playlist>

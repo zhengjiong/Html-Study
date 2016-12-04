@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk"?>
+<update>
+	<version>1.1</version>
+	<url>http://192.168.1.107:19100/ZJ_webservice/update/Air169_v1.1.apk</url>
+	<bugs>
+		<bug>1.修改了部分手机首页显示错位</bug>
+		<bug>2.分享的同时加入了小羽毛的介绍信息</bug>
+		<bug>3.修复了拼餐详情显示发起人的手机号码</bug>
+		<bug>4.在拼餐的介绍中加入了分享</bug>
+		<bug>5.用户注册的时候密码不受限制</bug>
+		<bug>6.修复覆盖安装后会报错</bug>
+		<bug>7.修复拼餐详情中拼餐介绍的错误数据</bug>
+	</bugs>
+</update>

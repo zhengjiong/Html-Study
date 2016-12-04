@@ -1,0 +1,34 @@
+html, body, div, span,applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+body {height:100%;background:#fff;}
+div {text-align:left;}
+body{font:12px/1.5em "\5b8b\4f53","Arial Narrow";color:#5c5c5c;}
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+address, cite, em{font-style:normal;}
+li{list-style-type:none;}
+a{text-decoration:none;color:#016a9f;}
+a:hover{text-decoration:underline;}
+.on:hover {text-decoration:none !important;}
+fieldset, img {border:0;}
+/*foucebox*/
+.foucebox {width:600px;height:280px;margin:0 auto 10px;}
+.scrollimg {position:relative;float:left;width:600px;height:280px;overflow:hidden;}
+#SwitchBigPic { float:left;width:5600px;}
+#SwitchBigPic .scrollimg_div {position:relative;float:left;width:600px;height:260px;}
+.scrollimg_img {display:block;width:600px;height:260px;}
+.scrollimg .bg {position:absolute;left:0;top:220px;width:600px;height:40px;background:#000;filter:alpha(opacity=60);opacity:0.6;z-index:98;}
+.scrollimg_txt {position:absolute;left:10px;top:233px;font-size:16px;color:#fff;font-family:"Microsoft Yahei";z-index:99;}
+.scrollimg_tigger {position:absolute;left:0;bottom:0;width:600px;height:15px;background:#000;padding-top:5px;overflow:hidden;font-size:0;line-height:0;text-align:center;}
+.scrollimg_tigger a {display:inline-block;width:16px;height:8px;background:#646464;margin:0 2px;color:#646464;overflow:hidden;}
+.scrollimg_tigger .on {background:#016b9f;color:#016b9f;}
+/*foucebox rank*/
+.foucerank h2 {height:38px;padding-left:25px;font-size:14px;color:#fff;font-family:"Microsoft Yahei";line-height:38px;}
+.foucerank {float:left;width:260px;height:280px;background-position:0 -159px;background-color:#464646;}
+.foucerank_con .sort-list {padding:0 25px;}
+.foucerank_con .sort-list li {background-position:0 -483px;background-repeat:repeat-x;padding:1px 30px 6px 25px;}
+.foucerank_con .sort-list a {color:#fff;}
+.foucerank_con .sort-list li a.playMov {background-position:0 -140px;}
+.foucerank_con .sort-list .score {font-size:12px;color:#fff;font-family:"Tahoma";}
+.foucerank_con .sort-list em {top:5px;display:block;width:14px;height:14px;background-position:0 -440px;font-size:11px;color:#010101;text-align:center;line-height:14px;}
+.foucerank_con .sort-list .top em {background-position:0 -455px;color:#fff;}
+.foucerank_con .morelink {padding:9px 25px 0 0;}
+.foucerank_con .morelink a {float:right;display:block;width:50px;height:15px;background-position:0 -510px;text-indent:-9999px;overflow:hidden;}

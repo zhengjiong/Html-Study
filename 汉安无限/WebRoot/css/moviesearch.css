@@ -1,0 +1,479 @@
+@CHARSET "UTF-8";
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+body {
+    color: #989898;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+*{padding:0;margin:0;}
+a {
+    text-decoration: none;
+    color: #404040;
+}
+a:hover{
+	color:#03a2dc;
+	text-decoration: underline;
+}
+div{
+	text-align: left;
+}
+*{margin:0;padding:0;}
+.clear{
+	clear: both;
+}
+.navigation{
+	width: 970px;
+	height:35px;
+	line-height:35px;
+	margin: 0 auto;
+}
+.navigation a{
+	color: #424242;
+	
+}
+.navigation a:hover{
+	color:#03a2dc;
+	text-decoration: underline;
+}
+.page{
+	width:970px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.page_left{
+	width:250px;
+	float: left;
+	border-top: 1px solid #DDDDDD;
+	background-color: white;
+}
+.page_left .box_tt{
+	height:31px;
+	line-height: 31px;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	background: url("../images/sprite_list.png") repeat-x scroll 0 0 transparent;
+}
+.box_tt h2{
+	color: #414141;
+    font-size: 14px;
+    text-indent: 15px;
+}
+.page_left .box_con{
+	width: 250px;
+}
+.page_left .box_con .tabbox{
+	border-bottom: 1px solid #E2E2E2;
+    height: 22px;
+    overflow: visible;
+}
+.page_left .box_con .tabbox a{
+	color: #424242;
+	border-left: 1px solid #E2E2E2;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    text-align: center;
+    width: 60px;
+}
+.page_left .box_con .tabbox a:hover{
+	color: #0face3;
+	text-decoration: none;
+	font-weight: bold;
+}
+.page_left .box_con .tabbox .on{
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+	position: relative;
+}
+.list_rebo_con{
+	padding: 15px 18px 0 13px;
+	border-left: 1px solid #dddddd;
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+.list_rebo_con li{
+	background: url("../images/line_1.png") no-repeat scroll center bottom transparent;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 7px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: bottom;
+    padding: 0 35px 6px 28px;
+}
+.list_rebo_con li .emtop{
+    border: medium none;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    height: 18px;
+    line-height: 15px;
+    width: 20px;
+    background: url("../images/sprite_list.png") no-repeat scroll -72px -32px transparent;
+    display: block;
+    font-family: "Tahoma";
+    font-size: 11px;
+    left: 0px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    font-style: normal;
+}
+.list_rebo_con li em{
+	border: 1px solid #C5C5C5;
+    color: #929292;
+    display: block;
+    font-family: "Tahoma";
+    font-size: 11px;
+    height: 14px;
+    left: 0;
+    line-height: 13px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 18px;
+    font-style: normal;
+}
+.list_rebo_con li p a{
+	color:#424242;
+}
+.list_rebo_con li p a:hover{
+	color:#0face3;
+}
+.list_rebo_con li .score{
+	color: #FF3C00;
+    font-family: "Tahoma";
+    font-size: 11px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+}
+.list_rebo_con li .info{
+	background-position: -93px -32px;
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    top: 3px;
+    width: 8px;
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    top: 3px;
+    width: 8px;
+    background: url("../images/sprite_list.png") no-repeat scroll -93px -32px transparent;
+}
+
+
+
+
+.box_con .submenu{
+    position: relative;
+    border-right: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+.box_con .submenu li{
+	border-bottom: 1px solid #DDDDDD;
+    height: 38px;
+    overflow: visible;
+    width: 248px;
+}
+.submenu a{
+	color: #575757;
+    display: block;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 30px;
+    width: 218px;
+}
+.submenu .on{
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 20px;
+    background: url("../images/sprite_list.png") no-repeat scroll -178px -56px transparent;
+    text-decoration: none;
+}
+.page_left_AD{
+	width:250px;
+	height:250px;
+	margin-top: 10px;
+}
+
+
+
+
+	
+.page_right{
+	width:710px;
+	float: left;
+	margin-left:10px;
+	overflow: hidden;
+}
+.right_box{
+	position: relative;
+	border: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: none;
+}
+.right_box_tt{
+	background-repeat: repeat-x;
+    border-bottom: 1px solid #DDDDDD;
+    height: 31px;
+    line-height: 31px;
+    background: url("../images/sprite_list.png") scroll 0 0 transparent;
+}
+.right_box_tt h2{
+	color: #414141;
+    float: left;
+    font-size: 14px;
+    text-indent: 15px;
+}
+.right_box_con{
+	overflow: hidden;
+	background-color: white;
+}
+.right_box_con_tt{
+	background: none repeat scroll 0 0 #FCFCFC;
+    border-bottom: 1px dashed #EBEBEB;
+    overflow: hidden;
+    padding: 10px 0 10px 15px;
+    position: relative;
+}
+.right_box_con_main{
+	padding-bottom: 25px;
+}
+.right_box_con_taglist{
+	line-height: 18px;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 0 0 0 80px;
+    position: relative;
+}
+.right_box_con_taglist dt{
+	color: #585858;
+    font-weight: bold;
+    left: 16px;
+    position: absolute;
+    top: 0;
+}
+.right_box_con_taglist dd{
+	overflow: hidden;
+	width: 620px;
+	height: 18px;
+	line-height: 18px;
+}
+.right_box_con_taglist dd a{
+	color:#424242;
+	white-space: nowrap;
+	padding: 3px 5px 3px 5px;
+	display: inline;
+	outline: none;
+}
+.right_box_con_taglist dd a:hover{
+	color:#03a2dc;
+	text-decoration: underline;
+}
+.right_box_con_taglist dd .on{
+	background: none repeat scroll 0 0 #03A2DC;
+    color: #FFFFFF;
+}
+.right_box_con_taglist dd .on:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.right_movielist{
+	position: relative;
+	border: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+    overflow: hidden;
+    margin-top:10px;
+    background-color: white;
+}
+.right_movielist_tt{
+	background: url("../images/sprite_list.png") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #DDDDDD;
+    height: 31px;
+    line-height: 31px;
+}
+.right_movielist_tt strong{
+	padding-left: 15px;
+	color:#414141;
+	font-size: 14px;
+}
+.right_movielist_con{
+	
+}
+.right_movielist_ul{
+	overflow: hidden;
+}
+.right_movielist_ul li{
+    display: inline;
+    float: left;
+    height: 285px;
+    overflow: hidden;
+    padding: 15px 0 0 41px;
+    position: relative;
+    text-align: left;
+    width: 126px;
+}
+.right_movielist_ul li .pic{
+	display: block;
+    font-size: 14px;
+    height: 174px;
+    overflow: hidden;
+    position: relative;
+    width: 126px;
+}
+.searchImg{
+	width: 120px;
+	height: 168px;
+	border:none;
+}
+.right_movielist_ul li .title {
+	margin: 10px 0 8px;
+    padding-right: 12px;
+    position: relative;
+    color: #909090;
+    height: 16px;
+    line-height: 16px;
+    margin: 8px 0;
+    overflow: hidden;
+    padding:0px;
+}
+.right_movielist_ul li .title .title_left{
+	font-size: 14px;
+	color: #424242;
+    text-decoration: none;
+}
+.right_movielist_ul li .title .title_left:hover{
+	color: #0da8e3;
+	text-decoration: underline;
+}
+.right_movielist_ul li .title .play{
+	right: 5px;
+    top: 2px;
+    background: url("../images/sprite_list.png") no-repeat -93px -32px scroll transparent;
+    display: block;
+    height: 10px;
+    width: 8px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    padding:0px;
+    margin: 0px;
+}
+.right_movielist_ul li .content{
+	color: #909090;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    padding:0px;
+    margin: 0px;
+}
+.right_movielist_ul li .evaluate{
+	color: #909090;
+    height: 16px;
+    line-height: 16px;
+    margin: 2px 0;
+    overflow: hidden;
+    padding:0px;
+    margin: 0px;
+    margin-bottom:4px;
+}
+.evaluate strong{
+	color: #F80000;
+    font-family: "Tahoma";
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: -1px;
+}
+.evaluate strong span{
+	color: #F80000;
+    font-size: 12px;
+}
+.right_movielist_ul li .operbox{
+	margin-top: 6px;
+}
+.right_movielist_ul li .operbox a{
+    display: block;
+    float: left;
+    height: 19px;
+    line-height: 19px;
+    margin-right: 1px;
+    text-align: center;
+    width: 41px;
+    background: url("../images/sprite_list.png") no-repeat 0 -32px scroll transparent;
+}
+.right_movielist_ul li .operbox a:hover,.right_movielist_ul li .operbox .on{
+    color: #FFFFFF;
+    text-decoration: none;
+    background: url("../images/sprite_list.png") no-repeat scroll 0 -52px transparent;
+    display: block;
+    float: left;
+    height: 19px;
+    line-height: 19px;
+    margin-right: 1px;
+    text-align: center;
+    width: 41px;
+}
+
+/*-------------------------------------分页-----------------------------*/
+.dividepage{
+	margin:10px 0 10px 0;
+	text-align: center;
+	overflow: hidden;
+	padding: 5px 0 5px 0;
+}
+.dividepage .next_page{
+	border:1px solid #c3c3c3;
+	padding: 3px 10px 3px 10px;
+	color: #424242;
+}
+.dividepage .next_page:hover{
+	border:1px solid #058cbe;
+	color: #fff;
+	background-color: #21b2e7;
+	text-decoration: none;
+}
+.page_num{
+	border:1px solid #c3c3c3;
+	padding: 3px 7px 3px 7px;
+	color: #424242;
+}
+.page_num:hover{
+	border:1px solid #058cbe;
+	color: #fff;
+	background-color: #21b2e7;
+	text-decoration: none;
+}
+.page_num_on{
+	padding: 3px 7px 3px 7px;
+	border:1px solid #21b2e7;
+	color: #fff;
+	background-color: #21b2e7;
+	text-decoration: none;
+	cursor: default;
+}
+.page_num_on:hover{
+	color: #fff;
+	text-decoration: none;
+}

@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+#footer {width:970px;height:60px;margin:0 auto;text-align: center;margin-top: 20px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+body {
+    color: #989898;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    background: url("../images/body_bg.jpg") repeat;
+}
+a {
+    text-decoration: none;
+}
+div{
+	text-align: left;
+	
+}
+*{margin:0;padding:0;}
+.clear{
+	clear: both;
+}
+.gamelist{
+	width: 958px;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	margin:10px auto 0px auto;
+	padding:10px 10px 10px 0;
+	background-color: white;
+}
+.game_tt {
+	background: url("../images/hotgamebg.gif") no-repeat scroll left center transparent;
+    float: left;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    width: 85px;
+    height: 30px;
+    overflow: hidden;
+}
+.game_tt a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.game_tt a:hover{
+	color: #FF6600;
+	text-decoration: none;
+}
+.game_con{
+	display: inline;
+    float: left;
+    margin-left: 5px;
+    text-align: left;
+    width: 866px;
+    color: #434343;
+    line-height: 30px;
+    overflow: hidden;
+    height:30px;
+}
+.game_con a{
+	color: #434343;
+	text-decoration: none;
+}
+.game_con a:hover{
+	color: #ff6600;
+	text-decoration: none;
+}
+
+
+
+
+/*------------------------------------御剑江湖start-----------------------*/
+.yujian{
+	width: 958px;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	margin:10px auto 0px auto;
+	padding:10px 10px 10px 10px;
+}
+.img_div{
+	width: 530px;
+	height:250px;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+}
+.yujian_info{
+	float: right;
+	overflow: hidden;
+	width:415px;
+	height:250px;
+	position: relative;
+}
+.yujian_info_tt{
+	text-align: center;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 16px;
+	color: #70460e;
+	height:30px;
+	line-height: 30px;
+}
+.yujian_info_con{
+	font-size: 12px;
+	color: #553408;
+	text-indent: 2em;
+}
+.yujian_info_con a{
+	color: #d53118;
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+}

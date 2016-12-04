@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="gb2312" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+	
+	<statement id="getCount" resultClass="java.lang.Integer" remapResults="true">
+		$sql$
+	</statement>
+	<select id="loginuser" resultClass="com.yufeng.bean.UserVo">
+		$sql$
+	</select> 
+	<insert id="updateLoginDate">
+		$sql$
+	</insert>
+	<insert id="insertusers">
+		$sql$
+	</insert>
+	<insert id="insertadmin">
+		$sql$
+	</insert>
+	<select id="selectfriends" resultClass="com.yufeng.bean.UserVo">
+		$sql$
+	</select>
+	<insert id="insertLikeMovie">
+		$sql$
+	</insert>
+	<insert id="updatetotalNum">
+		$sql$
+	</insert>
+	<select id="selecttotalNum" resultClass="java.lang.Integer">
+		$sql$
+	</select>
+	<insert id="insertComplain">
+		$sql$
+	</insert>
+	<insert id="insertPostMsg">
+		$sql$
+	</insert>
+	<select id="selectPostMsg" resultClass="com.yufeng.bean.PostMsgVo">
+		$sql$
+	</select>
+	<select id="selectDetailMsg" resultClass="com.yufeng.bean.PostMsgVo">
+		$sql$
+	</select>
+	<select id="selectMovieCate" resultClass="com.yufeng.bean.MovieCateVo">
+		$sql$
+	</select>
+	<select id="selectMovieStyle" resultClass="com.yufeng.bean.MovieStyleVo">
+		$sql$
+	</select>
+	<select id="selectPrevueMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectHotCinemasMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectConcernsMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectHotSuggestMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectNewMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectMoviesComedy" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectMoviesComedys" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectMoviesSearchByBigCateID" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	
+	<select id="selectMovie" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+
+	<select id="selectIndexMovie" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectIndexMovieList" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectIndexMovieTop" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectIndexMovieTops" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectzongyiSuggest" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getMoviesNames" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getHotMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getFYVO" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	
+	<select id="getUpdateTimeNewMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getGZVO" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getGZMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="selectsuggests" resultClass="com.yufeng.bean.SuggestsVo">
+		$sql$
+	</select>
+	<insert id="insertleaves">
+		$sql$
+	</insert>
+	<insert id="answersleaves">
+		$sql$
+	</insert>
+	<select id="selectleaves" resultClass="com.yufeng.bean.LeavesVo">
+		$sql$
+	</select>
+	<select id="selectuserGZ" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<insert id="insertConcerns">
+		$sql$
+	</insert>
+	<insert id="updateVote">
+		$sql$
+	</insert>
+	<select id="selectusermsg" resultClass="com.yufeng.bean.UserVo">
+		$sql$
+	</select>
+
+	<!-- music start -->
+	<select id="selectMusicStyleVos" resultClass="com.yufeng.bean.MusicStyleVo">
+		$sql$
+	</select>
+	<select id="selectMusicByStyle" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="selectMusicVosByCateId" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="selectMusicById" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="getNewAlbums" resultClass="com.yufeng.bean.AlbumVo">
+		$sql$
+	</select>
+	<select id="getAlbumByAlbumId" resultClass="com.yufeng.bean.AlbumVo">
+		$sql$
+	</select>
+	<select id="getMusicVosByAlbumID" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="getAllAlbums" resultClass="com.yufeng.bean.AlbumVo">
+		$sql$
+	</select>
+	<select id="searchMusicVos" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="getNewMusicVos" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="getSingers" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<select id="getMusicVosByRoleName" resultClass="com.yufeng.bean.MusicVo">
+		$sql$
+	</select>
+	<!-- music end -->
+	<select id="getAllSoftware" resultClass="com.yufeng.bean.SoftwareVo">
+		$sql$
+	</select>
+	<select id="getSoftware" resultClass="com.yufeng.bean.SoftwareVo">
+		$sql$
+	</select>
+	<select id="getAllSoftwareCount" resultClass="java.lang.Integer">
+		$sql$
+	</select>
+	<select id="getSoftwareByPageNum" resultClass="com.yufeng.bean.SoftwareVo">
+		$sql$
+	</select>
+	<select id="getSoftwareSmallCateVosByCid" resultClass="com.yufeng.bean.SoftwareSmallCateVo">
+		$sql$
+	</select>
+	<insert id="insertAlbum">
+		$sql$
+	</insert>
+	<insert id="insertMusic">
+		$sql$
+	</insert>
+	<select id="getMaxAlbumId" resultClass="java.lang.Integer">
+		$sql$
+	</select>
+	<insert id="insertdiaocha">
+		$sql$
+	</insert>
+	<insert id="insertsuggests">
+		$sql$
+	</insert>
+	<select id="getsuggestandcomplain" resultClass="com.yufeng.bean.SuggestAndComplainVO">
+		$sql$
+	</select>
+	<select id="getmoviespath" resultClass="com.yufeng.bean.MoviesPathVO">
+		$sql$
+	</select>
+	<select id="selectReEmail" resultClass="java.lang.Integer">
+		$sql$
+	</select>
+	<insert id="updateconcerns">
+		$sql$
+	</insert>
+	<insert id="shouchang">
+		$sql$
+	</insert>
+	<select id="selectSuggestFriends" resultClass="com.yufeng.bean.UserVo">
+		$sql$
+	</select>
+	<insert id="addmoviepath">
+		$sql$
+	</insert>
+	<select id="getMoviesVO" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getMoviesCateVO" resultClass="com.yufeng.bean.MovieCateVo">
+		$sql$
+	</select>
+	<select id="getHotPic" resultClass="com.yufeng.bean.MovieTopPicVo">
+		$sql$
+	</select>
+	
+	
+	
+	
+	<select id="getAllTop10" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getMoviesByBigID" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getHotBigMoviePic" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getHotBigMovie" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getTodayMovies" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getHotAnime" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getSuggestAnime" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getChinazy" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getSuggestzy" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	
+	<select id="getBigMoviesBottom" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getMovieBottomByCateID" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getindexBottomTop" resultClass="com.yufeng.bean.MoviesVo">
+		$sql$
+	</select>
+	<select id="getApp" resultClass="com.yufeng.bean.YDApp">
+		$sql$
+	</select>
+	<select id="getSoftById" resultClass="com.yufeng.bean.SoftwareVo">
+		$sql$
+	</select>
+</sqlMap>

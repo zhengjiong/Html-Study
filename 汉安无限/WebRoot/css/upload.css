@@ -1,0 +1,147 @@
+@CHARSET "UTF-8";
+#footer {width:970px;height:60px;text-align: center;position: absolute;bottom: 0px;}
+#footer a{
+	color:#414141;
+}
+#footer a:hover{
+	color:#09a8dd;
+}
+body {
+    color: #989898;
+    font-family: "宋体","Arial Narrow";
+    font-size: 12px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+li {
+    list-style-type: none;
+}
+*{padding:0;margin:0;}
+a {
+    color: #1B1B1B;
+    text-decoration: none;
+}
+div{
+	text-align: left;
+}
+*{margin:0;padding:0;}
+.clear{
+	clear: both;
+}
+.main{
+	width:970px;
+	overflow: hidden;
+	margin: 10px auto 10px auto;
+}
+.main_title{
+	height: 30px;
+	line-height: 30px;
+	word-wrap: break-word;
+	color: #555555;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "microsoft yahei","微软雅黑";
+	margin-top:5px;
+	margin-bottom:5px;
+	padding-left:10px;
+}
+.video_upload{
+	overflow: hidden;
+	margin-top: 5px;
+}
+.videoInfo{
+	background: none repeat scroll 0 0 #F3F9FD;
+    padding: 10px 10px 0;
+}
+.importantInfo{
+	background: none repeat scroll 0 0 #F3F9FD;
+    padding: 15px 0 25px 20px;
+}
+.videoInfo .action{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CACACA;
+    padding: 30px 35px 30px 40px;
+}
+.up_click{
+	overflow: hidden;
+}
+.up_click .upload_button{
+	direction: ltr;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.btnsub_1{
+	background: none repeat scroll 0 0 #EFF3F7;
+	border: 1px solid #2674D4;
+    border-color: #999999;
+    border-radius: 3px 3px 3px 3px;
+    height: 38px;
+    line-height: 38px;
+    -moz-user-select: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.btnsub_1 .btn_text{
+	background-position: 0 -600px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    height: 38px;
+    line-height: 37px;
+    padding: 0 15px;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    background: url("../images/form.png") repeat-x scroll transparent;
+    background-position: 0 -600px;
+}
+.filesize{
+	font-size: 14px;
+    padding-left: 25px;
+    color: #555555;
+}
+
+.up_dragDrop{
+	background: none repeat scroll 0 0 #fffcc9;
+    border: 2px dashed #FFE68E;
+    color: #909090;
+    display: none;
+    font-family: 'microsoft yahei','微软雅黑';
+    font-size: 18px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 30px;
+    text-align: center;
+    display: block;
+}
+.title{
+	line-height: 30px;
+	font-size: 14px;
+    font-weight: bold;
+    color:#555555;
+}
+ol, ul, dl {
+    list-style: none outside none;
+}
+.important_ul li{
+	color: #909090;
+	font: 12px/20px arial,helvetica,verdana,tahoma,sans-serif;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+.important_ul li a{
+	color: #3399e0;
+	text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		maxSessions="64" maxTransactions="10" maxRequests="128" />
+
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver"
+				value="org.gjt.mm.mysql.Driver" />
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:mysql://127.0.0.1:3306/habeyond" />
+			<property name="JDBC.Username" value="root" />
+			<property name="JDBC.Password" value="123456" />
+
+			<property name="JDBC.DefaultAutoCommit" value="true" />
+			<property name="maxActive" value="100" />
+			<property name="maxIdle" value="30" />
+			<property name="maxWait" value="1000" />
+			<property name="removeAbandoned" value="true" />
+			<property name="removeAbandonedTimeout" value="60" />
+		</dataSource>
+
+	</transactionManager>
+
+	<!--  配置映射文件   -->
+	<sqlMap resource="com/yufeng/dao/sqlmap/xxx.xml" />
+	
+
+</sqlMapConfig>

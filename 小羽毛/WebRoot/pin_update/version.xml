@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk"?>
+<update>
+	<version>2.0</version>
+	<url>http://www.air169.com:8866/ZJ_webservice/pin_update/pin_2.0.apk</url>
+	<bugs>
+		<bug>小羽拼餐2013年2月7日更新2.0beta版本</bug>
+		<bug>1.修改主页</bug>
+		<bug>2.模块位置调整</bug>
+		<bug>3.修复bug</bug>
+	</bugs>
+</update>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+
+	<service>
+		<name>Air169WebService</name>
+		<serviceClass>com.zj.service.Air169Service</serviceClass>
+		<implementationClass>com.zj.service.impl.Air169ServiceImpl</implementationClass>
+	</service>
+	
+</beans>
