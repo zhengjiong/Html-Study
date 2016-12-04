@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航条</title>
+    <style type="text/css">
+        body, div{margin:0;padding: 0;}
+        #nav {
+            width: 960px;
+            height: 35px;
+            background-color: #CCC;
+
+            /*水平居中, 代表上下margin为0,左右为auto*/
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        #nav ul{
+            width:960px;
+            height: 35px;
+        }
+        #nav ul li{
+            float: left;
+            /*大黑黑点，是 FF 给 li 标签定丿癿默认样式，我们叧需要将 li 癿默
+            认样式去掉就是了，在 ul 标签癿 CSS 属性中加入“list-style:none;” 就 OK 了。*/
+            list-style: none;
+
+            /*width:100px;不要设置宽度,不然有些文字过长会导致每一个li的左右空白不一样,应该用padding来解决*/
+            height:35px;
+            /*background-color: #b40000;调试打开看效果用*/
+            line-height: 35px;/*让文字垂直居中*/
+            text-align: center;/*让文字水平居中*/
+            /*margin-right: 1px;调试打开看效果用*/
+        }
+        a{
+            /*文字大小 12 像素，返里癿文字指癿是链接 a，所以我们对 a 迕行样式讴置*/
+            font-size: 14px;
+            text-decoration: none;/*去掉a标签的下划线*/
+            color: #333;
+
+            height:35px;
+            display: block;/*让a标签设置的高度和li一样高,需要把内联元素转换成块状元素才可以设置高度*/
+
+            /*IE 认为 a 既然转
+            化成坑状元素，就拥有坑状元素癿特性---霸道，它是丌允讲其他元素和它同一行，再加上
+            也没有对 a 癿宽度进行设定，所以才寻致 IE6 中返举显示，丌过 FF 中为什举丌返样呢，和
+            我们想象癿一样，那是因为 FireFox 认为 a 即使为坑状元素，也应该叐到外面<li>元素癿
+            影响，所以如此显示*/
+            /*其实览决癿斱法也径简单，叧需要在链接 a 癿 CSS 代码中加入“float:left;”*/
+
+            float: left;/*解决ie6的bug*/
+            padding:0 20px;/*相当于上下0px, 左右10px*/
+        }
+        /*移动到a标签上的样式*/
+        a:hover{
+            color: #fff;
+            text-decoration: underline;
+            background-color: #0a93c9;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li><a href="#">W3Cfuns</a></li>
+        <li><a href="#">厘米学院</a></li>
+        <li><a href="#">培训课程</a></li>
+        <li><a href="#">我要充电</a></li>
+        <li><a href="#">前端职业生涯</a></li>
+        <li><a href="#">课程答疑</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
