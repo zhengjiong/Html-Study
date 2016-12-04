@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+    <style>
+        #div1 {
+            height: 100px;
+            background-color: #0ac5f1;
+            text-align: center;/*文字水平居中*/
+            line-height: 100px;/*文字垂直居中*/
+        }
+
+        #div2{
+            height:300px;
+            overflow: hidden;
+            background-color: #00CC00;
+        }
+        #div2 a{
+            width: 100px;
+            margin: 0 auto;/*必须要设置宽度margin: 0 auto;才可以水平居中*/
+            display: block;
+            position: relative;
+            top: 45%;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1">
+    aaaaaaaaaaaaaaaaaaaaaaaaaaa
+</div>
+<div id="div2">
+    <!--<div style="background-color: #2b3f93;width: 100px;height: 50px;margin: 0 auto;"></div>-->
+    <a><img src="images/logo.png"/></a>
+</div>
+</body>
+</html>
