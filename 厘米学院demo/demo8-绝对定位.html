@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div, body, html, img{margin:0;padding:0;}
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background-color: #000000;
+        }
+        .center{
+            line-height: 100px;/*文字垂直居中*/
+            text-align: center;/*文字水平居中*/
+        }
+        #div1_child1 {
+            width: 100px;
+            height: 100px;
+            background-color: #fffcc9;
+            position: absolute;
+        }
+        #div1_child2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0099FF;
+            position: absolute;
+            left:0px;
+            top: 0px;
+        }
+        #div2 {
+            width: 300px;
+            height: 300px;
+            background-color: #404040;
+            position: relative;
+        }
+        #div2_child1 {
+            width: 100px;
+            height: 100px;
+            background-color: #fffcc9;
+            position: absolute;
+        }
+        #div2_child2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0099FF;
+            position: absolute;
+            left:150px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/absolute.png" style="margin-left: 100px;"/>
+<div id="div1">
+    <!--情况1:div1没有设置position属性-->
+    <div id="div1_child1" class="center">child1</div>
+    <div id="div1_child2" class="center">child2</div>
+</div>
+<div id="div2">
+    <!--情况2: div2设置了position属性-->
+    <div id="div2_child1" class="center">child1</div>
+    <div id="div2_child2" class="center">child2</div>
+</div>
+</body>
+</html>
