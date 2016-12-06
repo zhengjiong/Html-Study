@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+        当然我们可以修改排列方式。
+        如果我们设置 direction 属性为 rtl (right-to-left),弹性子元素的排列方式也会改变，页面布局也跟着改变
+        */
+        body {
+            direction: rtl;
+        }
+        .flex-container {
+            display: flex;
+            width: 400px;
+            height: 250px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+</body>
+</html>
