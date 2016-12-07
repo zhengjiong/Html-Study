@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex-wrap</title>
+    <style type="text/css">
+        .flex-container {
+            display: flex;
+            width: 300px;
+            height: 200px;
+            background-color: lightgrey;
+            /*overflow: hidden;*//*可以设置overflow来隐藏移除的内容*/
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .flex-wrap-nowrap {
+            flex-wrap: nowrap;
+        }
+
+        .flex-wrap-wrap {
+            flex-wrap: wrap;
+        }
+        .flex-wrap-wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+<body>
+<p>flex-wrap 属性用于指定弹性盒子的子元素换行方式。</p>
+<br/>
+<p>nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。(可以设置overflow来隐藏移除的内容)</p>
+<div class="flex-container flex-wrap-nowrap">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+<br/>
+
+
+<p>wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行</p>
+<div class="flex-container flex-wrap-wrap">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+<br/>
+
+
+<p>wrap-reverse -反转 wrap 排列。</p>
+<div class="flex-container flex-wrap-wrap-reverse">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+
+</body>
+</html>
