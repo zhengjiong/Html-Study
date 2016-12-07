@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-content</title>
+    <style type="text/css">
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 350px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .align-content-flex-start{
+            /*只有设置了flex-wrap,align-content才起作用*/
+            align-content: flex-start;
+        }
+
+        .align-content-center{
+            /*只有设置了flex-wrap,align-content才起作用*/
+            align-content: center;
+        }
+
+        .align-content-flex-end{
+            /*只有设置了flex-wrap,align-content才起作用*/
+            align-content: flex-end;
+        }
+        .align-content-space-between{
+            height:500px;
+            align-content: space-between;
+        }
+        .align-content-space-around{
+            height:500px;
+            align-content: space-around;
+        }
+    </style>
+</head>
+<body>
+<p>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<p style="color: red;font-size: 20px">align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。</p>
+<img src="images/align-content-1.png" width="610" height="710"/>
+<img src="images/align-content-2.png" width="760" height="290"/>
+
+<p>ailgn-content:flex-start, 与交叉轴的起点对齐。</p>
+<div class="flex-container align-content-flex-start">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+
+<br/>
+<p>ailgn-content:center, 与交叉轴的中点对齐。</p>
+<div class="flex-container align-content-center">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+
+<br/>
+<p>ailgn-content:flex-end, 与交叉轴的终点对齐。</p>
+<div class="flex-container align-content-flex-end">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+<br/>
+
+
+<p>ailgn-content:space-between, 与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+<div class="flex-container align-content-space-between">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+
+<br/>
+
+<p>ailgn-content:space_around, 每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍</p>
+<div class="flex-container align-content-space-around">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+</body>
+</html>
