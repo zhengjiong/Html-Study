@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            width: 400px;
+            height: 200px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 75px;
+            height: 75px;
+            border:1px solid black;
+        }
+
+        .margin-top-bottom-auto{
+            /*也可以用margin: auto 0;*/
+            margin-top: auto;
+            margin-bottom:auto;
+        }
+        .margin-right-auto{
+            margin-right: auto;
+        }
+        .margin-top-auto{
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+<p>
+    对齐<br/>
+    设置"margin"值为"auto"值，自动获取弹性容器中剩余的空间。所以设置垂直方向margin值为"auto"，可以使弹性子元素在弹性容器的两上轴方向都完全集中。<br/><br/>
+    一个弹性子元素上设置了 margin-right: auto; 。 它将剩余的空间放置在元素的右侧
+</p>
+<div class="flex-container">
+    <div class="flex-item margin-right-auto" >flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+</div>
+
+<div class="flex-container" style="margin-top: 10px">
+    <div class="flex-item margin-top-bottom-auto ">flex item 1</div>
+    <div class="flex-item margin-top-bottom-auto margin-right-auto">flex item 2</div>
+    <div class="flex-item margin-top-bottom-auto " >flex item 3</div>
+</div>
+<div class="flex-container" style="margin-top: 10px">
+    <div class="flex-item  margin-top-auto">flex item 1</div>
+    <div class="flex-item  margin-top-auto margin-right-auto">flex item 2</div>
+    <div class="flex-item margin-top-auto" >flex item 3</div>
+</div>
+
+<div class="flex-container" style="margin-top: 10px">
+    <div class="flex-item  margin-top-auto">flex item 1</div>
+    <div class="flex-item  margin-top-auto ">flex item 2</div>
+    <div class="flex-item margin-top-auto" >flex item 3</div>
+</div>
+
+<p>
+    完美的居中 方式1: margin:auto
+</p>
+<div class="flex-container" style="margin-top: 10px">
+    <div class="flex-item " style="margin: auto auto;">flex item 1</div>
+</div>
+<p>完美的居中 方式2:flex方式:</p>
+<div class="flex-container" style="margin-top: 10px;justify-content: center;align-items: center">
+    <div class="flex-item ">flex item 1</div>
+</div>
+</body>
+</html>

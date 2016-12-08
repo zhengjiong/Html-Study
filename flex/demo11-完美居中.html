@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            width: 400px;
+            height: 200px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 75px;
+            height: 75px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<p>
+    完美的居中 方式1: margin:auto
+</p>
+<div class="flex-container" style="margin-top: 10px">
+    <div class="flex-item " style="margin: auto auto;">flex item 1</div>
+</div>
+<p>完美的居中 方式2:flex方式:</p>
+<div class="flex-container" style="margin-top: 10px;justify-content: center;align-items: center">
+    <div class="flex-item ">flex item 1</div>
+</div>
+</body>
+</html>
