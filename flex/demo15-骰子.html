@@ -23,17 +23,30 @@
             background-color: #333;
         }
 
+        .flex-direction-column {
+            flex-direction: column;
+        }
+
         .justify-content-start {
             justify-content: flex-start;
         }
 
         .justify-content-center {
-            /*内容在主轴上的对齐方式*/
+            /*内容在主轴上的对齐方式:居中*/
             justify-content: center;
         }
 
         .justify-content-end {
             justify-content: flex-end;
+        }
+
+        .justify-content-space-between {
+            /*内容在主轴上的对齐方式:两端对齐*/
+            justify-content: space-between;
+        }
+
+        .justify-content-space-around {
+            justify-content: space-around;
         }
 
         .align-items-center {
@@ -52,43 +65,238 @@
         .float-left {
             float: left;
         }
+
     </style>
 </head>
 <body>
-<div>
-    <div class="first-face float-left">
-        <span class="pip"></span>
+<div style="background-color: #8eb5c8;overflow: hidden">
+    <div>
+        <div class="first-face float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-center float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-end float-left">
+            <span class="pip"></span>
+        </div>
     </div>
-    <div class="first-face justify-content-center float-left">
-        <span class="pip"></span>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face justify-content-start align-items-center float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-center align-items-center float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-end align-items-center float-left">
+            <span class="pip"></span>
+        </div>
     </div>
-    <div class="first-face justify-content-end float-left">
-        <span class="pip"></span>
-    </div>
-</div>
-<div style="clear: both"></div>
-<div >
-    <div class="first-face justify-content-start align-items-center float-left">
-        <span class="pip"></span>
-    </div>
-    <div class="first-face justify-content-center align-items-center float-left">
-        <span class="pip"></span>
-    </div>
-    <div class="first-face justify-content-end align-items-center float-left">
-        <span class="pip"></span>
-    </div>
-</div>
-<div style="clear: both"></div>
-<div>
+    <div style="clear: both"></div>
+    <div>
 
-    <div class="first-face justify-content-start align-items-end float-left">
-        <span class="pip"></span>
+        <div class="first-face justify-content-start align-items-end float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-center align-items-end float-left">
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-end align-items-end float-left">
+            <span class="pip"></span>
+        </div>
     </div>
-    <div class="first-face justify-content-center align-items-end float-left">
-        <span class="pip"></span>
+</div>
+<div style="clear: both"></div>
+<div style="background-color: #8eb5c8;margin-top: 10px;overflow: hidden">
+    <div>
+        <div class="first-face float-left">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-center float-left">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-end float-left">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-space-between float-left">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face justify-content-space-around float-left">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
     </div>
-    <div class="first-face justify-content-end align-items-end float-left">
-        <span class="pip"></span>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left flex-direction-column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-space-around">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-center">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-space-between">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left flex-direction-column align-items-center">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column align-items-center justify-content-space-around">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column align-items-center justify-content-center">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column align-items-center justify-content-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column align-items-center justify-content-space-between">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left flex-direction-column justify-content-start align-items-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-center align-items-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-end align-items-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-space-around align-items-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column justify-content-space-between align-items-end">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<div style="background-color: #fd9e80;margin-top: 10px;overflow: hidden">
+    <div>
+        <div class="first-face float-left">
+            <span class="pip"></span>
+            <span class="pip" style="align-self: center"></span>
+        </div>
+        <div class="first-face float-left flex-direction-column">
+            <span class="pip"></span>
+            <span class="pip" style="align-self: center"></span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left justify-content-space-between">
+            <span class="pip"></span>
+            <span class="pip" style="align-self: flex-end;"></span>
+        </div>
+        <div class="first-face float-left justify-content-space-between">
+            <span class="pip"></span>
+            <span class="pip" style="align-self: center"></span>
+            <span class="pip" style="align-self: flex-end"></span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left" style="flex-wrap: wrap;align-content: flex-start">
+            <!--flex-wrap:wrap会让第四个被挤压的span换行-->
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left" style="flex-wrap: wrap;align-content: space-between">
+            <!--flex-wrap:wrap会让第四个被挤压的span换行-->
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left" style="flex-wrap: wrap;">
+            <!--flex-wrap:wrap会让第四个被挤压的span换行-->
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip" style="align-self: flex-end"></span>
+        </div>
+        <div class="first-face float-left" style="justify-content: flex-end ;flex-wrap: wrap;align-content: space-between">
+            <!--flex-wrap:wrap会让第四个被挤压的span换行-->
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <!--<div class="first-face float-left" style="flex-wrap: wrap;align-content: center">
+            &lt;!&ndash;flex-wrap:wrap会让第四个被挤压的span换行&ndash;&gt;
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>-->
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        <div class="first-face float-left" style="flex-wrap: wrap;align-content: space-between">
+            <!--
+            这里必须设置div宽度占满父控件,不然justify-content: space-between不会让子view放在两边,
+            占满父控件有两种方法:
+            1.width: 100%;
+            2.flex : 1,相当于安卓的layout_weight:1
+            -->
+            <div style="display: flex;justify-content: space-between;width: 100%;background-color: #00CC00">
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+            <div style="display: flex;justify-content: space-between;flex:1;background-color: #00CC00">
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+        </div>
+        <div class="first-face float-left" style="justify-content: space-between;flex-wrap: wrap;align-content: space-between">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="first-face float-left" style="flex-direction: column;flex-wrap: wrap;align-content: space-between;justify-content: space-between">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
     </div>
 </div>
 </body>
