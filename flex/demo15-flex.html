@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            height: 100px;
+            background-color: #BE4C39;
+            border: 2px solid black;
+            color: white;
+            flex: 1;
+            word-break:break-all;/*解决因为不换行的问题*/
+        }
+
+        ul, li {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<p style="color: #ff0000;">
+    flex: 1, 则其计算值为 flex: 1 1 0%；<br/>
+    flex: auto, 则其计算值为 flex: 1 1 auto；<br/>
+    flex: none, 则其计算值为 flex: 0 0 auto；<br/>
+</p>
+<ul>
+    <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+</ul>
+</body>
+</html>

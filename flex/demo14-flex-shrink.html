@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</title>
+    <style type="text/css">
+        main {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        section {
+            flex-grow: 1;
+            background-color: #BE4C39;
+        }
+
+        aside {
+            flex-basis: 150px;
+            flex-shrink: 0;/*设置0代表不缩放*/
+            background-color: #2793C7;
+            /* flex-shrink: 0; prevents the aside from shrinking, if the section attempts to grow due to its content. (see third example) */
+
+            /* Instead of flex-basis: 150px; and flex-shrink: 0; you can use the shorthand: */
+            /* flex: 0 0 150px; */
+        }
+        section, aside {
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<p>http://www.heibaipig.com/blog/?p=450</p>
+<a href="http://www.cnblogs.com/shuiyi/p/5716918.html">不再混淆，一次搞懂！图解flexbox十余个属性</a>
+<p>定义子项宽度之和超过父元素宽度时，子项缩放的比例</p>
+<p>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<main>
+    <section>section</section>
+    <aside>aside:150px</aside>
+</main>
+
+<main>
+    <aside>aside:150px</aside>
+    <section>section</section>
+    <aside>aside:150px</aside>
+</main>
+
+<main>
+    <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quod cupiditate saepe tempora incidunt, id nobis iure? Neque harum illum voluptatibus a numquam, nihil asperiores, amet provident magni minima tempore!</section>
+    <aside>aside:150px</aside>
+</main>
+
+</body>
+</html>

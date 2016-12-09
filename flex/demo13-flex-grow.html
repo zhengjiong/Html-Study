@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex:1</title>
+    <style type="text/css">
+        .flex-container {
+            display: flex;
+            width: 400px;
+            height: 250px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            margin: 10px;
+        }
+
+        .item1 {
+            -webkit-flex: 2;
+            flex-grow: 2;
+        }
+
+        .item2 {
+            -webkit-flex: 1;
+            flex-grow: 1;
+        }
+
+        .item3 {
+            -webkit-flex: 1;
+            flex-grow: 1;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            background-color: #dddddd;
+        }
+
+        li {
+            flex-grow: 1;
+            padding: 5px;
+            margin-right: 10px;
+            background-color: #0a93c9;
+        }
+
+        main {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        section {
+            flex-grow: 1;
+            background-color: #BE4C39;
+        }
+
+        aside {
+            flex-basis: 150px;
+            flex-shrink: 0;/*设置0代表不缩放*/
+            background-color: #2793C7;
+            /* flex-shrink: 0; prevents the aside from shrinking, if the section attempts to grow due to its content. (see third example) */
+
+            /* Instead of flex-basis: 150px; and flex-shrink: 0; you can use the shorthand: */
+            /* flex: 0 0 150px; */
+        }
+        section, aside {
+            min-height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+<p>flex-grow 属性用于设置或检索弹性盒的扩展比率。</p>
+<p>
+    <a href="http://jinlong.github.io/2016/02/04/flex-grow-is-weird/?utm_source=tuicool&utm_medium=referral">最好教程</a>
+    <a href="http://www.cnblogs.com/shuiyi/p/5716918.html">不再混淆，一次搞懂！图解flexbox十余个属性</a>
+</p>
+<div class="flex-container">
+    <div class="flex-item item1">flex item 1</div>
+    <div class="flex-item item2">flex item 2</div>
+    <div class="flex-item item3">flex item 3</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<ul>
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+    <li>Element 4</li>
+</ul>
+
+<ul>
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+    <li>Element 4</li>
+    <li>Element 5</li>
+    <li>Element 6</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<p>固定宽度的 “圣杯” 3列流式布局<br/>
+    固定加自适应宽度的混合布局，可以用浮动实现，但是既不简单直观，又不灵活。Flexbox 实现的话，加点儿 flex-grow 和 flex-basis 魔法，简直小菜一碟。</p>
+<main>
+    <section>rest</section>
+    <aside>150px</aside>
+</main>
+
+<main>
+    <aside>150px</aside>
+    <section>rest</section>
+    <aside>150px</aside>
+</main>
+
+<main>
+    <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quod cupiditate saepe tempora incidunt, id nobis iure? Neque harum illum voluptatibus a numquam, nihil asperiores, amet provident magni minima tempore!</section>
+    <aside>150px</aside>
+</main>
+</body>
+</html>
